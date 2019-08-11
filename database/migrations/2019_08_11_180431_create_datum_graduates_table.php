@@ -15,9 +15,9 @@ class CreateDatumGraduatesTable extends Migration
     {
         Schema::create('datum_graduates', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('datum_id')->unsigned();
+            $table->bigInteger('datum_id')->unsigned();
             $table->foreign('datum_id')->references('id')->on('data');
-            $table->integer('graduate_id')->unsigned();
+            $table->bigInteger('graduate_id')->unsigned();
             $table->foreign('graduate_id')->references('id')->on('graduates');
             $table->timestamps();
         });

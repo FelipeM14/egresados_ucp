@@ -15,7 +15,7 @@ class CreateDatumOptionsTable extends Migration
     {
         Schema::create('datum_options', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('datum_id')->unsigned();
+            $table->bigInteger('datum_id')->unsigned();
             $table->foreign('datum_id')->references('id')->on('data');
             $table->string('text');
             $table->timestamps();

@@ -15,9 +15,9 @@ class CreateProgramGraduatesTable extends Migration
     {
         Schema::create('program_graduates', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('graduate_id')->unsigned();
+            $table->bigInteger('graduate_id')->unsigned();
             $table->foreign('graduate_id')->references('id')->on('graduates');
-            $table->integer('program_id')->unsigned();
+            $table->bigInteger('program_id')->unsigned();
             $table->foreign('program_id')->references('id')->on('programs');
             $table->timestamps();
         });
