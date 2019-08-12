@@ -35,7 +35,7 @@
                             <a href="index.html"><img src="img/core-img/im1logo.png" alt=""></a>
                         </div>
                         <div class="login-content">
-                            <a href="#">Register / Login</a>
+                            <a href="{{ route('login') }}">Register / Login</a>
                         </div>
                     </div>
                 </div>
@@ -64,7 +64,7 @@
                         </div>
 
                         <!-- Nav menu out_page -->
-                        @include('layouts/menus/out_page')
+                        @include('layouts.menus.out_page_menu')
                         <!-- Nav End -->
                     </div>
 
