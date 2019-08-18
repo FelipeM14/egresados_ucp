@@ -91,9 +91,8 @@
                 <div class="row h-100 align-items-center">
                     <div class="col-12">
                         <div class="hero-slides-content">
-                            <h4 data-animation="fadeInUp" data-delay="100ms">GRADUADOS UCP</h4>
-                            <h2 data-animation="fadeInUp" data-delay="400ms">Bienvenido <br></h2>
-
+                            <h2 data-animation="fadeInUp" data-delay="100ms">Bienvenidos </h2>
+                            <h4 data-animation="fadeInUp" data-delay="400ms">GRADUADOS UNIVERSIDAD CATOLICA <br></h4>
                         </div>
                     </div>
                 </div>
@@ -106,8 +105,8 @@
                 <div class="row h-100 align-items-center">
                     <div class="col-12">
                         <div class="hero-slides-content">
-                            <h4 data-animation="fadeInUp" data-delay="100ms">GRADUADOS UCP</h4>
-                            <h2 data-animation="fadeInUp" data-delay="400ms">Bienvenido  <br></h2>
+                            <h2 data-animation="fadeInUp" data-delay="100ms">Bienvenido</h2>
+                            <h4 data-animation="fadeInUp" data-delay="400ms">GRADUADOS LA CATOLICA<br></h4>
 
                         </div>
                     </div>
