@@ -213,6 +213,26 @@
 </footer>
 
 
+<div class="modal fade bd-example-modal-lg" id="mimodal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                Tarjeta Profesional
+            </div>
+            <div class="modal-body">
+                <div class="">
+
+                </div>
+                hola bebre
+            </div>
+            <div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
     <script src="js/js_template/jquery/jquery-2.2.4.min.js"></script>
     <!-- Popper js -->
     <script src="js/js_template/bootstrap/popper.min.js"></script>
