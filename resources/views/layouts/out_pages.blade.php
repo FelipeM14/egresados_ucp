@@ -35,7 +35,7 @@
                             <a href="index.html"><img src="img/core-img/im1logo.png" alt=""></a>
                         </div>
                         <div class="login-content">
-                            <a href="{{ route('login') }}">Register / Login</a>
+                            <a href="{{ route('login') }}">Login</a>
                         </div>
                     </div>
                 </div>
@@ -71,7 +71,7 @@
                     <!-- Calling Info -->
                     <div class="calling-info">
                         <div class="call-center">
-                            <a href="tel:+57 300 521 3310"><i class="icon-telephone-2"></i> <span>(+57) 300 521 3310</span></a>
+                            <a href="tel:+57 312 778 7141"><i class="icon-telephone-2"></i><span>(+57) 312 778 7141</span></a>
                         </div>
                     </div>
                 </nav>
@@ -86,7 +86,7 @@
     <div class="hero-slides owl-carousel">
 
         <!-- Single Hero Slide -->
-        <div class="single-hero-slide bg-img" style="background-image: url(img/bg-img/bg-1.jpg);">
+        <div class="single-hero-slide bg-img" style="background-image: url(img/bg-img/edit1.png);">
             <div class="container h-100">
                 <div class="row h-100 align-items-center">
                     <div class="col-12">
@@ -106,7 +106,7 @@
                     <div class="col-12">
                         <div class="hero-slides-content">
                             <h2 data-animation="fadeInUp" data-delay="100ms">Bienvenido</h2>
-                            <h4 data-animation="fadeInUp" data-delay="400ms">GRADUADOS LA CATOLICA<br></h4>
+                            <h4 data-animation="fadeInUp" data-delay="400ms">GRADUADOS UNIVERSIDAD CATOLICA<br></h4>
 
                         </div>
                     </div>
@@ -220,12 +220,14 @@
                 Tarjeta Profesional
             </div>
             <div class="modal-body">
-                <div class="">
+                <div class="single-hero-slide" >
+                    <img src="img/bg-img/bg-1.jpg" alt="">
 
                 </div>
                 hola bebre
             </div>
-            <div>
+            <div class="modal-footer">
+                chao bebe
 
             </div>
         </div>
