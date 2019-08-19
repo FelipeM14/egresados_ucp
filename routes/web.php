@@ -18,3 +18,29 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+//Rutas para el proyecto
+Route::middleware(['auth'])->group(function () {
+
+    Route::post('data/store', 'DataController@store')->name('data.store')
+        ->middleware('permission:data.create');
+
+    Route::get('data', 'DataController@index')->name('data.index')
+        ->middleware('permission:data.index');
+
+    Route::get('data/create', 'DataController@create')->name('data.create')
+        ->middleware('permission:data.create');
+
+    Route::put('data/{role}', 'DataController@update')->name('data.update')
+        ->middleware('permission:data.edit');
+
+    Route::get('data/{role}', 'DataController@show')->name('data.show')
+        ->middleware('permission:data.show');
+
+    Route::delete('data/{role}', 'DataController@destroy')->name('data.destroy')
+        ->middleware('permission:data.destroy');
+
+    Route::get('data/{role}/edit', 'DataController@edit')->name('data.edit')
+        ->middleware('permission:data.edit');
+});
