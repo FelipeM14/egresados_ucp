@@ -86,7 +86,7 @@
     <div class="hero-slides owl-carousel">
 
         <!-- Single Hero Slide -->
-        <div class="single-hero-slide bg-img" style="background-image: url(img/bg-img/edit1.png);">
+        <div class="single-hero-slide bg-img" style="background-image: url(img/bg-img/bg-1.jpg);">
             <div class="container h-100">
                 <div class="row h-100 align-items-center">
                     <div class="col-12">
@@ -214,22 +214,26 @@
 
 
 <div class="modal fade bd-example-modal-lg" id="mimodal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <span class="border border-danger"></span>
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                Tarjeta Profesional
+                <h5 class="modal-title">Tarjeta Profesional</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
             <div class="modal-body">
-                <div class="single-hero-slide" >
-                    <img src="img/bg-img/bg-1.jpg" alt="">
 
-                </div>
-                hola bebre
+                <p>Modal body text goes here.</p>
             </div>
             <div class="modal-footer">
-                chao bebe
 
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
             </div>
+        </div>
+    </div>
+
         </div>
     </div>
 </div>
