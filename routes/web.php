@@ -49,5 +49,17 @@ Route::middleware(['auth'])->group(function () {
     Route::get('users_index', 'UsersController@index')->name('users.index')
         ->middleware('permission:data.index');
 
+    Route::get('users_edit/{user}', 'UsersController@edit')->name('users.edit')
+        ->middleware('permission:data.edit');
+
+    Route::put('users_update/{user}', 'UsersController@update')->name('users.update')
+        ->middleware('permission:data.edit');
+
+    Route::get('users_create', 'UsersController@create')->name('users.create')
+        ->middleware('permission:data.create');
+
+    Route::post('users_store', 'UsersController@store')->name('users.store')
+        ->middleware('permission:data.create');
+
 
 });
