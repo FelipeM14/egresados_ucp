@@ -6,7 +6,7 @@
         <div class="col-md-4">
             <div class="card mt-5">
                 <div class="card-header text-center bg-green text-white">
-                    <h4>Portal Graduados</h4>
+                    <h4 class="mt-3">Portal Graduados</h4>
                 </div>
 
                 <div class="card-body">
