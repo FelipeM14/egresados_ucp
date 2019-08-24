@@ -44,7 +44,7 @@
                     </a>
                     <ul>
                         <li>
-                            <a href="elements-buttons-standard.html">
+                            <a href="{{ route('roles.index') }}">
                                 <i class="metismenu-icon"></i>
                                 Roles y permisos
                             </a>

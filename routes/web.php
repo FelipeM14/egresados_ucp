@@ -62,4 +62,9 @@ Route::middleware(['auth'])->group(function () {
         ->middleware('permission:data.create');
 
 
+    //Roles
+    Route::get('roles_index', 'RolesController@index')->name('roles.index')
+        ->middleware('permission:data.index');
+
+
 });

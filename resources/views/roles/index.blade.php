@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    Administrar usuarios
+    Administrar roles
 @endsection
 
 @section('content')
@@ -18,25 +18,19 @@
                                 <tr>
                                     <th colspan="6">
                                         <a href="#" class="btn btn-success">
-                                            Nuevo usuario
+                                            Nuevo rol
                                         </a>
                                     </th>
                                 </tr>
                                 <tr>
                                     <th>Nombre</th>
-                                    <th>Apellidos</th>
-                                    <th>Tipo de documento</th>
-                                    <th>Número de documento</th>
-                                    <th>Correo electrónico</th>
+                                    <th>Fecha de creación</th>
                                     <th>Acción</th>
                                 </tr>
-                                @foreach($users as $user)
+                                @foreach($roles as $role)
                                     <tr>
-                                        <td class="text-nowrap">{{ $user->name }}</td>
-                                        <td class="text-nowrap">{{ $user->last_name }}</td>
-                                        <td class="text-nowrap">{{ $user->document_type }}</td>
-                                        <td class="text-nowrap">{{ $user->document_number }}</td>
-                                        <td class="text-nowrap">{{ $user->email }}</td>
+                                        <td class="text-nowrap">{{ $role->name }}</td>
+                                        <td class="text-nowrap">{{ $role->created_at }}</td>
                                         <td class="text-nowrap">
                                             <a href="#" class="btn btn-danger">Inactivar</a>
                                             <a href="#" class="btn btn-warning">Editar</a>
@@ -45,7 +39,7 @@
                                 @endforeach
 
                             </table>
-                            {{ $users->links() }}
+                            {{ $roles->links() }}
                         </div>
                     </div>
                 </div>
