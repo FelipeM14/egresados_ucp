@@ -22,13 +22,16 @@
 </head>
 <body>
     <div id="app">
+
         <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
 
             <!--ENCABEZADO -->
             <div class="app-header header-shadow bg-success">
                 <div class="app-header__logo">
-                    <div class="logo-src"></div>
+
+                    <div  class="logo-src"></div>
                     <div class="header__pane ml-auto">
+
                         <div>
                             <button type="button" class="hamburger close-sidebar-btn hamburger--elastic" data-class="closed-sidebar">
                                 <h4 class="hamburger-box text-white">

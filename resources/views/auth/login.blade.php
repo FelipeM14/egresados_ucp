@@ -5,12 +5,29 @@
 @endsection
 
 @section('content')
+
+    <div class="top-header">
+        <div class="container h-100">
+            <div class="row h-100">
+                <div class="col-12 h-100">
+                    <div class="header-content h-100 d-flex align-items-center justify-content-between">
+                        <div class="academy-logo">
+                            <a href="index.html"><img src="img/bg-img/graduados_2.jpg" alt=""></a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 <div class="container">
+
     <div class="row justify-content-center">
         <div class="col-md-4">
             <div class="card mt-5">
                 <div class="card-header text-center bg-green text-white">
                     <h4 class="mt-3">Portal Graduados</h4>
+
                 </div>
 
                 <div class="card-body">
