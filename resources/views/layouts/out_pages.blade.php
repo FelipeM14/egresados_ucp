@@ -216,20 +216,101 @@
 <div class="modal fade bd-example-modal-lg" id="mimodal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
     <span class="border border-danger"></span>
     <div class="modal-dialog modal-lg">
+
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Tarjeta Profesional</h5>
+                <h4 class="modal-title">Tarjeta Profesional</h4>
+
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
+                <img src="img/bg-img/tittle_g.jpg" class="img-fluid" alt="Responsive image">
 
-                <p>Modal body text goes here.</p>
-            </div>
+            </div>>
+
+                <div>
+                    <div class="container">
+                        <div class="card-deck">
+                            <div class="card text-center">
+                                <div class="card-block">
+                                    <h6 class="card-title">Administracion De Empresas</h6>
+
+                                </div>
+                                <div class="modal-body">
+
+                                    <a href="https://www.cpae.gov.co" class="btn btn-danger" role="button">Obten Tu Tarjeta</a>
+
+                                </div>
+                            </div>
+                            <div class="card text-center">
+                                <div class="card-block">
+                                    <h6 class="card-title">Arquitectura</h6>
+
+                                </div>
+                                <div class="modal-body">
+
+                                    <a href="https://www.cpnaa.gov.co" class="btn btn-danger" role="button">Obten Tu Tarjeta</a>
+
+                                </div>
+                            </div>
+                            <div class="card text-center">
+                                <div class="card-block">
+                                    <h6 class="card-title">Diseño Industrial</h6>
+
+                                </div>
+                                <div class="modal-body">
+
+                                    <a href="http://www.mincit.gov.co" class="btn btn-danger" role="button">Obten Tu Tarjeta</a>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-deck mt-20">
+                            <div class="card text-center">
+                                <div class="card-block">
+                                    <h6 class="card-title">Ingenierias</h6>
+
+                                </div>
+                                <div class="modal-body">
+
+                                    <a href="http://www.copnia.gov.co" class="btn btn-danger" role="button">Obten Tu Tarjeta</a>
+
+                                </div>
+                            </div>
+
+                            <div class="card text-center">
+                                <div class="card-block">
+                                    <h6 class="card-title">Psicologia</h6>
+
+                                </div>
+                                <div class="modal-body">
+
+                                    <a href="https://www.colpsic.info" class="btn btn-danger" role="button">Obten Tu Tarjeta</a>
+
+                                </div>
+                            </div>
+
+                            <div class="card text-center">
+                                <div class="card-block">
+                                    <h6 class="card-title">Economia</h6>
+                                </div>
+                                <div class="modal-body">
+
+                                    <a href="https://www.conalpe.gov.co" class="btn btn-danger" role="button">Obten Tu Tarjeta</a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
             <div class="modal-footer">
 
-                <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
             </div>
         </div>
     </div>
