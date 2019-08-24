@@ -78,7 +78,7 @@
                 <div class="app-main__outer">
 
                     <!-- CONTENIDO CENTRAL-->
-                    <div class="app-main__inner">
+                    <div class="app-main__inner p-3">
 
                         @yield('content')
 

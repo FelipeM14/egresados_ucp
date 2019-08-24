@@ -1,5 +1,9 @@
 @extends('layouts.app_auth')
 
+@section('title')
+    Ingresar
+@endsection
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">

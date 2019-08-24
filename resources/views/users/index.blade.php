@@ -5,7 +5,6 @@
 @endsection
 
 @section('content')
-    <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card">
@@ -16,6 +15,13 @@
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table table-bordered table-sm table-responsive">
+                                <tr>
+                                    <th colspan="6">
+                                        <a href="#" class="btn btn-success">
+                                            Nuevo usuario
+                                        </a>
+                                    </th>
+                                </tr>
                                 <tr>
                                     <th>Nombre</th>
                                     <th>Apellidos</th>
@@ -32,7 +38,7 @@
                                         <td class="text-nowrap">{{ $user->document_number }}</td>
                                         <td class="text-nowrap">{{ $user->email }}</td>
                                         <td class="text-nowrap">
-                                            <a href="#" class="btn btn-danger">Eliminar</a>
+                                            <a href="#" class="btn btn-danger">Inactivar</a>
                                             <a href="#" class="btn btn-warning">Editar</a>
                                         </td>
                                     </tr>
@@ -45,5 +51,4 @@
                 </div>
             </div>
         </div>
-    </div>
 @endsection

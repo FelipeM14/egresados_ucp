@@ -33,10 +33,12 @@
         <div class="app-sidebar__inner">
             <ul class="vertical-nav-menu">
 
-                <li class="app-sidebar__heading">Menu principal</li>
+                <li class="app-sidebar__heading text-success">Menu principal</li>
                 <li>
                     <a href="#">
-                        <i class="far fa-user mr-3"></i>
+                        <small>
+                            <i class="metismenu-icon far fa-user"></i>
+                        </small>
                         Acceso
                         <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                     </a>
