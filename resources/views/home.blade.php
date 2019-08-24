@@ -3,13 +3,22 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Bienvenid@</div>
+                <div class="card-header">
+                     Bienvenid@
+                </div>
 
                 <div class="card-body">
+                    <div class="row">
+                        <div class="col text-center">
+                            <h1>Portal Graduados</h1>
+                            <h1>Universidad Católica De Pereira</h1>
+                        </div>
+                    </div>
+                    @php(dd(session()))
 
-                    Hollla como esta
+
                 </div>
             </div>
         </div>
