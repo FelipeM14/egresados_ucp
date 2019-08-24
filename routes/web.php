@@ -43,4 +43,11 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('data/{role}/edit', 'DataController@edit')->name('data.edit')
         ->middleware('permission:data.edit');
+
+
+    //Users
+    Route::get('users_index', 'UsersController@index')->name('users.index')
+        ->middleware('permission:data.index');
+
+
 });

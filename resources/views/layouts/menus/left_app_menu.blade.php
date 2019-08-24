@@ -32,6 +32,30 @@
     <div class="scrollbar-sidebar">
         <div class="app-sidebar__inner">
             <ul class="vertical-nav-menu">
+
+                <li class="app-sidebar__heading">Menu principal</li>
+                <li>
+                    <a href="#">
+                        <i class="far fa-user mr-3"></i>
+                        Acceso
+                        <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="elements-buttons-standard.html">
+                                <i class="metismenu-icon"></i>
+                                Roles y permisos
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('users.index') }}">
+                                <i class="metismenu-icon">
+                                </i>Usuarios
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <!--
                 <li class="app-sidebar__heading">Inicio</li>
                 <li>
                     <a href="{{ route('home') }}">
@@ -39,11 +63,11 @@
                         Bienvenid@
                     </a>
                 </li>
-                <li class="app-sidebar__heading">UI Components</li>
+                <li class="app-sidebar__heading">Seguridad</li>
                 <li>
                     <a href="#">
                         <i class="metismenu-icon pe-7s-diamond"></i>
-                        Elements
+                        Acceso
                         <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                     </a>
                     <ul>
@@ -219,6 +243,7 @@
                         Upgrade to PRO
                     </a>
                 </li>
+                -->
             </ul>
         </div>
     </div>

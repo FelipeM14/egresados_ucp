@@ -12,12 +12,22 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col text-center">
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
                             <h1>Portal Graduados</h1>
                             <h1>Universidad Católica De Pereira</h1>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
                         </div>
                     </div>
-                    @php()
-
 
                 </div>
             </div>
