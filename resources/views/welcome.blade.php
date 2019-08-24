@@ -8,6 +8,6 @@
 @section('content')
 
     <div class="container">
-        hola mundo
+
     </div>
 @endsection

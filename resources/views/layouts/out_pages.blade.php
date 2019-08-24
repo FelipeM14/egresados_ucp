@@ -42,7 +42,6 @@
             </div>
         </div>
     </div>
-
     <!-- Navbar Area -->
     <div class="academy-main-menu">
         <div class="classy-nav-container breakpoint-off">
@@ -100,7 +99,7 @@
         </div>
 
         <!-- Single Hero Slide -->
-        <div class="single-hero-slide bg-img" style="background-image: url(img/bg-img/bg-2.jpg);">
+        <div class="single-hero-slide bg-img" style=" background-image: url(img/bg-img/bg-2.jpg);">
             <div class="container h-100">
                 <div class="row h-100 align-items-center">
                     <div class="col-12">
@@ -239,7 +238,7 @@
 
                                 </div>
                                 <div class="modal-body">
-
+                                    <i class="icon-contract"></i>
                                     <a href="https://www.cpae.gov.co" class="btn btn-danger" role="button">Obten Tu Tarjeta</a>
 
                                 </div>
@@ -250,7 +249,7 @@
 
                                 </div>
                                 <div class="modal-body">
-
+                                    <i class="icon-contract"></i>
                                     <a href="https://www.cpnaa.gov.co" class="btn btn-danger" role="button">Obten Tu Tarjeta</a>
 
                                 </div>
@@ -261,6 +260,7 @@
 
                                 </div>
                                 <div class="modal-body">
+                                    <i class="icon-contract"></i>
 
                                     <a href="http://www.mincit.gov.co" class="btn btn-danger" role="button">Obten Tu Tarjeta</a>
 
@@ -274,7 +274,7 @@
 
                                 </div>
                                 <div class="modal-body">
-
+                                    <i class="icon-contract"></i>
                                     <a href="http://www.copnia.gov.co" class="btn btn-danger" role="button">Obten Tu Tarjeta</a>
 
                                 </div>
@@ -286,6 +286,7 @@
 
                                 </div>
                                 <div class="modal-body">
+                                    <i class="icon-contract"></i>
 
                                     <a href="https://www.colpsic.info" class="btn btn-danger" role="button">Obten Tu Tarjeta</a>
 
@@ -297,6 +298,7 @@
                                     <h6 class="card-title">Economia</h6>
                                 </div>
                                 <div class="modal-body">
+                                    <i class="icon-contract"></i>
 
                                     <a href="https://www.conalpe.gov.co" class="btn btn-danger" role="button">Obten Tu Tarjeta</a>
 
@@ -304,10 +306,6 @@
                             </div>
                         </div>
                     </div>
-
-
-
-
             <div class="modal-footer">
 
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
