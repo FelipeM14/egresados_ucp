@@ -16,7 +16,7 @@
                             <h1>Universidad Católica De Pereira</h1>
                         </div>
                     </div>
-                    @php(dd(session()))
+                    @php()
 
 
                 </div>
