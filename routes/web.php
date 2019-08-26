@@ -66,5 +66,37 @@ Route::middleware(['auth'])->group(function () {
     Route::get('roles_index', 'RolesController@index')->name('roles.index')
         ->middleware('permission:data.index');
 
+    Route::get('roles_create', 'RolesController@create')->name('roles.create')
+        ->middleware('permission:data.create');
+
+    Route::post('roles_store', 'RolesController@store')->name('roles.store')
+        ->middleware('permission:data.create');
+
+    Route::get('roles_edit/{role}', 'RolesController@edit')->name('roles.edit')
+        ->middleware('permission:data.edit');
+
+    Route::put('roles_update/{role}', 'RolesController@update')->name('roles.update')
+        ->middleware('permission:data.edit');
+
+    Route::get('roles_delete/{role}', 'RolesController@delete')->name('roles.delete')
+        ->middleware('permission:data.destroy');
+
+    Route::get('roles_setting/{role}', 'RolesController@setting')->name('roles.setting')
+        ->middleware('permission:data.edit');
+
+
+    Route::name('getNoPermissions')->get('permissions_np/{id}', 'RolesController@noPermissions')
+        ->middleware('permission:data.edit');
+
+    Route::name('getRolePermissions')->get('permissions_role/{role}', 'RolesController@getRolePermissions')
+        ->middleware('permission:data.edit');
+
+    Route::name('addPermissionsToRole')->post('permissions_to_role', 'RolesController@addPermissionToRole')
+        ->middleware('permission:data.edit');
+
+    Route::name('deleteRolePermissions')->delete('delete_permissions_role/{id}', 'RolesController@deleteRolePermissions')
+        ->middleware('permission:data.edit');
+
+
 
 });

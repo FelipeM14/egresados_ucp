@@ -27,6 +27,73 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-const app = new Vue({
+let app = new Vue({
     el: '#app',
+    data: {
+        permissions: [],
+        role_permissions: '',
+    },
+    created: function () {
+
+        if ($('#role_app').val() === "1") {
+            this.getNoPermissions(this.getIdRole());
+            this.getRolePermissions(this.getIdRole());
+        }
+    },
+
+    methods: {
+        getIdRole: function () {
+            return $('#role_v').val();
+        },
+        getNoPermissions: function (id) {
+            let url = '../../permissions_np/' + id;
+            axios.get(url).then(response => {
+                this.permissions = response.data;
+            });
+        },
+        getRolePermissions: function (id) {
+            let url = '../../permissions_role/' + id;
+            axios.get(url).then(response => {
+                this.role_permissions = response.data;
+            });
+        },
+        addPermission: function (id) {
+            let url = '../../permissions_to_role';
+            let role_id = this.getIdRole();
+            console.log('id ' + id);
+            axios.post(url, {
+                permission_id: id,
+                role_id: role_id,
+            }).then(response => {
+                this.getNoPermissions(role_id);
+                this.getRolePermissions(role_id);
+                toastr.success('Permiso agregado correctamente');
+            }).catch(error => {
+                toastr.error('Error al agregar el permiso');
+            });
+        },
+        deletePermission: function (id) {
+            let url = '../../delete_permissions_role/' + id;
+            let role_id = this.getIdRole();
+            axios.delete(url).then(response => {
+                this.getNoPermissions(role_id);
+                this.getRolePermissions(role_id);
+                toastr.success('Permiso eliminado eliminado');
+            }).catch(error => {
+                toastr.error('Error al eliminar el permiso');
+            });
+        },
+        quitPermissions: function () {
+            $("input[name='permissions']").val('');
+            let form = $('#form_roles');
+            form.append("<input type='hidden' name='back' value='ok'>");
+            form.submit();
+        },
+        addSpecialPermissions: function () {
+            let form = $('#form_roles');
+            form.append("<input type='hidden' name='back' value='ok'>");
+            form.append("<input type='hidden' name='permissions' value='all-access'>");
+            form.submit();
+        }
+    }
 });
