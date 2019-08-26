@@ -81,7 +81,7 @@
                 <div class="app-main__outer">
 
                     <!-- CONTENIDO CENTRAL-->
-                    <div class="app-main__inner p-3">
+                    <div id="app" class="app-main__inner p-3">
 
                         @yield('content')
 
@@ -101,5 +101,6 @@
     </div>
 
     <script type="text/javascript" src="{{ asset('js/main.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>
