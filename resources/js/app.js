@@ -27,6 +27,24 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+toastr.options = {
+    "closeButton": true,
+    "debug": false,
+    "newestOnTop": false,
+    "progressBar": false,
+    "positionClass": "toast-bottom-right",
+    "preventDuplicates": false,
+    "onclick": null,
+    "showDuration": "300",
+    "hideDuration": "1000",
+    "timeOut": "5000",
+    "extendedTimeOut": "1000",
+    "showEasing": "swing",
+    "hideEasing": "linear",
+    "showMethod": "fadeIn",
+    "hideMethod": "fadeOut"
+};
+
 let app = new Vue({
     el: '#app',
     data: {
@@ -55,6 +73,7 @@ let app = new Vue({
             let url = '../../permissions_role/' + id;
             axios.get(url).then(response => {
                 this.role_permissions = response.data;
+                console.log(this.role_permissions);
             });
         },
         addPermission: function (id) {
@@ -72,9 +91,10 @@ let app = new Vue({
                 toastr.error('Error al agregar el permiso');
             });
         },
-        deletePermission: function (id) {
-            let url = '../../delete_permissions_role/' + id;
+        deletePermission: function (permission_id) {
+
             let role_id = this.getIdRole();
+            let url = '../../delete_permissions_role/' + role_id+'/'+permission_id;
             axios.delete(url).then(response => {
                 this.getNoPermissions(role_id);
                 this.getRolePermissions(role_id);
@@ -83,17 +103,5 @@ let app = new Vue({
                 toastr.error('Error al eliminar el permiso');
             });
         },
-        quitPermissions: function () {
-            $("input[name='permissions']").val('');
-            let form = $('#form_roles');
-            form.append("<input type='hidden' name='back' value='ok'>");
-            form.submit();
-        },
-        addSpecialPermissions: function () {
-            let form = $('#form_roles');
-            form.append("<input type='hidden' name='back' value='ok'>");
-            form.append("<input type='hidden' name='permissions' value='all-access'>");
-            form.submit();
-        }
     }
 });

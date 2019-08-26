@@ -89,29 +89,33 @@ class RolesController extends Controller
         return redirect()->route('roles.index');
     }
 
+
+
     public function setting(Role $role){
 
         return view('roles.setting', ['role' => $role]);
     }
 
-
-
-
     public function noPermissions($id){
 
-        $role = [];
-        $yes_roles = $this->getRolePermissions($id);
+        $role = Role::find($id);
+
+        $role_arr = [];
+        $yes_roles = $this->getRolePermissions($role);
 
         foreach ($yes_roles as $yes_role){
-            $role[] = $yes_role->id;
+            $role_arr[] = $yes_role->id;
         }
 
         return Permission::select('permissions.id', 'permissions.name')
-            ->whereNotIn('id', $role)
+            ->whereNotIn('id', $role_arr)
             ->get();
     }
 
-    public function addPermissionToRole(Role $role, Permission $permission){
+    public function addPermissionToRole(Request $request){
+
+        $role = Role::find($request->role_id);
+        $permission = Permission::find($request->permission_id);
 
         $role->givePermissionTo($permission);
     }
@@ -121,9 +125,9 @@ class RolesController extends Controller
         return $role->permissions()->get();
     }
 
-    public function deleteRolePermissions($id){
+    public function deleteRolePermissions(Role $role, Permission $permission){
 
-        //
+        $role->revokePermissionTo($permission);
 
     }
 

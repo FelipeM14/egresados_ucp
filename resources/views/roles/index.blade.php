@@ -38,7 +38,7 @@
                                     <td class="text-nowrap text-right">
                                         <a href="{{ route('roles.delete', ['role' => $role->id]) }}" class="btn btn-danger">Eliminar</a>
                                         <a href="{{ route('roles.edit', ['role' => $role->id]) }}" class="btn btn-warning">Editar</a>
-                                        <a href="{{ route('roles.setting', ['role' => $role->id]) }}" class="btn btn-primary">Configurar permisos</a>
+                                        <a href="{{ route('roles.setting', ['role' => $role->id]) }}" class="btn btn-primary @if($role->id == 1) disabled @endif ">Configurar permisos</a>
                                     </td>
                                 </tr>
                             @endforeach

@@ -67,7 +67,7 @@
                                     </thead>
                                     <tbody>
                                     <tr v-for="role_permission in role_permissions">
-                                        <td><button v-on:click.prevent="deletePermission(role_permission.permission_role_id)" class="btn btn-sm btn-outline-warning"> <-- Quitar</button></td>
+                                        <td><button v-on:click.prevent="deletePermission(role_permission.id)" class="btn btn-sm btn-outline-warning"> <-- Quitar</button></td>
                                         <td>@{{ role_permission.name }}</td>
                                         <td>@{{ role_permission.description }}</td>
                                     </tr>

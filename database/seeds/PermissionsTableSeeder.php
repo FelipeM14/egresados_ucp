@@ -16,11 +16,14 @@ class PermissionsTableSeeder extends Seeder
     {
 
         //Crea los permisos en la BD
-        Permission::create(['name' => 'data.index']);
-        Permission::create(['name' => 'data.edit']);
-        Permission::create(['name' => 'data.create']);
-        Permission::create(['name' => 'data.destroy']);
-        Permission::create(['name' => 'data.basic']);
+        Permission::create(['name' => 'Ver datos']);
+        Permission::create(['name' => 'Editar datos']);
+        Permission::create(['name' => 'Ingresar datos']);
+        Permission::create(['name' => 'Eliminar datos']);
+        Permission::create(['name' => 'Ver datos básicos']);
+        Permission::create(['name' => 'Editar datos básicos']);
+        Permission::create(['name' => 'Ingresar datos básicos']);
+        Permission::create(['name' => 'Eliminar datos básicos']);
 
         //rol
         $admin = Role::create(['name' => 'Administrador']);
@@ -28,10 +31,10 @@ class PermissionsTableSeeder extends Seeder
         $admin->givePermissionTo(Permission::all());
 
         //Guest
-        $guest = Role::create(['name' => 'Guest']);
+        $guest = Role::create(['name' => 'Consultor']);
 
         $guest->givePermissionTo([
-            'data.index',
+            'Ver datos',
         ]);
 
         //User Administrador
