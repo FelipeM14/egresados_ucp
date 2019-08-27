@@ -49790,7 +49790,7 @@ var app = new Vue({
 
         _this4.getRolePermissions(role_id);
 
-        toastr.success('Permiso eliminado eliminado');
+        toastr.success('Permiso eliminado correctamente');
       })["catch"](function (error) {
         toastr.error('Error al eliminar el permiso');
       });

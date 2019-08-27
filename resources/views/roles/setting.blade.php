@@ -38,15 +38,13 @@
                                     </tr>
                                     <tr>
                                         <td class="text-uppercase text-muted">Nombre</td>
-                                        <td class="text-uppercase text-muted">Descripción</td>
                                         <td class="text-uppercase text-muted">Acción</td>
                                     </tr>
                                     </thead>
                                     <tbody>
                                     <tr v-for="permission in permissions">
                                         <td>@{{ permission.name }}</td>
-                                        <td>@{{ permission.description }}</td>
-                                        <th><button v-on:click.prevent="addPermission(permission.id)" class="btn btn-sm btn-outline-success">Agregar --></button></th>
+                                        <th class="text-right"><button v-on:click.prevent="addPermission(permission.id)" class="btn btn-sm btn-outline-success">Agregar --></button></th>
                                     </tr>
                                     </tbody>
                                 </table>
@@ -62,14 +60,12 @@
                                     <tr>
                                         <td class="text-uppercase text-muted">Acción</td>
                                         <td class="text-uppercase text-muted">Nombre</td>
-                                        <td class="text-uppercase text-muted">Descripción</td>
                                     </tr>
                                     </thead>
                                     <tbody>
                                     <tr v-for="role_permission in role_permissions">
                                         <td><button v-on:click.prevent="deletePermission(role_permission.id)" class="btn btn-sm btn-outline-warning"> <-- Quitar</button></td>
                                         <td>@{{ role_permission.name }}</td>
-                                        <td>@{{ role_permission.description }}</td>
                                     </tr>
                                     </tbody>
                                 </table>

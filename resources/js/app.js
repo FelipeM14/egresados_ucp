@@ -98,7 +98,7 @@ let app = new Vue({
             axios.delete(url).then(response => {
                 this.getNoPermissions(role_id);
                 this.getRolePermissions(role_id);
-                toastr.success('Permiso eliminado eliminado');
+                toastr.success('Permiso eliminado correctamente');
             }).catch(error => {
                 toastr.error('Error al eliminar el permiso');
             });
