@@ -27,6 +27,81 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-const app = new Vue({
+toastr.options = {
+    "closeButton": true,
+    "debug": false,
+    "newestOnTop": false,
+    "progressBar": false,
+    "positionClass": "toast-bottom-right",
+    "preventDuplicates": false,
+    "onclick": null,
+    "showDuration": "300",
+    "hideDuration": "1000",
+    "timeOut": "5000",
+    "extendedTimeOut": "1000",
+    "showEasing": "swing",
+    "hideEasing": "linear",
+    "showMethod": "fadeIn",
+    "hideMethod": "fadeOut"
+};
+
+let app = new Vue({
     el: '#app',
+    data: {
+        permissions: [],
+        role_permissions: '',
+    },
+    created: function () {
+
+        if ($('#role_app').val() === "1") {
+            this.getNoPermissions(this.getIdRole());
+            this.getRolePermissions(this.getIdRole());
+        }
+    },
+
+    methods: {
+        getIdRole: function () {
+            return $('#role_v').val();
+        },
+        getNoPermissions: function (id) {
+            let url = '../../permissions_np/' + id;
+            axios.get(url).then(response => {
+                this.permissions = response.data;
+            });
+        },
+        getRolePermissions: function (id) {
+            let url = '../../permissions_role/' + id;
+            axios.get(url).then(response => {
+                this.role_permissions = response.data;
+                console.log(this.role_permissions);
+            });
+        },
+        addPermission: function (id) {
+            let url = '../../permissions_to_role';
+            let role_id = this.getIdRole();
+            console.log('id ' + id);
+            axios.post(url, {
+                permission_id: id,
+                role_id: role_id,
+            }).then(response => {
+                this.getNoPermissions(role_id);
+                this.getRolePermissions(role_id);
+                toastr.success('Permiso agregado correctamente');
+            }).catch(error => {
+                toastr.error('Error al agregar el permiso');
+            });
+        },
+        deletePermission: function (permission_id) {
+
+            let role_id = this.getIdRole();
+            let url = '../../delete_permissions_role/' + role_id+'/'+permission_id;
+            axios.delete(url).then(response => {
+                this.getNoPermissions(role_id);
+                this.getRolePermissions(role_id);
+                toastr.success('Permiso eliminado correctamente');
+            }).catch(error => {
+                toastr.error('Error al eliminar el permiso');
+            });
+        },
+    }
 });

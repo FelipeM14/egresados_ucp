@@ -14,7 +14,7 @@
 
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table class="table table-bordered table-sm table-responsive">
+                            <table class="table table-bordered table-sm">
                                 <tr>
                                     <th colspan="6">
                                         <a href="#" class="btn btn-success">

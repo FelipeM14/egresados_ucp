@@ -24,42 +24,79 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::middleware(['auth'])->group(function () {
 
     Route::post('data/store', 'DataController@store')->name('data.store')
-        ->middleware('permission:data.create');
+        ->middleware('permission:Ingresar datos');
 
     Route::get('data', 'DataController@index')->name('data.index')
-        ->middleware('permission:data.index');
+        ->middleware('permission:Ver datos');
 
     Route::get('data/create', 'DataController@create')->name('data.create')
-        ->middleware('permission:data.create');
+        ->middleware('permission:Ingresar datos');
 
     Route::put('data/{role}', 'DataController@update')->name('data.update')
-        ->middleware('permission:data.edit');
+        ->middleware('permission:Editar datos');
 
     Route::get('data/{role}', 'DataController@show')->name('data.show')
-        ->middleware('permission:data.show');
+        ->middleware('permission:Ver datos');
 
     Route::delete('data/{role}', 'DataController@destroy')->name('data.destroy')
-        ->middleware('permission:data.destroy');
+        ->middleware('permission:Eliminar datos');
 
     Route::get('data/{role}/edit', 'DataController@edit')->name('data.edit')
-        ->middleware('permission:data.edit');
+        ->middleware('permission:Editar datos');
 
 
     //Users
     Route::get('users_index', 'UsersController@index')->name('users.index')
-        ->middleware('permission:data.index');
+        ->middleware('permission:Ver datos');
 
     Route::get('users_edit/{user}', 'UsersController@edit')->name('users.edit')
-        ->middleware('permission:data.edit');
+        ->middleware('permission:Editar datos');
 
     Route::put('users_update/{user}', 'UsersController@update')->name('users.update')
-        ->middleware('permission:data.edit');
+        ->middleware('permission:Editar datos');
 
     Route::get('users_create', 'UsersController@create')->name('users.create')
-        ->middleware('permission:data.create');
+        ->middleware('permission:Ingresar datos');
 
     Route::post('users_store', 'UsersController@store')->name('users.store')
-        ->middleware('permission:data.create');
+        ->middleware('permission:Ingresar datos');
+
+
+    //Roles
+    Route::get('roles_index', 'RolesController@index')->name('roles.index')
+        ->middleware('permission:Ver datos');
+
+    Route::get('roles_create', 'RolesController@create')->name('roles.create')
+        ->middleware('permission:Ingresar datos');
+
+    Route::post('roles_store', 'RolesController@store')->name('roles.store')
+        ->middleware('permission:Ingresar datos');
+
+    Route::get('roles_edit/{role}', 'RolesController@edit')->name('roles.edit')
+        ->middleware('permission:Editar datos');
+
+    Route::put('roles_update/{role}', 'RolesController@update')->name('roles.update')
+        ->middleware('permission:Editar datos');
+
+    Route::get('roles_delete/{role}', 'RolesController@delete')->name('roles.delete')
+        ->middleware('permission:Eliminar datos');
+
+    Route::get('roles_setting/{role}', 'RolesController@setting')->name('roles.setting')
+        ->middleware('permission:Editar datos');
+
+
+    Route::name('getNoPermissions')->get('permissions_np/{id}', 'RolesController@noPermissions')
+        ->middleware('permission:Editar datos');
+
+    Route::name('getRolePermissions')->get('permissions_role/{role}', 'RolesController@getRolePermissions')
+        ->middleware('permission:Editar datos');
+
+    Route::name('addPermissionsToRole')->post('permissions_to_role', 'RolesController@addPermissionToRole')
+        ->middleware('permission:Editar datos');
+
+    Route::name('deleteRolePermissions')->delete('delete_permissions_role/{role}/{permission}', 'RolesController@deleteRolePermissions')
+        ->middleware('permission:Editar datos');
+
 
 
 });
