@@ -17,7 +17,7 @@
                             <table class="table table-bordered table-sm">
                                 <tr>
                                     <th colspan="6">
-                                        <a href="#" class="btn btn-success">
+                                        <a href="{{ route('users.create') }}" class="btn btn-success">
                                             Nuevo usuario
                                         </a>
                                     </th>

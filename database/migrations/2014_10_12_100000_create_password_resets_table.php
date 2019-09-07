@@ -22,6 +22,7 @@ class CreatePasswordResetsTable extends Migration
 
     /**
      * Reverse the migrations.
+     *php artisan serve
      *
      * @return void
      */
