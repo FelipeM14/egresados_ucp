@@ -816,7 +816,7 @@ img {
 
 /* Footer Area CSS */
 .main-footer-area {
-  background-color: #232323; }
+  background-color: #3ec940; }
   .main-footer-area .footer-widget .widget-title {
     margin-bottom: 45px; }
     .main-footer-area .footer-widget .widget-title h6 {
@@ -828,13 +828,13 @@ img {
       text-transform: uppercase; }
   .main-footer-area .footer-widget .footer-social-info a {
     display: inline-block;
-    color: #606060;
+    color: #3ec940;
     margin-right: 15px; }
     .main-footer-area .footer-widget .footer-social-info a:hover, .main-footer-area .footer-widget .footer-social-info a:focus {
       color: #ffffff; }
   .main-footer-area .footer-widget .useful-links li a {
     display: block;
-    color: #606060;
+    color: #3ec940;
     margin-bottom: 15px;
     font-size: 14px;
     font-weight: 500; }
@@ -871,14 +871,14 @@ img {
     margin-bottom: 0; }
 
 .bottom-footer-area {
-  background-color: #141414;
+  background-color: #3ec940;
   padding: 30px 0;
   text-align: center; }
   .bottom-footer-area p {
     font-size: 12px;
     margin-bottom: 0; }
     .bottom-footer-area p a {
-      color: #606060;
+      color: #3ec940;
       font-size: 12px; }
 
 /* Breadcumb Area CSS */

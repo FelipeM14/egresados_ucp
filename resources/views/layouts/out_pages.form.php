@@ -32,7 +32,7 @@
                 <div class="col-12 h-100">
                     <div class="header-content h-100 d-flex align-items-center justify-content-between">
                         <div class="academy-logo">
-                            <a href="index.html"><img src="img/core-img/im1logo.png" alt=""></a>
+                            <a href="index.html"><img src="img/core-img/im1" alt=""></a>
                         </div>
                         <div class="login-content">
                             <a href="{{ route('login') }}">Login</a>
