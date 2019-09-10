@@ -5,7 +5,11 @@
 @endsection
 
 @section('content')
-        <div class="row justify-content-center">
+
+    @include('messages._messages')
+    @include('messages._errors')
+
+    <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
@@ -13,7 +17,7 @@
                     </div>
 
                     <form action="{{ route('users.store') }}" method="post">
-                        @crsf
+                        @csrf
                         <div class="card-body">
 
                             <div class="row">
@@ -43,10 +47,10 @@
                                         </label>
                                         <select class="form-control" name="document_type" id="document_type" >
                                             <option value="">Seleccionar</option>
-                                            <option value="C.C.">Cédula de ciudadanía</option>
-                                            <option value="C.E.">Cédula de Extranjería</option>
-                                            <option value="T.I.">Tarjeta de Identidad</option>
-                                            <option value="P.A.">Pasaporte</option>
+                                            <option @if(old('document_type') == 'C.C.') selected @endif value="C.C.">Cédula de ciudadanía</option>
+                                            <option @if(old('document_type') == 'C.E.') selected @endif value="C.E.">Cédula de Extranjería</option>
+                                            <option @if(old('document_type') == 'T.I.') selected @endif value="T.I.">Tarjeta de Identidad</option>
+                                            <option @if(old('document_type') == 'P.A.') selected @endif value="P.A.">Pasaporte</option>
                                         </select>
                                     </div>
                                 </div>
@@ -61,12 +65,25 @@
                             </div>
 
                             <div class="row">
-                                <div class="col-sm-12">
+                                <div class="col-sm-6">
                                     <div class="form-group">
                                         <label for="email">
                                             Correo electrónico: *
                                         </label>
                                         <input class="form-control" type="text" name="email" id="email" value="{{ old('email') }}" placeholder="Correo electrónico...">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="role">
+                                            Rol: *
+                                        </label>
+                                        <select class="form-control" name="role" id="role" >
+                                            <option value="">Seleccionar</option>
+                                            @foreach($roles as $role)
+                                                <option @if($role->id == old('role')) selected @endif value="{{ $role->id }}">{{ $role->name }}</option>
+                                            @endforeach
+                                        </select>
                                     </div>
                                 </div>
                             </div>

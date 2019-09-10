@@ -19,6 +19,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/complete/{code}', 'UsersController@complete')->name('complete');
+Route::put('/update_pass/{user}', 'UsersController@updatePass')->name('user.update.pass');
 
 //Rutas para el proyecto
 Route::middleware(['auth'])->group(function () {

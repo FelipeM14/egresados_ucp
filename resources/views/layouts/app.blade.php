@@ -50,19 +50,33 @@
                             <div class="widget-content p-0">
                                 <div class="widget-content-wrapper">
                                     <div class="widget-content-left">
-                                        <div class="btn-group">
-                                            <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="p-0 btn text-white">
-                                                {{ Auth::user()->name }}
-                                                <i class="fa fa-angle-down ml-2 opacity-8"></i>
-                                            </a>
-                                            <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu dropdown-menu-right">
-                                                <button type="button" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" tabindex="0" class="dropdown-item">Salir</button>
-                                            </div>
-                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                                {{ csrf_field() }}
-                                            </form>
 
-                                        </div>
+                                            <ul class="navbar-nav ml-auto">
+                                                @guest
+                                                    <li class="nav-item">
+                                                        <a class="nav-link active text-white" href="{{ route('login') }}">Ingresar</a>
+                                                    </li>
+                                                @else
+                                                    <li class="nav-item dropdown active">
+                                                        <a id="navbarDropdown" class="nav-link dropdown-toggle text-white" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                                            {{ Auth::user()->name }} <span class="caret"></span>
+                                                        </a>
+
+                                                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                                            <a class="dropdown-item" href="{{ route('logout') }}"
+                                                               onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                                                Salir
+                                                            </a>
+
+                                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                                @csrf
+                                                            </form>
+                                                        </div>
+                                                    </li>
+                                                @endguest
+                                            </ul>
+
                                     </div>
                                 </div>
                             </div>
@@ -99,8 +113,9 @@
             </div>
         </div>
     </div>
-
     <script type="text/javascript" src="{{ asset('js/main.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
 </body>
 </html>

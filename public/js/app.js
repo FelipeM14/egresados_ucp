@@ -49713,12 +49713,11 @@ Vue.component('example-component', __webpack_require__(/*! ./components/ExampleC
 
 toastr.options = {
   "closeButton": true,
-  "debug": false,
-  "newestOnTop": false,
-  "progressBar": false,
+  "debug": true,
+  "newestOnTop": true,
+  "progressBar": true,
   "positionClass": "toast-bottom-right",
-  "preventDuplicates": false,
-  "onclick": null,
+  "preventDuplicates": true,
   "showDuration": "300",
   "hideDuration": "1000",
   "timeOut": "5000",
