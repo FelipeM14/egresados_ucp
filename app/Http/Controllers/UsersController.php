@@ -77,4 +77,28 @@ class UsersController extends Controller
 
         return redirect()->route('login');
     }
+
+    public function edit(User $user){
+
+        $roles = Role::all();
+        return view('users.edit', ['user' => $user]);
+    }
+
+    public function update(Request $request, User $user){
+
+        $u = $user->update([
+            'name' => $request->name,
+            'last_name' => $request->last_name,
+            'document_type' => $request->document_type,
+            'document_number' => $request->document_number,
+            'email' => $request->email,
+        ]);
+
+
+        if($u){
+            session()->flash('message', 'Los datos del usuario '.$request->name.' fueron actualizados correctamente!');
+        }
+
+        return redirect()->route('users.index');
+    }
 }

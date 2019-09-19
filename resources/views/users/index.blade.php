@@ -42,7 +42,7 @@
                                     <td class="text-nowrap">{{ $user->email }}</td>
                                     <td class="text-nowrap">
                                         <a href="#" class="btn btn-danger">Inactivar</a>
-                                        <a href="#" class="btn btn-warning">Editar</a>
+                                        <a href="{{ route('users.edit', ['user' => $user->id]) }}" class="btn btn-warning">Editar</a>
                                     </td>
                                 </tr>
                             @endforeach
