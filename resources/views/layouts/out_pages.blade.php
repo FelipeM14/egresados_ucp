@@ -32,7 +32,7 @@
                 <div class="col-12 h-100">
                     <div class="header-content h-100 d-flex align-items-center justify-content-between">
                         <div class="academy-logo">
-                            <a href="index.html"><img src="img/core-img/im1logo.png" alt=""></a>
+                            <a href="https://www.ucp.edu.co/"><img src="img/core-img/im1logo.png" alt=""></a>
                         </div>
                         <div class="login-content">
                             <a href="{{ route('login') }}">Login</a>
@@ -85,7 +85,7 @@
     <div class="hero-slides owl-carousel">
 
         <!-- Single Hero Slide -->
-        <div class="single-hero-slide bg-img" style="background-image: url(img/bg-img/amo.png);">
+        <div class="single-hero-slide bg-img" style="background-image: url(img/bg-img/amoucp.jpg);">
             <div class="container h-100">
                 <div class="row h-100 align-items-center">
                     <div class="col-12">
@@ -99,7 +99,7 @@
         </div>
 
         <!-- Single Hero Slide -->
-        <div class="single-hero-slide bg-img" style=" background-image: url(img/bg-img/amo.png);">
+        <div class="single-hero-slide bg-img" style=" background-image: url(img/bg-img/aleteiaucpp.jpg);">
             <div class="container h-100">
                 <div class="row h-100 align-items-center">
                     <div class="col-12">
@@ -193,7 +193,7 @@
                         </div>
                         <div class="single-contact d-flex">
                             <i class="icon-contract"></i>
-                            <p>office@yourbusiness.com</p>
+                            <p>centro.graduados@ucp.edu.co</p>
                         </div>
                     </div>
                 </div>
