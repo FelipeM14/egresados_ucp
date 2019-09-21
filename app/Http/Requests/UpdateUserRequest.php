@@ -29,6 +29,7 @@ class UpdateUserRequest extends FormRequest
             'document_type' => 'required',
             'document_number' => 'required|min:2|max:20',
             'email' => 'required|min:10|max:150',
+            'active' => 'required',
         ];
     }
 
@@ -53,6 +54,7 @@ class UpdateUserRequest extends FormRequest
             'email.min' => 'El campo correo electrónico debe tener más de 10 caracteres',
             'email.max' => 'El campo correo electrónico debe tener menos de 150 caracteres',
 
+            'active.required' => 'Debe seleccionar un tipo estado',
         ];
     }
 

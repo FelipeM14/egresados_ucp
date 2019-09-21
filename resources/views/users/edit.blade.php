@@ -74,7 +74,19 @@
                                         <input class="form-control" type="text" name="email" id="email" value="{{ old('email', $user->email) }}" placeholder="Correo electrónico...">
                                     </div>
                                 </div>
-                            </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="active">
+                                            Estado: *
+                                        </label>
+                                        <select class="form-control" name="active" id="active" >
+                                            <option value="">Seleccionar</option>
+                                            <option @if(old('active', $user->active) == '1') selected @endif value="1">Habilitado</option>
+                                            <option @if(old('active', $user->active) == '0') selected @endif value="0">Inhabilitado</option>
+                                        </select>
+                                    </div>
+
+                                </div>
                          </div>
                         <div class="card-footer">
                             <button type="submit" class="btn btn-success mr-1">Guardar cambios</button>

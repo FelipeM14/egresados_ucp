@@ -63,6 +63,19 @@ Route::middleware(['auth', 'checkActive'])->group(function () {
     Route::post('users_store', 'UsersController@store')->name('users.store')
         ->middleware('permission:Ingresar datos');
 
+    Route::get('users_roles/{user}', 'UsersController@roles')->name('users.roles')
+        ->middleware('permission:Editar datos');
+
+
+    //Agragar rol a un usuario
+    Route::post('users_roles/{user}', 'UsersController@addRole')->name('users.addRole')
+        ->middleware('permission:Editar datos');
+
+    //Romover rol a un usuario
+    Route::get('users_roles/{user}/{role}', 'UsersController@removeRole')->name('users.removeRole')
+        ->middleware('permission:Editar datos');
+
+
 
     //Roles
     Route::get('roles_index', 'RolesController@index')->name('roles.index')
