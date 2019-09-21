@@ -19,7 +19,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'last_name', 'document_type', 'document_number', 'remember_token'
+        'active', 'name', 'email', 'password', 'last_name', 'document_type', 'document_number', 'remember_token'
     ];
 
     /**
@@ -39,4 +39,8 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function getStatus(){
+        return $this->active === 1;
+    }
 }

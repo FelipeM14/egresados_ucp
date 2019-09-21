@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateUserRequest;
+use App\Http\Requests\UpdateUserRequest;
 use App\Mail\Complete;
 use Illuminate\Http\Request;
 use App\User;
@@ -80,11 +81,10 @@ class UsersController extends Controller
 
     public function edit(User $user){
 
-        $roles = Role::all();
         return view('users.edit', ['user' => $user]);
     }
 
-    public function update(Request $request, User $user){
+    public function update(UpdateUserRequest $request, User $user){
 
         $u = $user->update([
             'name' => $request->name,
