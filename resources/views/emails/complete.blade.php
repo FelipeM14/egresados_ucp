@@ -13,5 +13,9 @@ Completar registro
 
 Cordialmente,<br>
 Oficina de graduados
-Universidad Católica de Pereira
+Universidad Católica de Pereira<br>
+Teléfono: PBX 3124000 ext. 1006<br>
+Celular: 312 778 7141
+
+
 @endcomponent
