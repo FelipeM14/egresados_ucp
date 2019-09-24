@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+Auth::routes(["register" => false]);
 
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -23,7 +23,7 @@ Route::get('/complete/{code}', 'UsersController@complete')->name('complete');
 Route::put('/update_pass/{user}', 'UsersController@updatePass')->name('user.update.pass');
 
 //Rutas para el proyecto
-Route::middleware(['auth'])->group(function () {
+Route::middleware(['auth', 'checkActive'])->group(function () {
 
     Route::post('data/store', 'DataController@store')->name('data.store')
         ->middleware('permission:Ingresar datos');
@@ -62,6 +62,19 @@ Route::middleware(['auth'])->group(function () {
 
     Route::post('users_store', 'UsersController@store')->name('users.store')
         ->middleware('permission:Ingresar datos');
+
+    Route::get('users_roles/{user}', 'UsersController@roles')->name('users.roles')
+        ->middleware('permission:Editar datos');
+
+
+    //Agragar rol a un usuario
+    Route::post('users_roles/{user}', 'UsersController@addRole')->name('users.addRole')
+        ->middleware('permission:Editar datos');
+
+    //Romover rol a un usuario
+    Route::get('users_roles/{user}/{role}', 'UsersController@removeRole')->name('users.removeRole')
+        ->middleware('permission:Editar datos');
+
 
 
     //Roles
