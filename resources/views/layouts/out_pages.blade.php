@@ -157,7 +157,7 @@
 
 
 <footer class="footer-area">
-    <div class="main-footer-area section-padding-100-0">
+    <div class="main-footer-area section-padding-100-0 bg-success">
         <div class="container">
             <div class="row">
                 <!-- Footer Widget Area -->
@@ -200,7 +200,7 @@
             </div>
         </div>
     </div>
-    <div class="bottom-footer-area">
+    <div class="bottom-footer-area bg-success">
         <div class="container">
             <div class="row">
                 <div class="col-12">
