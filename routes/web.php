@@ -25,6 +25,32 @@ Route::put('/update_pass/{user}', 'UsersController@updatePass')->name('user.upda
 //Rutas para el proyecto
 Route::middleware(['auth', 'checkActive'])->group(function () {
 
+    //CATEGORIES
+    Route::get('categories_create', 'CategoryController@create')->name('categories.create')
+        ->middleware('permission:Ingresar datos');
+
+    Route::get('categories_edit/{category}', 'CategoryController@edit')->name('categories.edit')
+        ->middleware('permission:Editar datos');
+
+    Route::get('categories_index', 'CategoryController@index')->name('categories.index')
+        ->middleware('permission:Ver datos');
+
+    Route::post('categories_store', 'CategoryController@store')->name('categories.store')
+        ->middleware('permission:Ingresar datos');
+
+    Route::put('categories_update/{category}', 'CategoryController@update')->name('categories.update')
+        ->middleware('permission:Editar datos');
+
+
+    //COLUMNS
+    Route::get('columns_create', 'ColumnController@create')->name('columns.create')
+        ->middleware('permission:Ingresar datos');
+
+    Route::post('columns_store', 'ColumnController@store')->name('columns.store')
+        ->middleware('permission:Ingresar datos');
+
+
+    //DATA
     Route::post('data/store', 'DataController@store')->name('data.store')
         ->middleware('permission:Ingresar datos');
 

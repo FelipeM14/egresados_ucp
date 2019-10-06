@@ -37,7 +37,7 @@
                 <li>
                     <a href="#">
                         <small>
-                            <i class="metismenu-icon far fa-user"></i>
+                            <i class="metismenu-icon fas fa-user"></i>
                         </small>
                         Acceso
                         <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
@@ -57,6 +57,41 @@
                         </li>
                     </ul>
                 </li>
+                <li>
+                    <a href="#">
+                        <small>
+                            <i class="metismenu-icon fas fa-wrench"></i>
+                        </small>
+                        Ajustes
+                        <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="{{ route('categories.index') }}">
+                                <i class="metismenu-icon"></i>
+                                Configurar categorías
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">
+                        <small>
+                            <i class="metismenu-icon fas fa-user-graduate"></i>
+                        </small>
+                        Egresados
+                        <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="{{ route('data.index') }}">
+                                <i class="metismenu-icon"></i>
+                                Datos
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
                 <!--
                 <li class="app-sidebar__heading">Inicio</li>
                 <li>

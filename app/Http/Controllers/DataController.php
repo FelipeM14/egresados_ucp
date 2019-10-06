@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Column;
 use App\Data;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,12 @@ class DataController extends Controller
      */
     public function index()
     {
-        //
+        $cols = Column::select('color', 'color_text', 'columns.name', 'columns.id', 'columns.title')
+            ->join('categories', 'categories.id', 'columns.category_id')
+            ->orderBy('categories.order', 'ASC')
+            ->orderBy('columns.order', 'ASC')->get();
+
+        return view('data.index', ['columns' => $cols]);
     }
 
     /**

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDatumOptionsTable extends Migration
+class CreateColumnsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,13 @@ class CreateDatumOptionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('datum_options', function (Blueprint $table) {
+        Schema::create('columns', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('datum_id')->unsigned();
-            $table->foreign('datum_id')->references('id')->on('data');
-            $table->string('text');
+            $table->string('title');
+            $table->string('name');
+            $table->integer('order');
+            $table->bigInteger('category_id')->unsigned();
+            $table->foreign('category_id')->references('id')->on('categories');
             $table->timestamps();
         });
     }
@@ -29,6 +31,6 @@ class CreateDatumOptionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('datum_options');
+        Schema::dropIfExists('columns');
     }
 }
