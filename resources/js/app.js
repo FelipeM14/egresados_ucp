@@ -49,6 +49,9 @@ let app = new Vue({
     data: {
         permissions: [],
         role_permissions: '',
+        columns:[],
+        graduate_id:'',
+        data:[],
     },
     created: function () {
 
@@ -102,5 +105,26 @@ let app = new Vue({
                 toastr.error('Error al eliminar el permiso');
             });
         },
+        createNewRegistry:function () {
+
+            axios.get('../../get_columns').then(response => {
+                this.columns = response.data[0];
+                this.graduate_id = response.data[1];
+                console.log(this.columns);
+            })
+        },
+        storeColumnGraduate:function (col) {
+
+            console.log(this.data[col]);
+
+            axios.put('../../store_col_graduate/'+this.graduate_id, {
+                col:this.data[col],
+                name:col
+            }).then(response =>{
+                console.log('ok')
+            }).catch(error =>{
+                console.log('error')
+            })
+        }
     }
 });

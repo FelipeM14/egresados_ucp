@@ -49731,7 +49731,10 @@ var app = new Vue({
   el: '#app',
   data: {
     permissions: [],
-    role_permissions: ''
+    role_permissions: '',
+    columns: [],
+    graduate_id: '',
+    data: []
   },
   created: function created() {
     if ($('#role_app').val() === "1") {
@@ -49792,6 +49795,26 @@ var app = new Vue({
         toastr.success('Permiso eliminado correctamente');
       })["catch"](function (error) {
         toastr.error('Error al eliminar el permiso');
+      });
+    },
+    createNewRegistry: function createNewRegistry() {
+      var _this5 = this;
+
+      axios.get('../../get_columns').then(function (response) {
+        _this5.columns = response.data[0];
+        _this5.graduate_id = response.data[1];
+        console.log(_this5.columns);
+      });
+    },
+    storeColumnGraduate: function storeColumnGraduate(col) {
+      console.log(this.data[col]);
+      axios.put('../../store_col_graduate/' + this.graduate_id, {
+        col: this.data[col],
+        name: col
+      }).then(function (response) {
+        console.log('ok');
+      })["catch"](function (error) {
+        console.log('error');
       });
     }
   }

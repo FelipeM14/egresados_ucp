@@ -49,6 +49,13 @@ Route::middleware(['auth', 'checkActive'])->group(function () {
     Route::post('columns_store', 'ColumnController@store')->name('columns.store')
         ->middleware('permission:Ingresar datos');
 
+    Route::get('get_columns', 'ColumnController@getCols')->name('columns.cols')
+        ->middleware('permission:Ingresar datos');
+
+    Route::put('store_col_graduate/{graduate_id}', 'ColumnController@updateCol')->name('columns.updateCol')
+        ->middleware('permission:Ingresar datos');
+
+
 
     //DATA
     Route::post('data/store', 'DataController@store')->name('data.store')

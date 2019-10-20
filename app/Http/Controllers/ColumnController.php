@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Column;
 use App\Http\Requests\CreateColumnRequest;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Category;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 class ColumnController extends Controller
@@ -45,7 +48,32 @@ class ColumnController extends Controller
 
         return redirect()->route('data.index');
 
+    }
 
+    //Se llama desde javascript en el metodo createNewRegistry para traer los nombres de las columnas
+    public function getCols(){
+
+        $cols = Column::select('color', 'color_text', 'columns.name', 'columns.id', 'columns.title')
+            ->join('categories', 'categories.id', 'columns.category_id')
+            ->orderBy('categories.order', 'ASC')
+            ->orderBy('columns.order', 'ASC')->get();
+
+        $time = Carbon::now()->format('Y-m-d H:i:s');
+
+        $id = DB::table('graduates')->insertGetId([
+                'created_at' => $time,
+                'updated_at' => $time,
+            ]);
+
+        return array($cols, $id);
+
+    }
+
+    public function updateCol(Request $request, $graduate_id){
+
+        return DB::table('graduates')->where('id', $graduate_id)->update([
+            $request->name => $request->col
+        ]);
     }
 
 }
