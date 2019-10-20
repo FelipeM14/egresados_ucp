@@ -11,10 +11,10 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
-    .sass('resources/sass/app.scss', 'public/css').
-styles([
-    'resources/css/styles.css'
-], 'public/css/change_styles.css');
+mix.js([
+    'resources/js/app.js',
+    'resources/js/sb-admin-2.min.js'
+], 'public/js')
+    .sass('resources/sass/app.scss', 'public/css');
 
 
