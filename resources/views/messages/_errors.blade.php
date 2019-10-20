@@ -10,5 +10,8 @@
 @if(session()->has('mjs_error') )
     <div class="alert alert-warning">
         {{ session()->get('mjs_error') }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
     </div>
 @endif

@@ -58,22 +58,36 @@ class ColumnController extends Controller
             ->orderBy('categories.order', 'ASC')
             ->orderBy('columns.order', 'ASC')->get();
 
-        $time = Carbon::now()->format('Y-m-d H:i:s');
-
-        $id = DB::table('graduates')->insertGetId([
-                'created_at' => $time,
-                'updated_at' => $time,
-            ]);
-
-        return array($cols, $id);
+        return array($cols);
 
     }
 
+    //Se llama desde javascript crea un nuevo registro nullo en la tabla egresados
+    public function NewRegistry(){
+
+        $time = Carbon::now()->format('Y-m-d H:i:s');
+
+        $id = DB::table('graduates')->insertGetId([
+            'created_at' => $time,
+            'updated_at' => $time,
+        ]);
+
+        return array($id);
+
+    }
+
+    //actualiza el valor de cada columna de la tabla graduates es llamado desde javascript
     public function updateCol(Request $request, $graduate_id){
 
         return DB::table('graduates')->where('id', $graduate_id)->update([
             $request->name => $request->col
         ]);
+    }
+
+    //Obtiene los datos de los egresados es llamado desde javascript en el metodo getGraduates
+    public function getGraduates(){
+
+        return DB::table('graduates')->orderBy('id', 'DESC')->get();
     }
 
 }

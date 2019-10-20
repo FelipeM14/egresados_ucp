@@ -52,12 +52,17 @@ let app = new Vue({
         columns:[],
         graduate_id:'',
         data:[],
+        graduates:[],
+        index:[],
     },
     created: function () {
 
         if ($('#role_app').val() === "1") {
             this.getNoPermissions(this.getIdRole());
             this.getRolePermissions(this.getIdRole());
+        }
+        if($('#graduate_app').val() === "1"){
+            this.getGraduates();
         }
     },
 
@@ -105,26 +110,51 @@ let app = new Vue({
                 toastr.error('Error al eliminar el permiso');
             });
         },
-        createNewRegistry:function () {
-
+        getCols:function (){
             axios.get('../../get_columns').then(response => {
                 this.columns = response.data[0];
                 this.graduate_id = response.data[1];
-                console.log(this.columns);
+            })
+
+        },
+        createNewRegistry:function () {
+            axios.get('../../new_registry').then(response => {
+                this.getGraduates()
+            }).catch(error => {
+                console.log(error);
             })
         },
-        storeColumnGraduate:function (col) {
+        storeColumnGraduate:function (col, index) {
 
-            console.log(this.data[col]);
+            let id = this.index[index];
+            console.log(id);
+            console.log(this.graduates[id][col]);
 
-            axios.put('../../store_col_graduate/'+this.graduate_id, {
-                col:this.data[col],
+            axios.put('../../store_col_graduate/'+index, {
+                col:this.graduates[id][col],
                 name:col
             }).then(response =>{
                 console.log('ok')
             }).catch(error =>{
                 console.log('error')
             })
+        },
+        getGraduates:function () {
+
+            this.getCols();
+            let data = [];
+
+            axios.get('../../get_graduates/').then(response => {
+                this.graduates = response.data;
+                console.log(response.data);
+                $.each(response.data, function (index, value) {
+                  data[value.id] = index;
+                });
+            }).catch(error => {
+                console.log(error);
+            });
+
+            this.index = data;
         }
     }
 });

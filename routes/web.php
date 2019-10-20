@@ -52,8 +52,14 @@ Route::middleware(['auth', 'checkActive'])->group(function () {
     Route::get('get_columns', 'ColumnController@getCols')->name('columns.cols')
         ->middleware('permission:Ingresar datos');
 
+    Route::get('new_registry', 'ColumnController@NewRegistry')->name('columns.new')
+        ->middleware('permission:Ingresar datos');
+
     Route::put('store_col_graduate/{graduate_id}', 'ColumnController@updateCol')->name('columns.updateCol')
         ->middleware('permission:Ingresar datos');
+
+    Route::get('get_graduates', 'ColumnController@getGraduates')->name('columns.get_graduates')
+        ->middleware('permission:Ver datos');
 
 
 
