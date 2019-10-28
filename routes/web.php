@@ -56,12 +56,14 @@ Route::middleware(['auth', 'checkActive'])->group(function () {
         ->middleware('permission:Ingresar datos');
 
     Route::put('store_col_graduate/{graduate_id}', 'ColumnController@updateCol')->name('columns.updateCol')
-        ->middleware('permission:Ingresar datos');
+        ->middleware('permission:Editar datos');
 
     Route::get('get_graduates', 'ColumnController@getGraduates')->name('columns.get_graduates')
         ->middleware('permission:Ver datos');
 
 
+    Route::name('graduate.delete')->delete('graduate_delete/{graduate}', 'ColumnController@graduateDelete')
+        ->middleware('permission:Eliminar datos');
 
     //DATA
     Route::post('data/store', 'DataController@store')->name('data.store')

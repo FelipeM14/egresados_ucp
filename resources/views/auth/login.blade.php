@@ -6,16 +6,16 @@
 
 @section('content')
 
-<div class="container">
+<div class="container mt-5">
 
-    <div class="row justify-content-center">
-        <div class="col-md-4">
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-4 mt-5">
 
             @include('messages._messages')
             @include('messages._errors')
 
-            <div class="card mt-5">
-                <div class="card-header text-center bg-green text-white">
+            <div class="card">
+                <div class="card-header text-center bg-success text-white">
                     <h4 class="mt-3">Portal Graduados</h4>
 
                 </div>

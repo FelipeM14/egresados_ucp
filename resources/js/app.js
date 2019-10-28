@@ -54,6 +54,7 @@ let app = new Vue({
         data:[],
         graduates:[],
         index:[],
+        graduate_delete:'',
     },
     created: function () {
 
@@ -155,6 +156,23 @@ let app = new Vue({
             });
 
             this.index = data;
+        },
+        deleteQuestion:function (id) {
+
+            this.graduate_delete = id;
+
+            $('#delete_r').text(id);
+            $('.bd-example-modal-sm').modal('show');
+        },
+        deleteRegister:function () {
+
+            axios.delete('graduate_delete/'+this.graduate_delete).then(response =>{
+                toastr.success('El egresado fue elimiando correctamente!');
+                this.getGraduates();
+                $('.bd-example-modal-sm').modal('hide');
+            }).catch(error =>{
+                toastr.error('Error al eliminar el usuario');
+            })
         }
     }
 });

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Column;
+use App\Graduate;
 use App\Http\Requests\CreateColumnRequest;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -88,6 +89,10 @@ class ColumnController extends Controller
     public function getGraduates(){
 
         return DB::table('graduates')->orderBy('id', 'DESC')->get();
+    }
+
+    public function graduateDelete(Graduate $graduate){
+        $graduate->delete();
     }
 
 }
