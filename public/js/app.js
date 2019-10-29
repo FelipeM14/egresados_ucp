@@ -50063,6 +50063,21 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/scripts.js":
+/*!*********************************!*\
+  !*** ./resources/js/scripts.js ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+$(document).ready(function () {
+  $(function () {
+    $('[data-toggle="tooltip"]').tooltip();
+  });
+});
+
+/***/ }),
+
 /***/ "./resources/sass/app.scss":
 /*!*********************************!*\
   !*** ./resources/sass/app.scss ***!
@@ -50075,13 +50090,14 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ 0:
-/*!*************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/app.scss ***!
-  \*************************************************************/
+/*!***************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/js/scripts.js ./resources/sass/app.scss ***!
+  \***************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! /Library/WebServer/Documents/egrsados_ucp/resources/js/app.js */"./resources/js/app.js");
+__webpack_require__(/*! /Library/WebServer/Documents/egrsados_ucp/resources/js/scripts.js */"./resources/js/scripts.js");
 module.exports = __webpack_require__(/*! /Library/WebServer/Documents/egrsados_ucp/resources/sass/app.scss */"./resources/sass/app.scss");
 
 

@@ -35,7 +35,7 @@
                     </tr>
                     <tr v-for="graduate in graduates">
                         <td>
-                            <button @click="deleteQuestion(graduate.id)" id="izq" class="btn btn-sm btn-circle btn-danger" data-toggle="tooltip" data-placement="right" title="Eliminar">@{{ graduate.id }}</button>
+                            <button @click="deleteQuestion(graduate.id)" id="izq" class="btn btn-sm btn-circle btn-danger" data-toggle="tooltip" data-placement="top" title="Compartir">@{{ graduate.id }}</button>
                         </td>
                         <td v-for="column in columns" class="p-0">
                             <input @change="storeColumnGraduate(column.name, graduate.id)"  v-model="graduate[column.name]" type="text" class="form-control border-0 rounded-0 px-1">

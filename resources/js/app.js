@@ -146,7 +146,6 @@ let app = new Vue({
             let data = [];
 
             axios.get('../../get_graduates/').then(response => {
-                this.graduates = response.data;
                 console.log(response.data);
                 $.each(response.data, function (index, value) {
                   data[value.id] = index;
