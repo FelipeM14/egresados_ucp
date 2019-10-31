@@ -19,16 +19,26 @@
                 <table class="table table-bordered table-sm">
                     <tr>
                         <th colspan="700">
-                            <a href="{{ route('columns.create') }}" class="btn btn-success btn-sm">
-                                Nueva columna
-                            </a>
-                            <button @click="createNewRegistry" type="button" class="btn btn-info btn-sm">
-                                Nuevo registro
-                            </button>
+                            <div class="input-group">
+                                <button onclick="window.location.href='columns_create'" class="btn btn-outline-secondary btn-sm rounded-left rounded-0 border-right-0">
+                                    Nueva columna
+                                </button>
+                                <button @click="createNewRegistry" class="btn btn-outline-secondary rounded-0 btn-sm">
+                                    Nuevo registro
+                                </button>
+
+                                <input type="text" class="form-control border-left-0" placeholder="Filtrar...">
+                                <select class="custom-select rounded-0">
+                                    <option value="" selected>Todas</option>
+                                    @foreach($columns as $column)
+                                        <option value="{{ $column->id }}">{{ $column->title }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
                         </th>
                     </tr>
                     <tr>
-                        <th class="py-5 text-center">#</th>
+                        <th class="py-5 text-center bg-danger text-white">#</th>
                         @foreach($columns as $column)
                             <th class="py-5 text-center" style="background-color: {{ $column->color }}; color: {{ $column->color_text }}">{{ $column->title }}</th>
                         @endforeach
