@@ -15,7 +15,7 @@
                 Datos egresados
             </div>
 
-            <div class="table-responsive border-top-0">
+            <div class="table-responsive">
                 <table class="table table-bordered table-sm">
                     <tr>
                         <th colspan="700">
@@ -43,7 +43,7 @@
                             <th class="py-5 text-center" style="background-color: {{ $column->color }}; color: {{ $column->color_text }}">{{ $column->title }}</th>
                         @endforeach
                     </tr>
-                    <tr v-for="graduate in graduates">
+                    <tr v-for="graduate in graduates.data">
                         <td>
                             <button @click="deleteQuestion(graduate.id)" id="izq" class="btn btn-sm btn-circle btn-danger" data-toggle="tooltip" data-placement="top" title="Compartir">@{{ graduate.id }}</button>
                         </td>
@@ -52,6 +52,8 @@
                         </td>
                     </tr>
                 </table>
+
+                <pagination :data="graduates" @pagination-change-page="getGraduates"></pagination>
             </div>
         </div>
     </div>

@@ -88,7 +88,7 @@ class ColumnController extends Controller
     //Obtiene los datos de los egresados es llamado desde javascript en el metodo getGraduates
     public function getGraduates(){
 
-        return DB::table('graduates')->orderBy('id', 'DESC')->get();
+        return DB::table('graduates')->orderBy('id', 'DESC')->paginate(5);
     }
 
     public function graduateDelete(Graduate $graduate){

@@ -20,6 +20,7 @@ window.Vue = require('vue');
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+Vue.component('pagination', require('laravel-vue-pagination'));
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -52,7 +53,7 @@ let app = new Vue({
         columns:[],
         graduate_id:'',
         data:[],
-        graduates:[],
+        graduates:{},
         index:[],
         graduate_delete:'',
     },
@@ -140,14 +141,15 @@ let app = new Vue({
                 console.log('error')
             })
         },
-        getGraduates:function () {
+        getGraduates:function (page = 1) {
 
             this.getCols();
             let data = [];
 
-            axios.get('../../get_graduates/').then(response => {
+            axios.get('../../get_graduates?page='+page).then(response => {
+                this.graduates = response.data;
                 console.log(response.data);
-                $.each(response.data, function (index, value) {
+                $.each(response.data.data, function (index, value) {
                   data[value.id] = index;
                 });
             }).catch(error => {
