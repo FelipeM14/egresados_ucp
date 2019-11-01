@@ -27,11 +27,11 @@
                                     Nuevo registro
                                 </button>
 
-                                <input type="text" class="form-control border-left-0" placeholder="Filtrar...">
-                                <select class="custom-select rounded-0">
-                                    <option value="" selected>Todas</option>
+                                <input @keyup="getGraduates" type="text" id="text_f" class="form-control border-left-0" placeholder="Filtrar...">
+                                <select @change="getGraduates" id="col_f" class="custom-select rounded-0">
+                                    <!-- <option value="" selected>Todas</option> -->
                                     @foreach($columns as $column)
-                                        <option value="{{ $column->id }}">{{ $column->title }}</option>
+                                        <option value="{{ $column->name }}">{{ $column->title }}</option>
                                     @endforeach
                                 </select>
                             </div>

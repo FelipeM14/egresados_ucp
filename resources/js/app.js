@@ -129,11 +129,11 @@ let app = new Vue({
         storeColumnGraduate:function (col, index) {
 
             let id = this.index[index];
-            console.log(id);
-            console.log(this.graduates[id][col]);
+            //console.log(id);
+            console.log(this.graduates.data[id][col]);
 
             axios.put('../../store_col_graduate/'+index, {
-                col:this.graduates[id][col],
+                col:this.graduates.data[id][col],
                 name:col
             }).then(response =>{
                 console.log('ok')
@@ -146,9 +146,18 @@ let app = new Vue({
             this.getCols();
             let data = [];
 
-            axios.get('../../get_graduates?page='+page).then(response => {
+            let col = $('#col_f').val();
+            let text = $('#text_f').val();
+
+            if(!col)
+                col = 'all';
+
+            if(!text)
+                text = 'default';
+
+            axios.get('../../get_graduates/'+col+'/'+text+'?page='+page).then(response => {
                 this.graduates = response.data;
-                console.log(response.data);
+                //console.log(response.data);
                 $.each(response.data.data, function (index, value) {
                   data[value.id] = index;
                 });
