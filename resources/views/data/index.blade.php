@@ -26,13 +26,21 @@
                                 <button @click="createNewRegistry" class="btn btn-outline-secondary rounded-0 btn-sm">
                                     Nuevo registro
                                 </button>
-
                                 <input @keyup="getGraduates" type="text" id="text_f" class="form-control border-left-0" placeholder="Filtrar...">
                                 <select @change="getGraduates" id="col_f" class="custom-select rounded-0">
                                     <!-- <option value="" selected>Todas</option> -->
                                     @foreach($columns as $column)
                                         <option value="{{ $column->name }}">{{ $column->title }}</option>
                                     @endforeach
+                                </select>
+                                <select v-model="num_f" @change="getGraduates" class="custom-select rounded-0 col-sm-2">
+                                    <option value="10">10 Filas</option>
+                                    <option value="20">20 Filas</option>
+                                    <option value="50">50 Filas</option>
+                                    <option value="100">100 Filas</option>
+                                    <option value="200">200 Filas</option>
+                                    <option value="500">500 Filas</option>
+                                    <option value="1000">1000 Filas</option>
                                 </select>
                             </div>
                         </th>

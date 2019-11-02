@@ -86,23 +86,13 @@ class ColumnController extends Controller
     }
 
     //Obtiene los datos de los egresados es llamado desde javascript en el metodo getGraduates
-    public function getGraduates($col, $text){
+    public function getGraduates($col, $text, $num){
 
-        $cols = $this->getCols();
-        $arr = [];
-        $num = 20;
-
-        if($col == 'all' && $text != 'default'){
-            foreach ($cols[0] as $c){
-                $arr[] = [$c->name, 'LIKE', '%'.$text.'%'];
-            }
-            return DB::table('graduates')->orWhere($arr)->orderBy('id', 'DESC')->paginate($num);
-        } else if($text != 'default'){ //
+        if($text != 'default' && $col != 'all'){ //
             return DB::table('graduates')->where($col, 'LIKE', '%'.$text.'%')->orderBy('id', 'DESC')->paginate($num);
         } else {
             return DB::table('graduates')->orderBy('id', 'DESC')->paginate($num);
         }
-
     }
 
     public function graduateDelete(Graduate $graduate){

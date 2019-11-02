@@ -56,6 +56,7 @@ let app = new Vue({
         graduates:{},
         index:[],
         graduate_delete:'',
+        num_f:10,
     },
     created: function () {
 
@@ -155,7 +156,7 @@ let app = new Vue({
             if(!text)
                 text = 'default';
 
-            axios.get('../../get_graduates/'+col+'/'+text+'?page='+page).then(response => {
+            axios.get('../../get_graduates/'+col+'/'+text+'/'+this.num_f+'?page='+page).then(response => {
                 this.graduates = response.data;
                 //console.log(response.data);
                 $.each(response.data.data, function (index, value) {
