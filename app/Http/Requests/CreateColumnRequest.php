@@ -27,6 +27,8 @@ class CreateColumnRequest extends FormRequest
             'title' => 'required|min:2|max:50',
             'category_id' => 'required',
             'order' => 'required|integer',
+            'status' => 'required',
+            'size' => 'required',
         ];
     }
 
@@ -38,6 +40,8 @@ class CreateColumnRequest extends FormRequest
             'title.mix' => 'El título debe tener menos de 50 caracteres',
             'category_id.required' => 'Debe seleccionar una categoría',
             'order.required' => 'El campo prioridad es requerido',
+            'order.status' => 'Debe seleccionar un estado',
+            'order.size' => 'El campo tamaño de la columna es requerido',
         ];
     }
 

@@ -46,6 +46,28 @@
                             </div>
 
                             <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="status">
+                                            Seleccione un estado
+                                        </label>
+                                        <select name="status" id="status" required class="form-control">
+                                            <option selected value="1">Activa</option>
+                                            <option value="0">Inactiva</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-size">
+                                        <label for="order">
+                                            Tamaño de la columna
+                                        </label>
+                                        <input class="form-control" type="number" name="size" id="size" value="{{ old('size', 100) }}" placeholder="Tamaño...">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
                                 <div class="col-sm-12">
                                     <div class="form-group">
                                         <label for="category_id">

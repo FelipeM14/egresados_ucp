@@ -48,7 +48,7 @@
                     <tr>
                         <th class="py-5 text-center bg-danger text-white">#</th>
                         @foreach($columns as $column)
-                            <th class="py-5 text-center" style="background-color: {{ $column->color }}; color: {{ $column->color_text }}">{{ $column->title }}</th>
+                            <th class="py-3 text-center" style="background-color: {{ $column->color }}; color: {{ $column->color_text }}; width: {{ $column->size.'px' }};">{{ $column->title }}</th>
                         @endforeach
                     </tr>
                     <tr v-for="graduate in graduates.data">

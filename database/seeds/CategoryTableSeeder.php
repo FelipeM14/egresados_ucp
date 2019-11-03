@@ -31,6 +31,7 @@ class CategoryTableSeeder extends Seeder
             'title' => 'Nombre y apellidos',
             'name' => 'nombre_y_apellidos',
             'order' => 1,
+            'size' => 150,
             'category_id' => 1
         ]);
 
@@ -38,6 +39,7 @@ class CategoryTableSeeder extends Seeder
             'title' => 'Código',
             'name' => 'codigo',
             'order' => 2,
+            'size' => 150,
             'category_id' => 1
         ]);
 
@@ -45,6 +47,7 @@ class CategoryTableSeeder extends Seeder
             'title' => 'Fecha graduación',
             'name' => 'fecha_graduacion',
             'order' => 3,
+            'size' => 150,
             'category_id' => 1
         ]);
 
@@ -52,6 +55,7 @@ class CategoryTableSeeder extends Seeder
             'title' => 'Teléfono',
             'name' => 'telefono3',
             'order' => 1,
+            'size' => 150,
             'category_id' => 2
         ]);
 
@@ -59,6 +63,7 @@ class CategoryTableSeeder extends Seeder
             'title' => 'Correo electrónico',
             'name' => 'correo_electronico3',
             'order' => 2,
+            'size' => 150,
             'category_id' => 2
         ]);
 
@@ -66,6 +71,7 @@ class CategoryTableSeeder extends Seeder
             'title' => 'En que ocupa la mayor parte del tiempo?',
             'name' => 'ocupacion3',
             'order' => 3,
+            'size' => 150,
             'category_id' => 2
         ]);
 
@@ -73,6 +79,7 @@ class CategoryTableSeeder extends Seeder
             'title' => 'Empresa en la que labora',
             'name' => 'labora3',
             'order' => 4,
+            'size' => 150,
             'category_id' => 2
         ]);
 
@@ -80,6 +87,7 @@ class CategoryTableSeeder extends Seeder
             'title' => 'Cargo que desempeña',
             'name' => 'cargo3',
             'order' => 5,
+            'size' => 150,
             'category_id' => 2
         ]);
     }

@@ -15,7 +15,7 @@ class DataController extends Controller
      */
     public function index()
     {
-        $cols = Column::select('color', 'color_text', 'columns.name', 'columns.id', 'columns.title')
+        $cols = Column::select('color', 'color_text', 'columns.name', 'columns.id', 'columns.title', 'columns.size', 'columns.status')
             ->join('categories', 'categories.id', 'columns.category_id')
             ->orderBy('categories.order', 'ASC')
             ->orderBy('columns.order', 'ASC')->get();

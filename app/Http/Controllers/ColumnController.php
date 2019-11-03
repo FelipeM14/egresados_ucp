@@ -37,6 +37,8 @@ class ColumnController extends Controller
             'title' => $request->title,
             'name' => $name,
             'order' => $request->order,
+            'status' => $request->status,
+            'size' => $request->size,
         ]);
 
         if($column){
@@ -80,8 +82,10 @@ class ColumnController extends Controller
     //actualiza el valor de cada columna de la tabla graduates es llamado desde javascript
     public function updateCol(Request $request, $graduate_id){
 
+        $date = Carbon::now();
         return DB::table('graduates')->where('id', $graduate_id)->update([
-            $request->name => $request->col
+            $request->name => $request->col,
+            'updated_at' => $date
         ]);
     }
 
