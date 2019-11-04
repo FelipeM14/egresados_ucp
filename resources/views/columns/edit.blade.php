@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    Nueva columna
+    Editar columna
 @endsection
 
 @section('content')
@@ -13,11 +13,13 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        Nueva columna
+                        Editar columna
                     </div>
 
-                    <form action="{{ route('columns.store') }}" method="post">
+                    <form action="{{ route('columns.update', ['column' => $column->id]) }}" method="post">
                         @csrf
+                        {{ method_field('PUT') }}
+
                         <div class="card-body pb-0">
 
                             <div class="row mb-3">
@@ -30,9 +32,9 @@
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label for="title">
-                                            Ingrese el título de la columna
+                                            Título de la columna
                                         </label>
-                                        <input class="form-control" type="text" name="title" id="title" value="{{ old('title') }}" placeholder="Título columna...">
+                                        <input class="form-control" type="text" name="title" id="title" value="{{ old('title', $column->title) }}" placeholder="Título columna...">
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
@@ -40,7 +42,7 @@
                                         <label for="order">
                                             Prioridad en la lista
                                         </label>
-                                        <input class="form-control" type="number" name="order" id="order" value="{{ old('order') }}" placeholder="Prioridad">
+                                        <input class="form-control" type="number" name="order" id="order" value="{{ old('order', $column->order) }}" placeholder="Prioridad">
                                     </div>
                                 </div>
                             </div>
@@ -52,8 +54,8 @@
                                             Seleccione un estado
                                         </label>
                                         <select name="status" id="status" required class="form-control">
-                                            <option @if(old('status', 1) == 1) selected @endif value="1">Activa</option>
-                                            <option @if(old('status', 1) == 0) selected @endif value="0">Inactiva</option>
+                                            <option @if(old('status', $column->status) == 1) selected @endif value="1">Activa</option>
+                                            <option @if(old('status', $column->status) == 0) selected @endif value="0">Inactiva</option>
                                         </select>
                                     </div>
                                 </div>
@@ -62,7 +64,7 @@
                                         <label for="order">
                                             Tamaño de la columna
                                         </label>
-                                        <input class="form-control" type="number" name="size" id="size" value="{{ old('size', 150) }}" placeholder="Tamaño...">
+                                        <input class="form-control" type="number" name="size" id="size" value="{{ old('size', $column->size) }}" placeholder="Tamaño...">
                                     </div>
                                 </div>
                             </div>
@@ -76,7 +78,7 @@
                                         <select class="form-control" name="category_id" id="category_id" >
                                             <option value="">Seleccionar</option>
                                             @foreach($categories as $category)
-                                                <option @if(old('category_id') == $category->id) selected @endif value="{{ $category->id }}">{{ $category->name }}</option>
+                                                <option @if(old('category_id', $column->category_id) == $category->id) selected @endif value="{{ $category->id }}">{{ $category->name }}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -85,7 +87,7 @@
 
                          </div>
                         <div class="card-footer">
-                            <button type="submit" class="btn btn-success mr-1">Agregar</button>
+                            <button type="submit" class="btn btn-success mr-1">Guardar cambios</button>
                             <a href="{{ route('data.index') }}" class="btn btn-secondary">Cancelar</a>
                         </div>
                     </form>

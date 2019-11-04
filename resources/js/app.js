@@ -142,7 +142,7 @@ let app = new Vue({
                 console.log('error')
             })
         },
-        getGraduates:function (page = 1) {
+        getGraduates:function (page = 1, column = 'id',order = 'DESC') {
 
             this.getCols();
             let data = [];
@@ -156,7 +156,7 @@ let app = new Vue({
             if(!text)
                 text = 'default';
 
-            axios.get('../../get_graduates/'+col+'/'+text+'/'+this.num_f+'?page='+page).then(response => {
+            axios.get('../../get_graduates/'+col+'/'+text+'/'+column+'/'+order+'/'+this.num_f+'?page='+page).then(response => {
                 this.graduates = response.data;
                 //console.log(response.data);
                 $.each(response.data.data, function (index, value) {
@@ -184,6 +184,9 @@ let app = new Vue({
             }).catch(error =>{
                 toastr.error('Error al eliminar el usuario');
             })
+        },
+        editColumn:function (id) {
+            window.location.href='columns_edit/'+id;
         }
     }
 });

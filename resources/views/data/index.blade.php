@@ -15,40 +15,82 @@
                 Datos egresados
             </div>
 
+            <table class="table table-bordered table-sm mb-0">
+                <tr>
+                    <th colspan="700">
+                        <div class="input-group">
+                            <button onclick="window.location.href='columns_index'" class="btn btn-outline-secondary btn-sm rounded-left rounded-0 border-right-0">
+                                <i class="fas fa-wrench"></i>
+                            </button>
+                            <button onclick="window.location.href='columns_create'" class="btn btn-outline-secondary btn-sm rounded-left rounded-0 border-right-0">
+                                Nueva columna
+                            </button>
+                            <button @click="createNewRegistry" class="btn btn-outline-secondary rounded-0 btn-sm">
+                                Nuevo registro
+                            </button>
+                            <input @keyup="getGraduates" type="text" id="text_f" class="form-control border-left-0" placeholder="Filtrar...">
+                            <select @change="getGraduates" id="col_f" class="custom-select rounded-0">
+                                <!-- <option value="" selected>Todas</option> -->
+                                @foreach($columns as $column)
+                                    <option value="{{ $column->name }}">{{ $column->title }}</option>
+                                @endforeach
+                            </select>
+                            <select v-model="num_f" @change="getGraduates" class="custom-select rounded-0 col-sm-2">
+                                <option value="10">10 Filas</option>
+                                <option value="20">20 Filas</option>
+                                <option value="50">50 Filas</option>
+                                <option value="100">100 Filas</option>
+                                <option value="200">200 Filas</option>
+                                <option value="500">500 Filas</option>
+                                <option value="1000">1000 Filas</option>
+                            </select>
+                        </div>
+                    </th>
+                </tr>
+            </table>
+
             <div class="table-responsive">
-                <table class="table table-bordered table-sm">
+                <table class="table table-bordered table-sm mt-0">
                     <tr>
-                        <th colspan="700">
-                            <div class="input-group">
-                                <button onclick="window.location.href='columns_create'" class="btn btn-outline-secondary btn-sm rounded-left rounded-0 border-right-0">
-                                    Nueva columna
-                                </button>
-                                <button @click="createNewRegistry" class="btn btn-outline-secondary rounded-0 btn-sm">
-                                    Nuevo registro
-                                </button>
-                                <input @keyup="getGraduates" type="text" id="text_f" class="form-control border-left-0" placeholder="Filtrar...">
-                                <select @change="getGraduates" id="col_f" class="custom-select rounded-0">
-                                    <!-- <option value="" selected>Todas</option> -->
-                                    @foreach($columns as $column)
-                                        <option value="{{ $column->name }}">{{ $column->title }}</option>
-                                    @endforeach
-                                </select>
-                                <select v-model="num_f" @change="getGraduates" class="custom-select rounded-0 col-sm-2">
-                                    <option value="10">10 Filas</option>
-                                    <option value="20">20 Filas</option>
-                                    <option value="50">50 Filas</option>
-                                    <option value="100">100 Filas</option>
-                                    <option value="200">200 Filas</option>
-                                    <option value="500">500 Filas</option>
-                                    <option value="1000">1000 Filas</option>
-                                </select>
+                        <th class="py-4 text-center bg-danger text-white align-middle">
+                            <div class="dropdown">
+                                <div class="pointer dropdown-toggle" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    #
+                                </div>
+                                <div class="dropdown-menu rounded-0" aria-labelledby="dropdownMenuLink">
+                                    <a @click='getGraduates(1,"id","ASC")' class="dropdown-item" href="#">
+                                        <i class="fas fa-sort-amount-down-alt text-muted mr-3"></i>
+                                        Ascendente
+                                    </a>
+                                    <a @click='getGraduates(1,"id","DESC")' class="dropdown-item" href="#">
+                                        <i class="fas fa-sort-amount-up text-muted mr-3"></i>
+                                        Descendente
+                                    </a>
+                                </div>
                             </div>
                         </th>
-                    </tr>
-                    <tr>
-                        <th class="py-5 text-center bg-danger text-white">#</th>
                         @foreach($columns as $column)
-                            <th class="py-3 text-center" style="background-color: {{ $column->color }}; color: {{ $column->color_text }}; width: {{ $column->size.'px' }};">{{ $column->title }}</th>
+                            <th class="py-4 text-center align-middle" style="background-color: {{ $column->color }}; color: {{ $column->color_text }}; min-width: {{ $column->size.'px' }};">
+
+                                <div class="dropdown">
+                                    <div class="pointer dropdown-toggle" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        {{ $column->title }}
+                                    </div>
+                                    <div class="dropdown-menu rounded-0" aria-labelledby="dropdownMenuLink">
+                                        <a @click="editColumn({{ $column->id }})" class="dropdown-item" href="#">
+                                            <i class="fas fa-pen text-muted mr-3"></i> Editar
+                                        </a>
+                                        <a @click='getGraduates(1,"{{ $column->name }}","ASC")' class="dropdown-item" href="#">
+                                            <i class="fas fa-sort-amount-down-alt text-muted mr-3"></i>
+                                            Ascendente
+                                        </a>
+                                        <a @click='getGraduates(1,"{{ $column->name }}","DESC")' class="dropdown-item" href="#">
+                                            <i class="fas fa-sort-amount-up text-muted mr-3"></i>
+                                            Descendente
+                                        </a>
+                                    </div>
+                                </div>
+                            </th>
                         @endforeach
                     </tr>
                     <tr v-for="graduate in graduates.data">

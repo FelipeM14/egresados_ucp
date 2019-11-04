@@ -3,23 +3,30 @@
 namespace App\Http\Controllers;
 
 use App\Column;
-use App\Graduate;
 use App\Http\Requests\CreateColumnRequest;
-use Carbon\Carbon;
+use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Http\Request;
 use App\Category;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 class ColumnController extends Controller
 {
 
+    //Retorna una vista con el listado de las columnas
+    public function index(){
+
+        $columns = Column::all();
+        return view('columns.index', ['columns' => $columns]);
+    }
+
+    //Retorna una vista con los datos de todas las categorias
     public function create(){
 
         $categories = Category::all();
         return view('columns.create', ['categories' => $categories]);
     }
 
+    //Agrega una nuevo columna en la tabla graduates
     private function addColumnTable($nameCol, $nameTabla = 'graduates'){
 
         Schema::table($nameTabla, function ($table) use ($nameCol) {
@@ -27,11 +34,27 @@ class ColumnController extends Controller
         });
     }
 
+    //Valida que el nombre de la columna no exista en la bd
+    private function validaNameColumn($name, $id = []){
+
+        $col = Column::where('name', $name)
+            ->whereNotIn('id', $id)->count();
+
+        return $col;
+    }
+
+    //Guarda los datos de la columna en la tabla columns
     public function store(CreateColumnRequest $request){
 
         $category = Category::find($request->category_id);
 
         $name = $this->prepareName($request->title);
+        $name_ant = $this->validaNameColumn($name);
+
+        if($name_ant){
+            session()->flash('mjs_error', 'Ya existe una columna con ese título!');
+            return back();
+        }
 
         $column = $category->columns()->create([
             'title' => $request->title,
@@ -53,54 +76,49 @@ class ColumnController extends Controller
 
     }
 
-    //Se llama desde javascript en el metodo createNewRegistry para traer los nombres de las columnas
-    public function getCols(){
+    //Retorna una vista con los datos de la columna a editar
+    public function edit(Column $column){
 
-        $cols = Column::select('color', 'color_text', 'columns.name', 'columns.id', 'columns.title')
-            ->join('categories', 'categories.id', 'columns.category_id')
-            ->orderBy('categories.order', 'ASC')
-            ->orderBy('columns.order', 'ASC')->get();
+        $categories = Category::all();
+        return view('columns.edit', ['column' => $column, 'categories' => $categories]);
+    }
 
-        return array($cols);
+    private function renameColumn($before, $after, $table = 'graduates'){
+
+        Schema::table($table, function (Blueprint $table) use($before, $after) {
+            $table->renameColumn($before, $after);
+        });
 
     }
 
-    //Se llama desde javascript crea un nuevo registro nullo en la tabla egresados
-    public function NewRegistry(){
+    public function update(Column $column, CreateColumnRequest $request){
 
-        $time = Carbon::now()->format('Y-m-d H:i:s');
+        $name = $this->prepareName($request->title);
+        $name_ant = $this->validaNameColumn($name, [$column->id]);
 
-        $id = DB::table('graduates')->insertGetId([
-            'created_at' => $time,
-            'updated_at' => $time,
-        ]);
-
-        return array($id);
-
-    }
-
-    //actualiza el valor de cada columna de la tabla graduates es llamado desde javascript
-    public function updateCol(Request $request, $graduate_id){
-
-        $date = Carbon::now();
-        return DB::table('graduates')->where('id', $graduate_id)->update([
-            $request->name => $request->col,
-            'updated_at' => $date
-        ]);
-    }
-
-    //Obtiene los datos de los egresados es llamado desde javascript en el metodo getGraduates
-    public function getGraduates($col, $text, $num){
-
-        if($text != 'default' && $col != 'all'){ //
-            return DB::table('graduates')->where($col, 'LIKE', '%'.$text.'%')->orderBy('id', 'DESC')->paginate($num);
-        } else {
-            return DB::table('graduates')->orderBy('id', 'DESC')->paginate($num);
+        if($name_ant){
+            session()->flash('mjs_error', 'Ya existe una columna con ese título!');
+            return back();
         }
-    }
 
-    public function graduateDelete(Graduate $graduate){
-        $graduate->delete();
+        $name_before = $column->name;
+
+        $changes = $column->update([
+            'title' => $request->title,
+            'name' => $name,
+            'order' => $request->order,
+            'status' => $request->status,
+            'size' => $request->size,
+            'category_id' => $request->category_id,
+        ]);
+
+        if($changes){
+            $this->renameColumn($name_before, $name);
+            session()->flash('message', 'La columna '.strtolower($column->title).' fue actualizada correctamente!');
+        }
+
+        return redirect()->route('data.index');
+
     }
 
 }

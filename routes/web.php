@@ -43,27 +43,21 @@ Route::middleware(['auth', 'checkActive'])->group(function () {
 
 
     //COLUMNS
+    Route::get('columns_index', 'ColumnController@index')->name('columns.index')
+        ->middleware('permission:Ver datos');
+
     Route::get('columns_create', 'ColumnController@create')->name('columns.create')
         ->middleware('permission:Ingresar datos');
 
     Route::post('columns_store', 'ColumnController@store')->name('columns.store')
         ->middleware('permission:Ingresar datos');
 
-    Route::get('get_columns', 'ColumnController@getCols')->name('columns.cols')
-        ->middleware('permission:Ingresar datos');
-
-    Route::get('new_registry', 'ColumnController@NewRegistry')->name('columns.new')
-        ->middleware('permission:Ingresar datos');
-
-    Route::put('store_col_graduate/{graduate_id}', 'ColumnController@updateCol')->name('columns.updateCol')
+    Route::get('columns_edit/{column}', 'ColumnController@edit')->name('columns.edit')
         ->middleware('permission:Editar datos');
 
-    Route::get('get_graduates/{col}/{text}/{num}', 'ColumnController@getGraduates')->name('columns.get_graduates')
-        ->middleware('permission:Ver datos');
+    Route::put('columns_update/{column}', 'ColumnController@update')->name('columns.update')
+        ->middleware('permission:Editar datos');
 
-
-    Route::name('graduate.delete')->delete('graduate_delete/{graduate}', 'ColumnController@graduateDelete')
-        ->middleware('permission:Eliminar datos');
 
     //DATA
     Route::post('data/store', 'DataController@store')->name('data.store')
@@ -72,20 +66,20 @@ Route::middleware(['auth', 'checkActive'])->group(function () {
     Route::get('data', 'DataController@index')->name('data.index')
         ->middleware('permission:Ver datos');
 
-    Route::get('data/create', 'DataController@create')->name('data.create')
+    Route::get('get_columns', 'DataController@getCols')->name('data.cols')
         ->middleware('permission:Ingresar datos');
 
-    Route::put('data/{role}', 'DataController@update')->name('data.update')
+    Route::get('new_registry', 'DataController@NewRegistry')->name('data.new')
+        ->middleware('permission:Ingresar datos');
+
+    Route::put('store_col_graduate/{graduate_id}', 'DataController@updateCol')->name('data.updateCol')
         ->middleware('permission:Editar datos');
 
-    Route::get('data/{role}', 'DataController@show')->name('data.show')
+    Route::get('get_graduates/{col}/{text}/{order_col}/{order}/{num}', 'DataController@getGraduates')->name('data.get_graduates')
         ->middleware('permission:Ver datos');
 
-    Route::delete('data/{role}', 'DataController@destroy')->name('data.destroy')
+    Route::name('graduate.delete')->delete('graduate_delete/{graduate}', 'DataController@graduateDelete')
         ->middleware('permission:Eliminar datos');
-
-    Route::get('data/{role}/edit', 'DataController@edit')->name('data.edit')
-        ->middleware('permission:Editar datos');
 
 
     //Users
