@@ -90,6 +90,97 @@ class CategoryTableSeeder extends Seeder
             'order' => 11,
         ]);
 
+        Category::create([
+            'name' => 'Información contacto laboral',
+            'color' => '#5FB404',
+            'color_text' => '#FFFFFF',
+            'order' => 12,
+        ]);
+
+        Category::create([
+            'name' => 'Perfil laboral con respecto al perfil profesional',
+            'color' => '#2E9AFE',
+            'color_text' => '#FFFFFF',
+            'order' => 13,
+        ]);
+
+        Category::create([
+            'name' => 'Busqueda de empleo',
+            'color' => '#8A0808',
+            'color_text' => '#FFFFFF',
+            'order' => 14,
+        ]);
+
+        Category::create([
+            'name' => 'Información de contacto familiar o personal',
+            'color' => '#0B3B0B',
+            'color_text' => '#FFFFFF',
+            'order' => 15,
+        ]);
+
+        Category::create([
+            'name' => 'Información de contacto de otro graduado',
+            'color' => '#045FB4',
+            'color_text' => '#FFFFFF',
+            'order' => 16,
+        ]);
+
+        Category::create([
+            'name' => 'Requistos de grado',
+            'color' => '#FF0040',
+            'color_text' => '#FFFFFF',
+            'order' => 17,
+        ]);
+
+        Category::create([
+            'name' => 'Seguimiento M1-M5',
+            'color' => '#AC58FA',
+            'color_text' => '#FFFFFF',
+            'order' => 18,
+        ]);
+
+        Category::create([
+            'name' => 'Asistencia actividades',
+            'color' => '#2EFE64',
+            'color_text' => '#FFFFFF',
+            'order' => 19,
+        ]);
+
+        Category::create([
+            'name' => 'Jornadas de actualización académicas',
+            'color' => '#FE9A2E',
+            'color_text' => '#FFFFFF',
+            'order' => 20,
+        ]);
+
+        Category::create([
+            'name' => 'Asistencia a fiesta de graduados',
+            'color' => '#2EFEF7',
+            'color_text' => '#FFFFFF',
+            'order' => 21,
+        ]);
+
+        Category::create([
+            'name' => 'Asistencia a talleres de acompañamiento a la empleabilidad',
+            'color' => '#FA58F4',
+            'color_text' => '#FFFFFF',
+            'order' => 22,
+        ]);
+
+        Category::create([
+            'name' => 'Datos de registro en bolsa de empleo',
+            'color' => '#DF0101',
+            'color_text' => '#FFFFFF',
+            'order' => 23,
+        ]);
+
+        Category::create([
+            'name' => 'Información sobre los hijos ',
+            'color' => '#04B404',
+            'color_text' => '#FFFFFF',
+            'order' => 24,
+        ]);
+
         Column::create([
             'title' => 'Nombre y apellidos',
             'name' => 'nombre_y_apellidos',
@@ -188,7 +279,7 @@ class CategoryTableSeeder extends Seeder
 
         Column::create([
             'title' => 'Direcciones redes sociales - enviar mas información SI - NO',
-            'name' => 'direcciones_redes_sociales_enviar_mas_información',
+            'name' => 'direcciones_redes_sociales_enviar_mas_informacion',
             'order' => 3,
             'size' => 150,
             'category_id' => 3
@@ -196,7 +287,7 @@ class CategoryTableSeeder extends Seeder
 
         Column::create([
             'title' => 'Observación gestión matriculados',
-            'name' => 'observación gestión matriculados',
+            'name' => 'observacion_gestion_matriculados',
             'order' => 4,
             'size' => 150,
             'category_id' => 3
@@ -539,6 +630,466 @@ class CategoryTableSeeder extends Seeder
             'size' => 150,
             'category_id' => 11
         ]);
+
+        Column::create([
+            'title' => '¿El ámbito de la empresa es local, regional, nacional o internacional?',
+            'name' => 'el_ambito_de_la_empresa',
+            'order' => 1,
+            'size' => 150,
+            'category_id' => 12
+        ]);
+
+        Column::create([
+            'title' => 'Teléfono laboral',
+            'name' => 'telefono_laboral',
+            'order' => 2,
+            'size' => 150,
+            'category_id' => 12
+        ]);
+
+        Column::create([
+            'title' => 'Correo electrónico laboral',
+            'name' => 'correo_electronico_labora',
+            'order' => 3,
+            'size' => 150,
+            'category_id' => 12
+        ]);
+
+        Column::create([
+            'title' => 'Dirección del trabajo',
+            'name' => 'dirreccion_del_trabajo',
+            'order' => 4,
+            'size' => 150,
+            'category_id' => 12
+        ]);
+
+        Column::create([
+            'title' => 'Si se encuentra trabajando: en su trabajo usted es',
+            'name' => 'en_su_trabajo_usted_es',
+            'order' => 5,
+            'size' => 150,
+            'category_id' => 12
+        ]);
+
+        Column::create([
+            'title' => 'La siguiente información se consulta sólo con fines académicos
+                        ¿Cuál fue su ingreso laboral el mes pasado?',
+            'name' => 'cual_fue_su_ingreso_laboral_el_mes_pasado',
+            'order' => 6,
+            'size' => 150,
+            'category_id' => 12
+        ]);
+
+        Column::create([
+            'title' => '¿Cuánto tiempo lleva en esta actividad o trabajo?',
+            'name' => 'cuanto_tiempo_lleva_en_esta_actividad_o_trabajo',
+            'order' => 7,
+            'size' => 150,
+            'category_id' => 12
+        ]);
+
+        Column::create([
+            'title' => '¿Qué nivel de formación considera es el más apropiado para la
+                        actividad o trabajo que usted desempeña?',
+            'name' => 'nivel_de_formacion_es_mas_apropiado',
+            'order' => 1,
+            'size' => 150,
+            'category_id' => 13
+        ]);
+
+        Column::create([
+            'title' => 'En éste trabajo, en qué medida utiliza los conocimientos, habilidades que
+                        obtuvo del programa del cuál es graduado?',
+            'name' => 'en_que_medida_utiliza_los_conocimientos',
+            'order' => 2,
+            'size' => 150,
+            'category_id' => 13
+        ]);
+
+        Column::create([
+            'title' => '¿Cuál de los siguientes aspectos le genera a usted mayor satisfacción en su trabajo actual?',
+            'name' => 'mayor_satisfaccion_en_su_trabajo_actual',
+            'order' => 3,
+            'size' => 150,
+            'category_id' => 13
+        ]);
+
+        Column::create([
+            'title' => '¿Cuál de los siguientes aspectos le genera a usted mayor insatisfacción en su trabajo actual?',
+            'name' => 'mayor_insatisfaccion_en_su_trabajo_actual',
+            'order' => 4,
+            'size' => 150,
+            'category_id' => 13
+        ]);
+
+        Column::create([
+            'title' => '¿Qué tan relacionado está su perfil laboral con respecto al perfil profesional?',
+            'name' => 'relacion_perfil_laboral_perfil_profesional',
+            'order' => 5,
+            'size' => 150,
+            'category_id' => 13
+        ]);
+
+        Column::create([
+            'title' => 'Si está buscando trabajo u otro trabajo / ¿cuántos meses ha estado buscando trabajo?',
+            'name' => 'cuantos_meses_ha_estado_buscando_trabajo',
+            'order' => 1,
+            'size' => 150,
+            'category_id' => 14
+        ]);
+
+        Column::create([
+            'title' => '¿Cuál considera la principal dificultad a la hora de conseguir el empleo que busca?',
+            'name' => 'principal_dificultad_para_conseguir_empleo',
+            'order' => 2,
+            'size' => 150,
+            'category_id' => 14
+        ]);
+
+        Column::create([
+            'title' => '¿Cuál es el perfil ocupacional que busca para emplearse?',
+            'name' => 'perfil_ocupacional_que_busca_para_emplearse',
+            'order' => 3,
+            'size' => 150,
+            'category_id' => 14
+        ]);
+
+        Column::create([
+            'title' => '¿Cuál es su aspiración salarial?',
+            'name' => 'aspiracion_salarial',
+            'order' => 4,
+            'size' => 150,
+            'category_id' => 14
+        ]);
+
+        Column::create([
+            'title' => 'Indíquenos por favor el nombre un contacto personal, laboral o familiar',
+            'name' => 'nombre_contacto_personal_laboral_o_familiar',
+            'order' => 1,
+            'size' => 150,
+            'category_id' => 15
+        ]);
+
+        Column::create([
+            'title' => 'Parentesco del contacto',
+            'name' => 'parentesco_del_contacto',
+            'order' => 2,
+            'size' => 150,
+            'category_id' => 15
+        ]);
+
+        Column::create([
+            'title' => 'Teléfono fijo del contacto',
+            'name' => 'telefono_fijo_contacto',
+            'order' => 3,
+            'size' => 150,
+            'category_id' => 15
+        ]);
+
+        Column::create([
+            'title' => 'Celular 1 del contacto',
+            'name' => 'celular_contacto1',
+            'order' => 4,
+            'size' => 150,
+            'category_id' => 15
+        ]);
+
+        Column::create([
+            'title' => 'Celular 2 del contacto',
+            'name' => 'celular_contacto2',
+            'order' => 5,
+            'size' => 150,
+            'category_id' => 15
+        ]);
+
+        Column::create([
+            'title' => 'Indíquenos por favor el nombre un segundo contacto personal, laboral o familiar',
+            'name' => 'nombre_segundo_contacto_personal_laboral_o_familiar',
+            'order' => 6,
+            'size' => 150,
+            'category_id' => 15
+        ]);
+
+        Column::create([
+            'title' => 'Parentesco del segundo contacto',
+            'name' => 'parentesco_segundo_contacto',
+            'order' => 7,
+            'size' => 150,
+            'category_id' => 15
+        ]);
+
+        Column::create([
+            'title' => 'Teléfono fijo segundo contacto',
+            'name' => 'telefono_fijo_segundo_contacto',
+            'order' => 8,
+            'size' => 150,
+            'category_id' => 15
+        ]);
+
+        Column::create([
+            'title' => 'Celular 1 del segundo contacto',
+            'name' => 'celular2_segundo_contacto',
+            'order' => 9,
+            'size' => 150,
+            'category_id' => 15
+        ]);
+
+        Column::create([
+            'title' => 'Celular 2 del segundo contacto',
+            'name' => 'celular2_segundo_contacto',
+            'order' => 10,
+            'size' => 150,
+            'category_id' => 15
+        ]);
+
+        Column::create([
+            'title' => 'Tiene información de algún graduado ucp',
+            'name' => 'informacion_graduado_ucp',
+            'order' => 1,
+            'size' => 150,
+            'category_id' => 16
+        ]);
+
+        Column::create([
+            'title' => 'Nombre graduado referido',
+            'name' => 'nombre_graduado_referido',
+            'order' => 2,
+            'size' => 150,
+            'category_id' => 16
+        ]);
+
+        Column::create([
+            'title' => 'Programa del que se graduo',
+            'name' => 'programa_del_que_se_graduo',
+            'order' => 3,
+            'size' => 150,
+            'category_id' => 16
+        ]);
+
+        Column::create([
+            'title' => 'Sabe dónde trabaja el graduado',
+            'name' => 'donde_trabaja_el_graduado',
+            'order' => 4,
+            'size' => 150,
+            'category_id' => 16
+        ]);
+
+        Column::create([
+            'title' => 'Tiene algún No. telefónico de graduado referido',
+            'name' => 'telefono_de_graduado_referido',
+            'order' => 5,
+            'size' => 150,
+            'category_id' => 16
+        ]);
+
+        Column::create([
+            'title' => 'Tiene la dirección de email de graduado referido',
+            'name' => 'email_graduado_referido',
+            'order' => 6,
+            'size' => 150,
+            'category_id' => 16
+        ]);
+
+        Column::create([
+            'title' => 'Programa ¿me gradúo y ahora qué? fecha de asistencia',
+            'name' => 'fecha_asistencia_me_graduo_y_ahora_que',
+            'order' => 1,
+            'size' => 150,
+            'category_id' => 17
+        ]);
+
+        Column::create([
+            'title' => 'Autoevaluación',
+            'name' => 'autoevaluacion',
+            'order' => 2,
+            'size' => 150,
+            'category_id' => 17
+        ]);
+
+        Column::create([
+            'title' => 'Carta en custodia oficina 1AG - fecha de realización carta',
+            'name' => 'fecha_de_realizacion_carta_en_custodia',
+            'order' => 3,
+            'size' => 150,
+            'category_id' => 17
+        ]);
+
+        Column::create([
+            'title' => 'Programa 1AG fecha de envió correspondencia',
+            'name' => 'programa_1ag_fecha_de_envio_correspondencia',
+            'order' => 4,
+            'size' => 150,
+            'category_id' => 17
+        ]);
+
+        Column::create([
+            'title' => 'Seguimiento M1',
+            'name' => 'seguimiento_m1',
+            'order' => 1,
+            'size' => 150,
+            'category_id' => 18
+        ]);
+
+        Column::create([
+            'title' => 'Seguimiento M5',
+            'name' => 'seguimiento_m5',
+            'order' => 2,
+            'size' => 150,
+            'category_id' => 18
+        ]);
+
+        Column::create([
+            'title' => 'Sancocho universitario',
+            'name' => 'sancocho_universitario',
+            'order' => 1,
+            'size' => 150,
+            'category_id' => 19
+        ]);
+
+        Column::create([
+            'title' => 'Fiesta de los niños',
+            'name' => 'fiesta_de_los_ninos',
+            'order' => 2,
+            'size' => 150,
+            'category_id' => 19
+        ]);
+
+        Column::create([
+            'title' => 'Jornadas de actualización académicas. Si. Fecha - nombre de la jornada',
+            'name' => 'jornadas_de_actualizacion_academicas',
+            'order' => 1,
+            'size' => 150,
+            'category_id' => 20
+        ]);
+
+        Column::create([
+            'title' => 'Asistencia a fiesta de graduados. Si - fecha',
+            'name' => 'asistencia_fiesta_de_graduados',
+            'order' => 1,
+            'size' => 150,
+            'category_id' => 21
+        ]);
+
+        Column::create([
+            'title' => 'Fecha de registro al taller acompañamiento a la empleabilidad / emprendimiento',
+            'name' => 'fecha_registro_taller_empleabilidad',
+            'order' => 1,
+            'size' => 150,
+            'category_id' => 22
+        ]);
+
+        Column::create([
+            'title' => 'Fecha de invitación al taller de acompañamiento a la empleabilidad',
+            'name' => 'fecha_invitacion_taller_empleabilidad',
+            'order' => 2,
+            'size' => 150,
+            'category_id' => 22
+        ]);
+
+        Column::create([
+            'title' => 'Asistió al taller de acompañamiento a la empleabilidad. SI - NO',
+            'name' => 'asistencia_taller_empleabilidad',
+            'order' => 3,
+            'size' => 150,
+            'category_id' => 22
+        ]);
+
+        Column::create([
+            'title' => 'Consentimiento informado firmado y en físico oficina. SI - NO',
+            'name' => 'consentimiento_informado_firmado_fisico_oficina',
+            'order' => 4,
+            'size' => 150,
+            'category_id' => 22
+        ]);
+
+        Column::create([
+            'title' => 'Registro en bolsa de empleo. Si - Fecha de registro',
+            'name' => 'fecha_registro_bolsa_empleo',
+            'order' => 1,
+            'size' => 150,
+            'category_id' => 23
+        ]);
+
+        Column::create([
+            'title' => 'Auto-postulación a ofertas de empleo empresa - cargo y fecha',
+            'name' => 'autopostulacion_ofertas_empleo_empresa_cargo_fecha',
+            'order' => 2,
+            'size' => 150,
+            'category_id' => 23
+        ]);
+
+        Column::create([
+            'title' => 'Remisión de hojas de vida 1. Nombre de la empresa - fecha',
+            'name' => 'remision1_hoja_de_vida_empresa_fecha',
+            'order' => 3,
+            'size' => 150,
+            'category_id' => 23
+        ]);
+
+        Column::create([
+            'title' => 'Remisión de hojas de vida 2. Nombre de la empresa - fecha',
+            'name' => 'remision2_hoja_de_vida_empresa_fecha',
+            'order' => 4,
+            'size' => 150,
+            'category_id' => 23
+        ]);
+
+        Column::create([
+            'title' => 'Remisión de hojas de vida 3. Nombre de la empresa - fecha',
+            'name' => 'remision3_hoja_de_vida_empresa_fecha',
+            'order' => 5,
+            'size' => 150,
+            'category_id' => 23
+        ]);
+
+        Column::create([
+            'title' => 'Remisión de hojas de vida 4. Nombre de la empresa - fecha',
+            'name' => 'remision4_hoja_de_vida_empresa_fecha',
+            'order' => 6,
+            'size' => 150,
+            'category_id' => 23
+        ]);
+
+        Column::create([
+            'title' => 'Seguimiento. Dejar observación',
+            'name' => 'seguimiento_ejar_observacion',
+            'order' => 7,
+            'size' => 150,
+            'category_id' => 23
+        ]);
+
+        Column::create([
+            'title' => 'Ubicación de empleo. SI - NO',
+            'name' => 'ubicacion_empleo_si_no',
+            'order' => 8,
+            'size' => 150,
+            'category_id' => 23
+        ]);
+
+        Column::create([
+            'title' => '¿Tiene hijos?',
+            'name' => 'tiene_hijos',
+            'order' => 1,
+            'size' => 150,
+            'category_id' => 24
+        ]);
+
+        Column::create([
+            'title' => '¿Cuántos hijos tiene?',
+            'name' => 'cuantos_hijos_tiene',
+            'order' => 2,
+            'size' => 150,
+            'category_id' => 24
+        ]);
+
+        Column::create([
+            'title' => 'Qué edades tienen sus hijos',
+            'name' => 'edades_de_los_hijos',
+            'order' => 3,
+            'size' => 150,
+            'category_id' => 24
+        ]);
+
 
     }
 }
