@@ -60,6 +60,7 @@
         <div id="collapsePages" class="collapse show" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item" href="{{ route('data.index') }}">Datos</a>
+                <a class="collapse-item" href="{{ route('data.import') }}">Importar</a>
             </div>
         </div>
     </li>

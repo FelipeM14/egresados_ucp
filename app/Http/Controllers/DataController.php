@@ -4,10 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Column;
 use App\Data;
+use App\Http\Requests\ImportGraduateRequest;
 use Illuminate\Http\Request;
 use App\Graduate;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
+use App\Exports\TemplateGraduatesExport;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Imports\GraduatesImport;
 
 class DataController extends Controller
 {
@@ -35,7 +39,6 @@ class DataController extends Controller
         $cols = $this->getColumns();
         return view('data.index', ['columns' => $cols]);
     }
-
 
     //Se llama desde javascript en el metodo createNewRegistry para traer los nombres de las columnas
     public function getCols(){
@@ -79,6 +82,71 @@ class DataController extends Controller
 
     public function graduateDelete(Graduate $graduate){
         $graduate->delete();
+    }
+
+    public function dataImport(){
+
+        return view('data.import');
+    }
+
+    public function exportTemplate(){
+
+        $cols = Column::all();
+        $arr = [];
+
+        foreach ($cols as $col){
+            $arr[] = $col->name;
+        }
+
+        Excel::create('Plantilla', function($excel) use ($arr) {
+            $excel->sheet('Egresados', function($sheet) use ($arr) {
+                $sheet->row(1, $arr);
+            });
+        })->download('xlsx');
+    }
+
+    public function import(ImportGraduateRequest $request){
+
+        $arr_file = [];
+        $cols = Column::all();
+        $arr = [];
+        $i = 0;
+        $dtsOK = false;
+
+        foreach ($cols as $col){
+            $arr[] = $col->name;
+        }
+
+        if($request->hasFile('file')){
+
+            $path = $request->file('file')->getRealPath();
+            $data = Excel::load($path)->get();
+            if($data->count()){
+
+                foreach ($data as $key => $value) {
+
+                    foreach ($cols as $col){
+                        $name = $col->name;
+                        if($value->$name){
+                            $arr_file[$i][$name] = $value->$name;
+
+                        }
+                    }
+                    $i++;
+                }
+            }
+        }
+
+        if(!empty($arr_file)){
+            $dtsOK = DB::table('graduates')->insert($arr_file);
+        }
+
+        if($dtsOK){
+            $cols = $this->getColumns();
+            session()->flash('message', 'Los datos de han importado correctamente!');
+            return view('data.index', ['columns' => $cols]);
+        } else
+            return back();
     }
 
 }

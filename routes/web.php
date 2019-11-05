@@ -81,6 +81,15 @@ Route::middleware(['auth', 'checkActive'])->group(function () {
     Route::name('graduate.delete')->delete('graduate_delete/{graduate}', 'DataController@graduateDelete')
         ->middleware('permission:Eliminar datos');
 
+    Route::get('data_import', 'DataController@dataImport')->name('data.import')
+        ->middleware('permission:Ver datos');
+
+    Route::get('data_export_template', 'DataController@exportTemplate')->name('data.export.template')
+        ->middleware('permission:Ver datos');
+
+    Route::post('graduates_import', 'DataController@import')->name('graduates.import')
+        ->middleware('permission:Ver datos');
+
 
     //Users
     Route::get('users_index', 'UsersController@index')->name('users.index')
