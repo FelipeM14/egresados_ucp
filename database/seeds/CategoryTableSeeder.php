@@ -11,6 +11,9 @@ class CategoryTableSeeder extends Seeder
      *
      * @return void
      */
+
+    //creacio de categorias predeterminadas y asignacion de columnas a dichas categorias
+
     public function run()
     {
         Category::create([
@@ -231,7 +234,7 @@ class CategoryTableSeeder extends Seeder
 
         Column::create([
             'title' => 'Correo electrónico',
-            'name' => 'correo_electronico3',
+            'name' => 'correo_actualizacion',
             'order' => 2,
             'size' => 150,
             'category_id' => 2
@@ -263,7 +266,7 @@ class CategoryTableSeeder extends Seeder
 
         Column::create([
             'title' => 'Cantidad de títulos obtenidos en la universidad católica',
-            'name' => 'cantidad_de_titulos_obtenidos_en_la_universidad_catolica',
+            'name' => 'titulos_obtenidos_ucp',
             'order' => 1,
             'size' => 150,
             'category_id' => 3
@@ -279,7 +282,7 @@ class CategoryTableSeeder extends Seeder
 
         Column::create([
             'title' => 'Direcciones redes sociales - enviar mas información SI - NO',
-            'name' => 'direcciones_redes_sociales_enviar_mas_informacion',
+            'name' => 'enviar_informacion_redes_sociales',
             'order' => 3,
             'size' => 150,
             'category_id' => 3
@@ -287,7 +290,7 @@ class CategoryTableSeeder extends Seeder
 
         Column::create([
             'title' => 'Observación gestión matriculados',
-            'name' => 'observacion_gestion_matriculados',
+            'name' => 'gestion_matriculados',
             'order' => 4,
             'size' => 150,
             'category_id' => 3
@@ -399,7 +402,7 @@ class CategoryTableSeeder extends Seeder
 
         Column::create([
             'title' => 'SI. Indique el nombre del proyecto de investigación',
-            'name' => 'participacion_proyectos_investigacion2',
+            'name' => 'nombre_proyecto_investigacion',
             'order' => 2,
             'size' => 150,
             'category_id' => 4
@@ -407,7 +410,7 @@ class CategoryTableSeeder extends Seeder
 
         Column::create([
             'title' => 'Usted pertenece a comunidades académicas, asociaciones científicas, profesionales, tecnologícas y/o redes de investigación',
-            'name' => 'pertenece_red_investigacion2',
+            'name' => 'pertenece_red_investigacion',
             'order' => 1,
             'size' => 150,
             'category_id' => 5
@@ -422,8 +425,8 @@ class CategoryTableSeeder extends Seeder
         ]);
 
         Column::create([
-            'title' => 'El ámbito de esta red es regional, NACIONAL o INTERNACIONAL',
-            'name' => 'nombre_red_investigacion2',
+            'title' => 'El ámbito de esta red es REGIONAL, NACIONAL o INTERNACIONAL',
+            'name' => 'ambito_red_investigacion',
             'order' => 3,
             'size' => 150,
             'category_id' => 5
@@ -447,7 +450,7 @@ class CategoryTableSeeder extends Seeder
 
         Column::create([
             'title' => 'Usted pertence o ha pertenecido a organizaciones sin ánimo de lucro o realiza o ha realizado voluntariados. SI - NO',
-            'name' => 'organizacion_sin_animo_lucro',
+            'name' => 'pertenece_organizacion_sinanimolucro',
             'order' => 3,
             'size' => 150,
             'category_id' => 6
@@ -455,7 +458,7 @@ class CategoryTableSeeder extends Seeder
 
         Column::create([
             'title' => 'Nombre de la organización sin ánimo de lucro, voluntariado o fundación en donde ha prestado sus servicios',
-            'name' => 'nombre_organizacion_sin_animo_lucro',
+            'name' => 'nombre_organizacion_sinanimolucro',
             'order' => 4,
             'size' => 150,
             'category_id' => 6
@@ -495,7 +498,7 @@ class CategoryTableSeeder extends Seeder
 
         Column::create([
             'title' => '¿En la actualidad ésta interesado en cursar estudios posgraduales?',
-            'name' => 'interes_estudios',
+            'name' => 'interes_estudios_posgradual',
             'order' => 1,
             'size' => 150,
             'category_id' => 8
@@ -503,7 +506,7 @@ class CategoryTableSeeder extends Seeder
 
         Column::create([
             'title' => 'Si la respuesta fue: definitivamente si o lo esta pensando, índique que le gustaría estudiar',
-            'name' => 'que_le _gustaria_estudiar',
+            'name' => 'que_le_gustaria_estudiar',
             'order' => 2,
             'size' => 150,
             'category_id' => 8
@@ -519,7 +522,7 @@ class CategoryTableSeeder extends Seeder
 
         Column::create([
             'title' => '¿Cuál de las siguientes jornadas se ajustaría más a su disponibilidad de tiempo?',
-            'name' => 'Jornada_disponibilidad',
+            'name' => 'jornada_disponibilidad',
             'order' => 4,
             'size' => 150,
             'category_id' => 8
@@ -527,7 +530,7 @@ class CategoryTableSeeder extends Seeder
 
         Column::create([
             'title' => '¿En qué universidad ha pensado realizar sus estudios?',
-            'name' => 'en_que_universidad_ha_pensado_realizar_sus_estudios',
+            'name' => 'universidad_para_realizar_estudios',
             'order' => 5,
             'size' => 150,
             'category_id' => 8
@@ -536,7 +539,7 @@ class CategoryTableSeeder extends Seeder
         Column::create([
             'title' => '¿Cuál fue su lugar de residencia en su primer empleo después de graduarse de la universidad?             
             CIUDAD - DEPARTAMENTO - PAÍS',
-            'name' => 'lugar_residencia_despues_de_graduarse',
+            'name' => 'lugar_residencia_al_graduarse',
             'order' => 1,
             'size' => 150,
             'category_id' => 9
@@ -544,7 +547,7 @@ class CategoryTableSeeder extends Seeder
 
         Column::create([
             'title' => '¿Cuál fue su primer cargo después de graduarse de la universidad?',
-            'name' => 'primer_cargo_despues_de_graduarse_de_la_universidad',
+            'name' => 'primer_cargo_al_graduarse_ucp',
             'order' => 2,
             'size' => 150,
             'category_id' => 9
@@ -552,7 +555,7 @@ class CategoryTableSeeder extends Seeder
 
         Column::create([
             'title' => '¿Cuál fue se primer cargo y salario después de graduarse de la universidad?',
-            'name' => 'primer_cargo_salario_despues_de_graduarse_de_la_universidad',
+            'name' => 'primer_salario_al_graduarse_ucp',
             'order' => 3,
             'size' => 150,
             'category_id' => 9
@@ -561,7 +564,7 @@ class CategoryTableSeeder extends Seeder
         Column::create([
             'title' => '¿Ha estado algún tiempo en el exterior después de graduarse de la universidad?
                         Si, por estudio – Si, Por trabajo - otro',
-            'name' => 'ha_estado_en_el_exterior_al_graduarse',
+            'name' => 'visitas_al_exterior_al_graduarse',
             'order' => 4,
             'size' => 150,
             'category_id' => 9
@@ -569,7 +572,7 @@ class CategoryTableSeeder extends Seeder
 
         Column::create([
             'title' => '¿En qué país estuvo después de su graduación?',
-            'name' => 'en_que_pais_estuvo_despues_de_su_graduacion',
+            'name' => 'pais_despues_de_graduarce',
             'order' => 5,
             'size' => 150,
             'category_id' => 9
@@ -577,7 +580,7 @@ class CategoryTableSeeder extends Seeder
 
         Column::create([
             'title' => '¿Cuánto tiempo estuvo fuera del país?',
-            'name' => 'cuanto_tiempo_estuvo_fuera_del_pais',
+            'name' => 'tiempo_fuera_del_pais',
             'order' => 6,
             'size' => 150,
             'category_id' => 9
@@ -585,7 +588,7 @@ class CategoryTableSeeder extends Seeder
 
         Column::create([
             'title' => '¿En la actualidad en qué actividad ocupa la mayor parte de su tiempo?',
-            'name' => 'en_la_actualidad_en_que_actividad_ocupa_la_mayor_parte_de_su_tiempo',
+            'name' => 'ocupacion_mayoria_del_tiempo',
             'order' => 1,
             'size' => 150,
             'category_id' => 10
@@ -593,7 +596,7 @@ class CategoryTableSeeder extends Seeder
 
         Column::create([
             'title' => '¿Nombre de la empresa dónde se encuentra laborando?',
-            'name' => 'nombre_de_la_empresa_donde_se_encuentra_laborando',
+            'name' => 'empresa_donde_esta_laborando',
             'order' => 2,
             'size' => 150,
             'category_id' => 10
@@ -609,7 +612,7 @@ class CategoryTableSeeder extends Seeder
 
         Column::create([
             'title' => 'Nivel del cargo ocupacional',
-            'name' => 'nivel_del_cargo_ocupacional',
+            'name' => 'nivel_cargo_ocupacional',
             'order' => 1,
             'size' => 150,
             'category_id' => 11
@@ -617,7 +620,7 @@ class CategoryTableSeeder extends Seeder
 
         Column::create([
             'title' => '¿Qué cargo ocupacional, ocupa actualmente?',
-            'name' => 'que_cargo_ocupacional_ocupa_actualmente',
+            'name' => 'cargo_ocupacional_actualmente',
             'order' => 2,
             'size' => 150,
             'category_id' => 11
@@ -625,7 +628,7 @@ class CategoryTableSeeder extends Seeder
 
         Column::create([
             'title' => '¿En qué área del ejercicio profesional se desempeña actualmente?',
-            'name' => 'en_que_area_del_ejercicio_profesional_se_desempena_actualmente',
+            'name' => 'area_desempeno_profesional_actual',
             'order' => 3,
             'size' => 150,
             'category_id' => 11
@@ -633,7 +636,7 @@ class CategoryTableSeeder extends Seeder
 
         Column::create([
             'title' => '¿El ámbito de la empresa es local, regional, nacional o internacional?',
-            'name' => 'el_ambito_de_la_empresa',
+            'name' => 'ambito_de_la_empresa',
             'order' => 1,
             'size' => 150,
             'category_id' => 12
@@ -649,7 +652,7 @@ class CategoryTableSeeder extends Seeder
 
         Column::create([
             'title' => 'Correo electrónico laboral',
-            'name' => 'correo_electronico_labora',
+            'name' => 'correo_labora',
             'order' => 3,
             'size' => 150,
             'category_id' => 12
@@ -657,7 +660,7 @@ class CategoryTableSeeder extends Seeder
 
         Column::create([
             'title' => 'Dirección del trabajo',
-            'name' => 'dirreccion_del_trabajo',
+            'name' => 'dirreccion_trabajo',
             'order' => 4,
             'size' => 150,
             'category_id' => 12
@@ -674,7 +677,7 @@ class CategoryTableSeeder extends Seeder
         Column::create([
             'title' => 'La siguiente información se consulta sólo con fines académicos
                         ¿Cuál fue su ingreso laboral el mes pasado?',
-            'name' => 'cual_fue_su_ingreso_laboral_el_mes_pasado',
+            'name' => 'ingreso_laboral_mes_pasado',
             'order' => 6,
             'size' => 150,
             'category_id' => 12
@@ -682,7 +685,7 @@ class CategoryTableSeeder extends Seeder
 
         Column::create([
             'title' => '¿Cuánto tiempo lleva en esta actividad o trabajo?',
-            'name' => 'cuanto_tiempo_lleva_en_esta_actividad_o_trabajo',
+            'name' => 'cuanto_tiempo_lleva_en_el_trabajo',
             'order' => 7,
             'size' => 150,
             'category_id' => 12
@@ -691,7 +694,7 @@ class CategoryTableSeeder extends Seeder
         Column::create([
             'title' => '¿Qué nivel de formación considera es el más apropiado para la
                         actividad o trabajo que usted desempeña?',
-            'name' => 'nivel_de_formacion_es_mas_apropiado',
+            'name' => 'nivel_formacion_mas_apropiado',
             'order' => 1,
             'size' => 150,
             'category_id' => 13
@@ -700,7 +703,7 @@ class CategoryTableSeeder extends Seeder
         Column::create([
             'title' => 'En éste trabajo, en qué medida utiliza los conocimientos, habilidades que
                         obtuvo del programa del cuál es graduado?',
-            'name' => 'en_que_medida_utiliza_los_conocimientos',
+            'name' => 'utiliza_los_conocimientos',
             'order' => 2,
             'size' => 150,
             'category_id' => 13
@@ -708,7 +711,7 @@ class CategoryTableSeeder extends Seeder
 
         Column::create([
             'title' => '¿Cuál de los siguientes aspectos le genera a usted mayor satisfacción en su trabajo actual?',
-            'name' => 'mayor_satisfaccion_en_su_trabajo_actual',
+            'name' => 'mayor_satisfaccion_laboral',
             'order' => 3,
             'size' => 150,
             'category_id' => 13
@@ -716,7 +719,7 @@ class CategoryTableSeeder extends Seeder
 
         Column::create([
             'title' => '¿Cuál de los siguientes aspectos le genera a usted mayor insatisfacción en su trabajo actual?',
-            'name' => 'mayor_insatisfaccion_en_su_trabajo_actual',
+            'name' => 'mayor_insatisfaccion_laboral',
             'order' => 4,
             'size' => 150,
             'category_id' => 13
@@ -724,7 +727,7 @@ class CategoryTableSeeder extends Seeder
 
         Column::create([
             'title' => '¿Qué tan relacionado está su perfil laboral con respecto al perfil profesional?',
-            'name' => 'relacion_perfil_laboral_perfil_profesional',
+            'name' => 'relacion_perfil_laboral_profesional',
             'order' => 5,
             'size' => 150,
             'category_id' => 13
@@ -732,7 +735,7 @@ class CategoryTableSeeder extends Seeder
 
         Column::create([
             'title' => 'Si está buscando trabajo u otro trabajo / ¿cuántos meses ha estado buscando trabajo?',
-            'name' => 'cuantos_meses_ha_estado_buscando_trabajo',
+            'name' => 'meses_buscando_trabajo',
             'order' => 1,
             'size' => 150,
             'category_id' => 14
@@ -740,7 +743,7 @@ class CategoryTableSeeder extends Seeder
 
         Column::create([
             'title' => '¿Cuál considera la principal dificultad a la hora de conseguir el empleo que busca?',
-            'name' => 'principal_dificultad_para_conseguir_empleo',
+            'name' => 'dificultad_conseguir_empleo',
             'order' => 2,
             'size' => 150,
             'category_id' => 14
@@ -748,7 +751,7 @@ class CategoryTableSeeder extends Seeder
 
         Column::create([
             'title' => '¿Cuál es el perfil ocupacional que busca para emplearse?',
-            'name' => 'perfil_ocupacional_que_busca_para_emplearse',
+            'name' => 'perfil_que_busca_al_emplearse',
             'order' => 3,
             'size' => 150,
             'category_id' => 14
@@ -764,7 +767,7 @@ class CategoryTableSeeder extends Seeder
 
         Column::create([
             'title' => 'Indíquenos por favor el nombre un contacto personal, laboral o familiar',
-            'name' => 'nombre_contacto_personal_laboral_o_familiar',
+            'name' => 'nombre_contacto_personal',
             'order' => 1,
             'size' => 150,
             'category_id' => 15
@@ -772,7 +775,7 @@ class CategoryTableSeeder extends Seeder
 
         Column::create([
             'title' => 'Parentesco del contacto',
-            'name' => 'parentesco_del_contacto',
+            'name' => 'parentesco_contacto',
             'order' => 2,
             'size' => 150,
             'category_id' => 15
@@ -804,7 +807,7 @@ class CategoryTableSeeder extends Seeder
 
         Column::create([
             'title' => 'Indíquenos por favor el nombre un segundo contacto personal, laboral o familiar',
-            'name' => 'nombre_segundo_contacto_personal_laboral_o_familiar',
+            'name' => 'nombre_segundo_contacto',
             'order' => 6,
             'size' => 150,
             'category_id' => 15
@@ -820,7 +823,7 @@ class CategoryTableSeeder extends Seeder
 
         Column::create([
             'title' => 'Teléfono fijo segundo contacto',
-            'name' => 'telefono_fijo_segundo_contacto',
+            'name' => 'telefono_segundo_contacto',
             'order' => 8,
             'size' => 150,
             'category_id' => 15
@@ -828,7 +831,7 @@ class CategoryTableSeeder extends Seeder
 
         Column::create([
             'title' => 'Celular 1 del segundo contacto',
-            'name' => 'celular2_segundo_contacto',
+            'name' => 'celular1_segundo_contacto',
             'order' => 9,
             'size' => 150,
             'category_id' => 15
@@ -876,7 +879,7 @@ class CategoryTableSeeder extends Seeder
 
         Column::create([
             'title' => 'Tiene algún No. telefónico de graduado referido',
-            'name' => 'telefono_de_graduado_referido',
+            'name' => 'telefono_graduado_referido',
             'order' => 5,
             'size' => 150,
             'category_id' => 16
@@ -892,7 +895,7 @@ class CategoryTableSeeder extends Seeder
 
         Column::create([
             'title' => 'Programa ¿me gradúo y ahora qué? fecha de asistencia',
-            'name' => 'fecha_asistencia_me_graduo_y_ahora_que',
+            'name' => 'asistencia_graduo_y_ahora_que',
             'order' => 1,
             'size' => 150,
             'category_id' => 17
@@ -908,7 +911,7 @@ class CategoryTableSeeder extends Seeder
 
         Column::create([
             'title' => 'Carta en custodia oficina 1AG - fecha de realización carta',
-            'name' => 'fecha_de_realizacion_carta_en_custodia',
+            'name' => 'realizacion_carta_en_custodia',
             'order' => 3,
             'size' => 150,
             'category_id' => 17
@@ -916,7 +919,7 @@ class CategoryTableSeeder extends Seeder
 
         Column::create([
             'title' => 'Programa 1AG fecha de envió correspondencia',
-            'name' => 'programa_1ag_fecha_de_envio_correspondencia',
+            'name' => 'programa_1ag_envio_correspondencia',
             'order' => 4,
             'size' => 150,
             'category_id' => 17
@@ -956,7 +959,7 @@ class CategoryTableSeeder extends Seeder
 
         Column::create([
             'title' => 'Jornadas de actualización académicas. Si. Fecha - nombre de la jornada',
-            'name' => 'jornadas_de_actualizacion_academicas',
+            'name' => 'jornadas_actualizacion_academicas',
             'order' => 1,
             'size' => 150,
             'category_id' => 20
@@ -964,7 +967,7 @@ class CategoryTableSeeder extends Seeder
 
         Column::create([
             'title' => 'Asistencia a fiesta de graduados. Si - fecha',
-            'name' => 'asistencia_fiesta_de_graduados',
+            'name' => 'asistencia_fiesta_graduados',
             'order' => 1,
             'size' => 150,
             'category_id' => 21
@@ -972,7 +975,7 @@ class CategoryTableSeeder extends Seeder
 
         Column::create([
             'title' => 'Fecha de registro al taller acompañamiento a la empleabilidad / emprendimiento',
-            'name' => 'fecha_registro_taller_empleabilidad',
+            'name' => 'registro_taller_empleabilidad',
             'order' => 1,
             'size' => 150,
             'category_id' => 22
@@ -980,7 +983,7 @@ class CategoryTableSeeder extends Seeder
 
         Column::create([
             'title' => 'Fecha de invitación al taller de acompañamiento a la empleabilidad',
-            'name' => 'fecha_invitacion_taller_empleabilidad',
+            'name' => 'invitacion_taller_empleabilidad',
             'order' => 2,
             'size' => 150,
             'category_id' => 22
@@ -996,7 +999,7 @@ class CategoryTableSeeder extends Seeder
 
         Column::create([
             'title' => 'Consentimiento informado firmado y en físico oficina. SI - NO',
-            'name' => 'consentimiento_informado_firmado_fisico_oficina',
+            'name' => 'consentimiento_informado_firmado',
             'order' => 4,
             'size' => 150,
             'category_id' => 22
@@ -1004,7 +1007,7 @@ class CategoryTableSeeder extends Seeder
 
         Column::create([
             'title' => 'Registro en bolsa de empleo. Si - Fecha de registro',
-            'name' => 'fecha_registro_bolsa_empleo',
+            'name' => 'registro_bolsa_empleo',
             'order' => 1,
             'size' => 150,
             'category_id' => 23
@@ -1012,7 +1015,7 @@ class CategoryTableSeeder extends Seeder
 
         Column::create([
             'title' => 'Auto-postulación a ofertas de empleo empresa - cargo y fecha',
-            'name' => 'autopostulacion_ofertas_empleo_empresa_cargo_fecha',
+            'name' => 'f_postulacion_ofertas_empleo',
             'order' => 2,
             'size' => 150,
             'category_id' => 23
@@ -1020,7 +1023,7 @@ class CategoryTableSeeder extends Seeder
 
         Column::create([
             'title' => 'Remisión de hojas de vida 1. Nombre de la empresa - fecha',
-            'name' => 'remision1_hoja_de_vida_empresa_fecha',
+            'name' => 'f_remision1_hoja_vida',
             'order' => 3,
             'size' => 150,
             'category_id' => 23
@@ -1028,7 +1031,7 @@ class CategoryTableSeeder extends Seeder
 
         Column::create([
             'title' => 'Remisión de hojas de vida 2. Nombre de la empresa - fecha',
-            'name' => 'remision2_hoja_de_vida_empresa_fecha',
+            'name' => 'f_remision2_hoja_vida',
             'order' => 4,
             'size' => 150,
             'category_id' => 23
@@ -1036,7 +1039,7 @@ class CategoryTableSeeder extends Seeder
 
         Column::create([
             'title' => 'Remisión de hojas de vida 3. Nombre de la empresa - fecha',
-            'name' => 'remision3_hoja_de_vida_empresa_fecha',
+            'name' => 'f_remision3_hoja_vida',
             'order' => 5,
             'size' => 150,
             'category_id' => 23
@@ -1044,7 +1047,7 @@ class CategoryTableSeeder extends Seeder
 
         Column::create([
             'title' => 'Remisión de hojas de vida 4. Nombre de la empresa - fecha',
-            'name' => 'remision4_hoja_de_vida_empresa_fecha',
+            'name' => 'f_remision4_hoja_vida',
             'order' => 6,
             'size' => 150,
             'category_id' => 23
@@ -1052,7 +1055,7 @@ class CategoryTableSeeder extends Seeder
 
         Column::create([
             'title' => 'Seguimiento. Dejar observación',
-            'name' => 'seguimiento_ejar_observacion',
+            'name' => 'seguimiento_observacion',
             'order' => 7,
             'size' => 150,
             'category_id' => 23
