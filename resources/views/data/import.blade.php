@@ -33,9 +33,13 @@
                                 @csrf()
 
                                 <div class="form-group">
-                                    <label for="file">Seleccione el archivo de la pantilla con los datos</label>
-                                    <input type="file" name="file" id="file" class="form-control" required>
+                                    <label>Seleccione el archivo de la pantilla con los datos</label>
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" name="file" id="file" required lang="es">
+                                        <label class="custom-file-label" for="customFile">Seleccionar archivo</label>
+                                    </div>
                                 </div>
+
                                 <button type="submit" class="btn btn-primary btn-sm">Importar plantilla</button>
                             </form>
                         </div>

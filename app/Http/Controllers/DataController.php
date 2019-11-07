@@ -101,6 +101,12 @@ class DataController extends Controller
         Excel::create('Plantilla', function($excel) use ($arr) {
             $excel->sheet('Egresados', function($sheet) use ($arr) {
                 $sheet->row(1, $arr);
+                $sheet->row(1, function($row) {
+
+                    // Cambia la fuente a bold
+                    $row->setFontWeight('bold');
+
+                });
             });
         })->download('xlsx');
     }
@@ -147,6 +153,49 @@ class DataController extends Controller
             return view('data.index', ['columns' => $cols]);
         } else
             return back();
+    }
+
+
+    public function ViewExport(){
+        return view('data.export');
+    }
+
+    public function export(){
+
+        $cols = Column::all();
+        $arr = [];
+        $graduates = Graduate::all();
+
+        foreach ($cols as $col){
+            $arr[] = $col->name;
+        }
+
+        Excel::create('Egresados', function($excel) use ($arr, $graduates) {
+            $excel->sheet('Egresados', function($sheet) use ($arr, $graduates) {
+                $sheet->row(1, $arr);
+                $sheet->row(1, function($row) {
+
+                    // Cambia la fuente a bold
+                    $row->setFontWeight('bold');
+                });
+
+                $line = 2;
+                $data = [];
+                foreach ($graduates as $graduate){
+                    foreach ($arr as $value){
+                        if($graduate->$value){
+                            $data[] = $graduate->$value;
+                        } else {
+                            $data[] = '';
+                        }
+                    }
+                    $sheet->row($line, $data);
+                    $line++;
+                    $data = [];
+                }
+
+            });
+        })->download('xlsx');
     }
 
 }
