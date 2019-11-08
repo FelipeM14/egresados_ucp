@@ -93,7 +93,7 @@ Route::middleware(['auth', 'checkActive'])->group(function () {
     Route::get('graduates_view_export', 'DataController@ViewExport')->name('data.export')
         ->middleware('permission:Ver datos');
 
-    Route::get('graduates_export', 'DataController@export')->name('graduates.export')
+    Route::post('graduates_export', 'DataController@export')->name('graduates.export')
         ->middleware('permission:Ver datos');
 
 

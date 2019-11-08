@@ -21,6 +21,7 @@ class CategoryTableSeeder extends Seeder
             'color' => '#000000',
             'color_text' => '#FFFFFF',
             'order' => 1,
+            'protected' => 1,
         ]);
 
         Category::create([
@@ -28,6 +29,7 @@ class CategoryTableSeeder extends Seeder
             'color' => '#FFFFFF',
             'color_text' => '#000000',
             'order' => 2,
+            'protected' => 1,
         ]);
 
         Category::create([

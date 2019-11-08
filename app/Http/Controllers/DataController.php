@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use App\Column;
 use App\Data;
+use App\Http\Requests\ExportGraduateRequest;
 use App\Http\Requests\ImportGraduateRequest;
 use Illuminate\Http\Request;
 use App\Graduate;
@@ -111,6 +113,13 @@ class DataController extends Controller
         })->download('xlsx');
     }
 
+    private function insertGraduates($arr_file){
+
+        $dtsOK = DB::table('graduates')->insert($arr_file);
+
+        return $dtsOK;
+    }
+
     public function import(ImportGraduateRequest $request){
 
         $arr_file = [];
@@ -135,16 +144,22 @@ class DataController extends Controller
                         $name = $col->name;
                         if($value->$name){
                             $arr_file[$i][$name] = $value->$name;
-
+                        } else {
+                            $arr_file[$i][$name] = '';
                         }
                     }
-                    $i++;
+                    if($i == 500){
+                        $dtsOK = $this->insertGraduates($arr_file);
+                        $arr_file = [];
+                        $i = 0;
+                    } else
+                        $i++;
                 }
             }
         }
 
-        if(!empty($arr_file)){
-            $dtsOK = DB::table('graduates')->insert($arr_file);
+        if(!empty($arr_file)) {
+            $dtsOK = $this->insertGraduates($arr_file);
         }
 
         if($dtsOK){
@@ -157,22 +172,31 @@ class DataController extends Controller
 
 
     public function ViewExport(){
-        return view('data.export');
+
+        $programs = Graduate::select('programa')->get()->unique('programa');
+        $categories = Category::all();
+        return view('data.export', ['categories' => $categories, 'programs' => $programs]);
     }
 
-    public function export(){
+    public function export(ExportGraduateRequest $request){
 
-        $cols = Column::all();
         $arr = [];
-        $graduates = Graduate::all();
+        $titles = [];
+        $cols = Category::select('columns.name', 'columns.title')->join('columns', 'columns.category_id', 'categories.id')
+                    ->whereIn('categories.id', $request->category_id)->get();
+
+        $program = '%'.$request->program.'%';
+
+        $graduates = Graduate::where('programa', 'LIKE', $program)->get();
 
         foreach ($cols as $col){
             $arr[] = $col->name;
+            $titles[] = $col->title;
         }
 
-        Excel::create('Egresados', function($excel) use ($arr, $graduates) {
-            $excel->sheet('Egresados', function($sheet) use ($arr, $graduates) {
-                $sheet->row(1, $arr);
+        Excel::create('Egresados', function($excel) use ($arr, $graduates, $titles) {
+            $excel->sheet('Egresados', function($sheet) use ($arr, $graduates, $titles) {
+                $sheet->row(1, $titles);
                 $sheet->row(1, function($row) {
 
                     // Cambia la fuente a bold
@@ -196,6 +220,7 @@ class DataController extends Controller
 
             });
         })->download('xlsx');
+
     }
 
 }

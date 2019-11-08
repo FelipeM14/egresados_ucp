@@ -91,7 +91,27 @@ class ColumnController extends Controller
 
     }
 
+    //Valida si la categoria de la columna esta protegida para los cambios
+    private function validateProtected($col){
+
+        $category = Category::find($col->category_id);
+
+        if($category->protected)
+            return true;
+        else
+            return false;
+
+    }
+
+    //Actualiza el nombre de una columna
     public function update(Column $column, CreateColumnRequest $request){
+
+        $protected = $this->validateProtected($column);
+
+        if($protected){
+            session()->flash('mjs_error', 'No se puede cambiar el nombre de las columnas de esta categoría!');
+            return back();
+        }
 
         $name = $this->prepareName($request->title);
         $name_ant = $this->validaNameColumn($name, [$column->id]);
