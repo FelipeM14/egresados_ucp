@@ -61,7 +61,7 @@
             <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item" href="{{ route('data.index') }}">Datos</a>
                 <a class="collapse-item" href="{{ route('data.import') }}">Importar</a>
-                <a class="collapse-item" href="{{ route('data.export') }}">Exportar</a>
+                <a class="collapse-item" href="{{ route('data.export') }}">Reportes</a>
             </div>
         </div>
     </li>

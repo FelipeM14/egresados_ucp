@@ -31,7 +31,7 @@ class ExportGraduateRequest extends FormRequest
     public function messages()
     {
         return [
-            'category_id.required' => 'Debe Seleccionar por lo menos una categoría',
+            'category_id.required' => 'Debe seleccionar por lo menos una categoría',
         ];
     }
 }

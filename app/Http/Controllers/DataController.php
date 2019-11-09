@@ -174,8 +174,18 @@ class DataController extends Controller
     public function ViewExport(){
 
         $programs = Graduate::select('programa')->get()->unique('programa');
+        $dates = Graduate::select('fecha_graduacion')->get()->unique('fecha_graduacion');
+        $years = [];
+
+        foreach ($dates as $date){
+            $y = new Carbon($date->fecha_graduacion);
+            $years[] = $y->format('Y');
+        }
+
+        $years = array_unique($years);
+
         $categories = Category::all();
-        return view('data.export', ['categories' => $categories, 'programs' => $programs]);
+        return view('data.export', ['categories' => $categories, 'programs' => $programs, 'years' => $years]);
     }
 
     public function export(ExportGraduateRequest $request){
@@ -186,8 +196,11 @@ class DataController extends Controller
                     ->whereIn('categories.id', $request->category_id)->get();
 
         $program = '%'.$request->program.'%';
+        $year = '%'.$request->year.'%';
 
-        $graduates = Graduate::where('programa', 'LIKE', $program)->get();
+        $graduates = Graduate::where('programa', 'LIKE', $program)
+            ->where('fecha_graduacion', 'LIKE', $year)
+            ->get();
 
         foreach ($cols as $col){
             $arr[] = $col->name;

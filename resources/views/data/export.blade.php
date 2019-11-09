@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    Exportar datos
+    Reporte de datos
 @endsection
 
 @section('content')
@@ -11,9 +11,9 @@
     <input type="hidden" id="graduate_app" value="1">
     <div class="row justify-content-center">
         <div class="col-md-12">
-            <div class="card">
+            <div class="card mb-3">
                 <div class="card-header border ">
-                    Exportar datos
+                    Reporte de datos
                 </div>
                 <div class="card-body pb-0">
 
@@ -31,15 +31,24 @@
                             </select>
                         </div>
                         <div class="form-group">
+                            <label for="year">2. Seleccione el(los) años(s) de graduación</label>
+                            <select name="year" class="form-control" id="">
+                                <option value="">Todos los años</option>
+                                @foreach($years as $year)
+                                    <option value="{{ $year }}">{{ $year }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="form-group">
 
-                            <label for="program">2. Seleccione la(s) categoría(s)</label>
+                            <label for="program">3. Seleccione la(s) categoría(s)</label>
                             <table class="table table-sm table-bordered">
                                 <tr>
                                     <th class="bg-success text-white">
                                         <input type="checkbox" class="cb-selector" data-for="category_id\[">
                                     </th>
                                     <th class="bg-success text-white">
-                                        Seleccionar todos
+                                        Seleccionar todas
                                     </th>
                                 </tr>
                                 @foreach($categories as $category)
@@ -55,7 +64,7 @@
                             </table>
                         </div>
                         <div class="form-group">
-                            <button type="submit" class="btn btn-success btn-sm">Exportar graduados</button>
+                            <button type="submit" class="btn btn-success btn-sm">Generar reporte</button>
                         </div>
                     </form>
 
