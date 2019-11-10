@@ -53,7 +53,7 @@ class Controller extends BaseController
 
         $text = $this->deleteAccents($text);
         $min = mb_strtolower($text);
-        $name = str_replace(' ','_',trim($min));
+        $name = str_replace([' ','-'],['_','_'],trim($min));
         return $name;
     }
 

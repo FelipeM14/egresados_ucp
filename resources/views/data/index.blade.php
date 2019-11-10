@@ -54,7 +54,9 @@
                     <tr>
                         <th class="text-center bg-danger"></th>
                         @foreach($categories as $category)
-                            <th class="" style="background-color: {{ $category['color'] }}; color: {{ $category['color_text'] }};" colspan="{{ $category['cols'] }}">{{ $category['name'] }}</th>
+                            @if($category['cols'])
+                                <th class="" style="background-color: {{ $category['color'] }}; color: {{ $category['color_text'] }};" colspan="{{ $category['cols'] }}">{{ $category['name'] }}</th>
+                            @endif
                         @endforeach
                     </tr>
                     <tr>

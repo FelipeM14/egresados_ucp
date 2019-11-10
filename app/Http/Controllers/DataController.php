@@ -46,7 +46,7 @@ class DataController extends Controller
         foreach ($categories as $category){
 
             $data[] = [
-                'cols' => $category->columns()->count(),
+                'cols' => $category->columns()->where('status', 1)->count(),
                 'name' => $category->name,
                 'color' => $category->color,
                 'color_text' => $category->color_text,

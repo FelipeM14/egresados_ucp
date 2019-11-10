@@ -125,15 +125,20 @@ class ColumnController extends Controller
 
         $changes = $column->update([
             'title' => $request->title,
-            'name' => $name,
             'order' => $request->order,
             'status' => $request->status,
             'size' => $request->size,
             'category_id' => $request->category_id,
         ]);
 
-        if($changes){
+        $changes_name = $column->update([
+            'name' => $name,
+        ]);
+
+        if($changes_name)
             $this->renameColumn($name_before, $name);
+
+        if($changes or $changes_name){
             session()->flash('message', 'La columna '.strtolower($column->title).' fue actualizada correctamente!');
         }
 
