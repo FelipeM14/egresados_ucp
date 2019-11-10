@@ -20,10 +20,13 @@ class PermissionsTableSeeder extends Seeder
         Permission::create(['name' => 'Editar datos']);
         Permission::create(['name' => 'Ingresar datos']);
         Permission::create(['name' => 'Eliminar datos']);
-        Permission::create(['name' => 'Ver datos básicos']);
-        Permission::create(['name' => 'Editar datos básicos']);
-        Permission::create(['name' => 'Ingresar datos básicos']);
-        Permission::create(['name' => 'Eliminar datos básicos']);
+
+        Permission::create(['name' => 'Datos básicos ver']);
+        Permission::create(['name' => 'Datos básicos editar']);
+
+        Permission::create(['name' => 'Actualización datos ver']);
+        Permission::create(['name' => 'Actualización datos editar']);
+
 
         //rol
         $admin = Role::create(['name' => 'Administrador']);
