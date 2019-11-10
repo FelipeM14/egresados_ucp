@@ -24,7 +24,7 @@ class ImportGraduateRequest extends FormRequest
     public function rules()
     {
         return [
-            'file' => 'required|file|mimes:xlsx|max:1000'
+            'file' => 'required|file|mimes:xlsx|max:700'
         ];
     }
 
@@ -33,7 +33,7 @@ class ImportGraduateRequest extends FormRequest
         return [
             'file.required' => 'El archivo es requerido',
             'file.mimes' => 'Debe subir un archivo de excel 2007 o superior',
-            'file.max' => 'El archivo debe tener menos de 1 MB',
+            'file.max' => 'El archivo debe tener menos de 700 KB',
         ];
     }
 }

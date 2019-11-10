@@ -35,11 +35,32 @@ class DataController extends Controller
      * @return \Illuminate\Http\Response
      */
 
+
+
+    //Retorna todas las categorias
+    private function getCategories():array
+    {
+        $categories = Category::orderBy('categories.order', 'ASC')->get();
+        $data = [];
+
+        foreach ($categories as $category){
+
+            $data[] = [
+                'cols' => $category->columns()->count(),
+                'name' => $category->name,
+                'color' => $category->color,
+                'color_text' => $category->color_text,
+            ];
+        }
+        return $data;
+    }
+
     //Retorna las columnas a la vista data
     public function index()
     {
+        $categories = $this->getCategories();
         $cols = $this->getColumns();
-        return view('data.index', ['columns' => $cols]);
+        return view('data.index', ['columns' => $cols, 'categories' => $categories]);
     }
 
     //Se llama desde javascript en el metodo createNewRegistry para traer los nombres de las columnas
@@ -136,7 +157,10 @@ class DataController extends Controller
 
             $path = $request->file('file')->getRealPath();
             $data = Excel::load($path)->get();
-            if($data->count()){
+
+            //$size = $request->file('file')->getSize();
+
+            if ($data->count()){
 
                 foreach ($data as $key => $value) {
 

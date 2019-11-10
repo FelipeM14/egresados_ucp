@@ -52,6 +52,12 @@
             <div class="table-responsive">
                 <table class="table table-bordered table-sm mt-0">
                     <tr>
+                        <th class="text-center bg-danger"></th>
+                        @foreach($categories as $category)
+                            <th class="" style="background-color: {{ $category['color'] }}; color: {{ $category['color_text'] }};" colspan="{{ $category['cols'] }}">{{ $category['name'] }}</th>
+                        @endforeach
+                    </tr>
+                    <tr>
                         <th class="py-4 text-center bg-danger text-white align-middle">
                             <div class="dropdown">
                                 <div class="pointer dropdown-toggle" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -95,7 +101,7 @@
                     </tr>
                     <tr v-for="graduate in graduates.data">
                         <td>
-                            <button @click="deleteQuestion(graduate.id)" id="izq" class="btn btn-sm btn-circle btn-danger" data-toggle="tooltip" data-placement="top" title="Compartir">@{{ graduate.id }}</button>
+                            <button @click="deleteQuestion(graduate.id)" id="izq" class="btn btn-sm btn-circle btn-danger" data-toggle="tooltip" data-placement="top" title="Eliminar"><small>@{{ graduate.id }}</small></button>
                         </td>
                         <td v-for="column in columns" class="p-0">
                             <input @change="storeColumnGraduate(column.name, graduate.id)"  v-model="graduate[column.name]" type="text" class="form-control border-0 rounded-0 px-1">
