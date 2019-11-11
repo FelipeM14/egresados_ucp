@@ -58,7 +58,6 @@ Route::middleware(['auth', 'checkActive'])->group(function () {
     Route::put('columns_update/{column}', 'ColumnController@update')->name('columns.update')
         ->middleware('permission:Editar datos');
 
-
     //DATA
     Route::post('data/store', 'DataController@store')->name('data.store')
         ->middleware('permission:Ingresar datos');
@@ -106,6 +105,32 @@ Route::middleware(['auth', 'checkActive'])->group(function () {
     //Graduates
     Route::get('show_graduate/{graduate_id}', 'GraduateController@show')->name('graduate.show');
     Route::post('update_graduate/{graduate_id}', 'GraduateController@update')->name('graduate.update');
+
+
+
+
+    //ACTUALIZACION DE DATOS
+    Route::post('data/store', 'DataController@store')->name('upgrade.store')
+        ->middleware('permission:Ingresar datos');
+
+    Route::get('upgrade', 'DataController@index')->name('upgrade.index')
+        ->middleware('permission:Ver datos');
+
+
+    Route::get('upgrade/create', 'DataController@create')->name('upgrade.create')
+        ->middleware('permission:Ingresar datos');
+
+    Route::put('upgrade/{role}', 'DataController@update')->name('upgrade.update')
+        ->middleware('permission:Editar datos');
+
+    Route::get('upgrade/{role}', 'DataController@show')->name('upgrade.show')
+        ->middleware('permission:Ver datos');
+
+    Route::delete('upgrade/{role}', 'DataController@destroy')->name('upgrade.destroy')
+        ->middleware('permission:Eliminar datos');
+
+    Route::get('upgrade/{role}/edit', 'DataController@edit')->name('upgrade.edit')
+        ->middleware('permission:Editar datos');
 
 
 

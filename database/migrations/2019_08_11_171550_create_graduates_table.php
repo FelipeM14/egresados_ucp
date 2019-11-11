@@ -135,6 +135,15 @@ class CreateGraduatesTable extends Migration
 
     }
 
+
+
+
+
+
+
+
+
+
     /**
      * Reverse the migrations.
      *
