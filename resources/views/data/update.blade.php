@@ -19,18 +19,8 @@
                 <tr>
                     <th colspan="700">
                         <div class="input-group">
-                            <button onclick="window.location.href='columns_index'" class="btn btn-outline-secondary btn-sm rounded-left rounded-0 border-right-0">
-                                <i class="fas fa-wrench"></i>
-                            </button>
-                            <button onclick="window.location.href='columns_create'" class="btn btn-outline-secondary btn-sm rounded-left rounded-0 border-right-0">
-                                Nueva columna
-                            </button>
-                            <button @click="createNewRegistry" class="btn btn-outline-secondary rounded-0 btn-sm">
-                                Nuevo registro
-                            </button>
-                            <input @keyup="getGraduates" type="text" id="text_f" class="form-control border-left-0" placeholder="Filtrar...">
+                            <input @keyup="getGraduates" type="text" id="text_f" class="form-control rounded-0" placeholder="Filtrar...">
                             <select @change="getGraduates" id="col_f" class="custom-select rounded-0">
-                                <!-- <option value="" selected>Todas</option> -->
                                 @foreach($columns as $column)
                                     <option value="{{ $column->name }}">{{ $column->title }}</option>
                                 @endforeach
@@ -52,15 +42,7 @@
             <div class="table-responsive">
                 <table class="table table-bordered table-sm mt-0">
                     <tr>
-                        <th class="text-center bg-danger"></th>
-                        @foreach($categories as $category)
-                            @if($category['cols'])
-                                <th class="" style="background-color: {{ $category['color'] }}; color: {{ $category['color_text'] }};" colspan="{{ $category['cols'] }}">{{ $category['name'] }}</th>
-                            @endif
-                        @endforeach
-                    </tr>
-                    <tr>
-                        <th class="py-4 text-center bg-danger text-white align-middle">
+                        <th class="py-4 text-center align-middle">
                             <div class="dropdown">
                                 <div class="pointer dropdown-toggle" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     #
@@ -85,9 +67,6 @@
                                         {{ $column->title }}
                                     </div>
                                     <div class="dropdown-menu rounded-0" aria-labelledby="dropdownMenuLink">
-                                        <a @click="editColumn({{ $column->id }})" class="dropdown-item" href="#">
-                                            <i class="fas fa-pen text-muted mr-3"></i> Editar
-                                        </a>
                                         <a @click='getGraduates(1,"{{ $column->name }}","ASC")' class="dropdown-item" href="#">
                                             <i class="fas fa-sort-amount-down-alt text-muted mr-3"></i>
                                             Ascendente
@@ -100,42 +79,23 @@
                                 </div>
                             </th>
                         @endforeach
+                        <th class="py-4 text-center align-middle">Acción</th>
                     </tr>
                     <tr v-for="graduate in graduates.data">
                         <td>
-                            <button @click="deleteGraduated(graduate.id)" id="izq" class="btn btn-sm btn-circle btn-danger" data-toggle="tooltip" data-placement="top" title="Eliminar"><small>@{{ graduate.id }}</small></button>
+                            @{{ graduate.id }}
                         </td>
-                        <td v-for="column in columns" class="p-0">
-                            <input @change="storeColumnGraduate(column.name, graduate.id)"  v-model="graduate[column.name]" type="text" class="form-control border-0 rounded-0 px-1">
+                        <td v-for="column in columns" class="text-nowrap">
+                            @{{ graduate[column.name] }}
+                        </td>
+                        <td>
+                            <a :href="'show_graduate/'+graduate.id" class="btn btn-outline-primary btn-sm">Datos</a>
                         </td>
                     </tr>
                 </table>
 
+                <input type="hidden" value="1" id="update">
                 <pagination :data="graduates" @pagination-change-page="getGraduates"></pagination>
-            </div>
-        </div>
-    </div>
-
-    <!--MODAL PARA CONFIRMAR ELIMINAR UN REGISTRO-->
-    <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-sm modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4>
-                        Confirmar
-                    </h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body text-center">
-                    ¿Desea eliminar el registro Nº <span id="delete_r"></span>?<br>
-                    <small>Esta acción no se puede revertir</small>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
-                    <button @click="deleteRegister" type="button" class="btn btn-danger">Si</button>
-                </div>
             </div>
         </div>
     </div>

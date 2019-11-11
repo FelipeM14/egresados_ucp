@@ -23,5 +23,10 @@ $(document).ready(function () {
             });
     });
 
+    $('#category_id').on('change', function () {
+        let frm = $('#frm_category');
+        frm.submit();
+    })
+
 
 });

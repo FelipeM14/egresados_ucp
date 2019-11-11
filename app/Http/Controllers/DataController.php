@@ -20,10 +20,21 @@ class DataController extends Controller
 
     //Obtiene los datos de las columnas de la table columns
     private function getColumns(){
-        $cols = Column::select('color', 'color_text', 'columns.name', 'columns.id', 'columns.title', 'columns.status', 'columns.size')
+        $cols = Column::select('color', 'color_text', 'columns.name', 'columns.id', 'columns.title', 'columns.status', 'columns.size', 'categories.name as category_name')
             ->join('categories', 'categories.id', 'columns.category_id')
             ->where('columns.status', 1)
             ->orderBy('categories.order', 'ASC')
+            ->orderBy('columns.order', 'ASC')->get();
+
+        return $cols;
+    }
+
+    //Obtiene los datos de las columnas de la categoria datos basicos de la table columns
+    private function getBasicColumns(){
+
+        $category = Category::where('name', 'Datos básicos')->first();
+
+        $cols = $category->columns()->select('columns.name', 'columns.id', 'columns.title', 'columns.status', 'columns.size')
             ->orderBy('columns.order', 'ASC')->get();
 
         return $cols;
@@ -63,10 +74,17 @@ class DataController extends Controller
         return view('data.index', ['columns' => $cols, 'categories' => $categories]);
     }
 
-    //Se llama desde javascript en el metodo createNewRegistry para traer los nombres de las columnas
+    //Se llama desde varios metodos javascript para traer los nombres de las columnas
     public function getCols(){
 
         $cols = $this->getColumns();
+        return array($cols);
+    }
+
+    //Se llama desde varios metodos javascript para traer los nombres de las columnas de la categoria datos basicos
+    public function getBasicCols(){
+
+        $cols = $this->getBasicColumns();
         return array($cols);
     }
 
@@ -187,9 +205,10 @@ class DataController extends Controller
         }
 
         if($dtsOK){
+            $categories = $this->getCategories();
             $cols = $this->getColumns();
             session()->flash('message', 'Los datos de han importado correctamente!');
-            return view('data.index', ['columns' => $cols]);
+            return view('data.index', ['columns' => $cols, 'categories' => $categories]);
         } else
             return back();
     }
@@ -258,6 +277,12 @@ class DataController extends Controller
             });
         })->download('xlsx');
 
+    }
+
+    public function dataUpdate(){
+
+        $cols = $this->getBasicColumns();
+        return view('data.update', ['columns' => $cols]);
     }
 
 }

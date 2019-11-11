@@ -120,6 +120,13 @@ let app = new Vue({
             })
 
         },
+        getBasicCols:function (){
+            axios.get('../../get_basic_columns').then(response => {
+                this.columns = response.data[0];
+                this.graduate_id = response.data[1];
+            })
+
+        },
         createNewRegistry:function () {
             axios.get('../../new_registry').then(response => {
                 this.getGraduates()
@@ -144,7 +151,6 @@ let app = new Vue({
         },
         getGraduates:function (page = 1, column = 'id',order = 'DESC') {
 
-            this.getCols();
             let data = [];
 
             let col = $('#col_f').val();
@@ -155,6 +161,11 @@ let app = new Vue({
 
             if(!text)
                 text = 'default';
+
+            if($('#update').val() === "1")
+                this.getBasicCols();
+            else
+                this.getCols();
 
             axios.get('../../get_graduates/'+col+'/'+text+'/'+column+'/'+order+'/'+this.num_f+'?page='+page).then(response => {
                 this.graduates = response.data;
@@ -168,7 +179,7 @@ let app = new Vue({
 
             this.index = data;
         },
-        deleteQuestion:function (id) {
+        deleteGraduated:function (id) {
 
             this.graduate_delete = id;
 

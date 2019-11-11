@@ -62,6 +62,7 @@
                 <a class="collapse-item" href="{{ route('data.index') }}">Datos</a>
                 <a class="collapse-item" href="{{ route('data.import') }}">Importar</a>
                 <a class="collapse-item" href="{{ route('data.export') }}">Reportes</a>
+                <a class="collapse-item" href="{{ route('data.update') }}">Actualización de datos</a>
             </div>
         </div>
     </li>

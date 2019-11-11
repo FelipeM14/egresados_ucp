@@ -69,6 +69,9 @@ Route::middleware(['auth', 'checkActive'])->group(function () {
     Route::get('get_columns', 'DataController@getCols')->name('data.cols')
         ->middleware('permission:Ingresar datos');
 
+    Route::get('get_basic_columns', 'DataController@getBasicCols')->name('data.cols')
+        ->middleware('permission:Ingresar datos');
+
     Route::get('new_registry', 'DataController@NewRegistry')->name('data.new')
         ->middleware('permission:Ingresar datos');
 
@@ -95,6 +98,16 @@ Route::middleware(['auth', 'checkActive'])->group(function () {
 
     Route::post('graduates_export', 'DataController@export')->name('graduates.export')
         ->middleware('permission:Ver datos');
+
+    Route::get('data_update', 'DataController@dataUpdate')->name('data.update')
+        ->middleware('permission:Ver datos');
+
+
+    //Graduates
+    Route::get('show_graduate/{graduate_id}', 'GraduateController@show')->name('graduate.show');
+    Route::post('update_graduate/{graduate_id}', 'GraduateController@update')->name('graduate.update');
+
+
 
 
     //Users
