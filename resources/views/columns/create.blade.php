@@ -38,9 +38,9 @@
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label for="order">
-                                            Prioridad en la lista
+                                            Orden en la lista
                                         </label>
-                                        <input class="form-control" type="number" name="order" id="order" value="{{ old('order') }}" placeholder="Prioridad">
+                                        <input class="form-control" type="number" name="order" id="order" value="{{ old('order') }}" placeholder="Orden">
                                     </div>
                                 </div>
                             </div>
