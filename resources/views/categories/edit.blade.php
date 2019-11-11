@@ -53,9 +53,9 @@
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label for="order">
-                                            Prioridad de vista
+                                            Orden de vista
                                         </label>
-                                        <input class="form-control" type="number" name="order" id="order" value="{{ old('order', $category->order) }}" placeholder="Prioridad">
+                                        <input class="form-control" type="number" name="order" id="order" value="{{ old('order', $category->order) }}" placeholder="Orden">
                                     </div>
                                 </div>
 
