@@ -180,7 +180,7 @@ class CategoryTableSeeder extends Seeder
         ]);
 
         Category::create([
-            'name' => 'Información sobre los hijos ',
+            'name' => 'Información sobre los hijos',
             'color' => '#04B404',
             'color_text' => '#FFFFFF',
             'order' => 24,
