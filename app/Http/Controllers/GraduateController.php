@@ -30,7 +30,26 @@ class GraduateController extends Controller
         return view('data.show', ['graduate' => $graduate, 'categories' => $categories, 'cols' => $cols, 'category_id' => $category_id]);
     }
 
-    public function GraduateController(){
+    public function update($graduate_id, Request $request){
+
+        $category = Category::find($request->category);
+        $this->middleware('permission:'.$category->name. ' editar22323');
+        $updates = 0;
+
+        $cols = $category->columns()->get();
+
+        foreach ($cols as $col){
+            $name_col = $col->name;
+            $updates += DB::table('graduates')->where('id', $graduate_id)->update([$name_col => $request->$name_col]);
+        }
+
+        if($updates)
+            session()->flash('message', 'Los datos de han actualizado correctamente!');
+        else {
+            session()->flash('mjs_error', 'No se han realizado cambios!');
+        }
+
+        return redirect()->route('data.update');
 
     }
 }
