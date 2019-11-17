@@ -19,13 +19,14 @@
                     <div class="table-responsive">
                         <table class="table table-sm table-bordered">
                             <tr>
-                                <th colspan="3">
+                                <th colspan="4">
                                     <a href="{{ route('columns.create') }}" class="btn btn-success">Nueva columna</a>
                                     <a href="{{ route('data.index') }}" class="btn btn-secondary">Regresar</a>
                                 </th>
                             </tr>
                             <tr>
                                 <th>Columna</th>
+                                <th>Tamaño</th>
                                 <th>Estado</th>
                                 <th>Acción</th>
                             </tr>
@@ -33,6 +34,7 @@
                                 @php(($column->status) ? $status = 'Activa' : $status = 'Inactiva')
                                 <tr>
                                     <td>{{ $column->title }}</td>
+                                    <td>{{ $column->size }}</td>
                                     <td>{{ $status }}</td>
                                     <td><a href="{{ route('columns.edit', ['column' => $column->id]) }}" class="btn btn-sm btn-outline-warning">Editar</a></td>
                                 </tr>
