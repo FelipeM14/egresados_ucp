@@ -198,7 +198,7 @@ class CategoryTableSeeder extends Seeder
             'title' => 'Código',
             'name' => 'codigo',
             'order' => 2,
-            'size' => 150,
+            'size' => 20,
             'category_id' => 1
         ]);
 
@@ -206,7 +206,7 @@ class CategoryTableSeeder extends Seeder
             'title' => 'Fecha graduación',
             'name' => 'fecha_graduacion',
             'order' => 3,
-            'size' => 150,
+            'size' => 20,
             'category_id' => 1
         ]);
 
@@ -222,7 +222,7 @@ class CategoryTableSeeder extends Seeder
             'title' => 'Promoción No.',
             'name' => 'numero_promocion',
             'order' => 5,
-            'size' => 150,
+            'size' => 20,
             'category_id' => 1
         ]);
 
@@ -230,7 +230,7 @@ class CategoryTableSeeder extends Seeder
             'title' => 'Teléfono',
             'name' => 'telefono4',
             'order' => 1,
-            'size' => 150,
+            'size' => 20,
             'category_id' => 2
         ]);
 
@@ -238,7 +238,7 @@ class CategoryTableSeeder extends Seeder
             'title' => 'Correo electrónico',
             'name' => 'correo_actualizacion',
             'order' => 2,
-            'size' => 150,
+            'size' => 100,
             'category_id' => 2
         ]);
 
@@ -262,7 +262,7 @@ class CategoryTableSeeder extends Seeder
             'title' => 'Cargo que desempeña',
             'name' => 'cargo3',
             'order' => 5,
-            'size' => 150,
+            'size' => 100,
             'category_id' => 2
         ]);
 
@@ -270,7 +270,7 @@ class CategoryTableSeeder extends Seeder
             'title' => 'Cantidad de títulos obtenidos en la universidad católica',
             'name' => 'titulos_obtenidos_ucp',
             'order' => 1,
-            'size' => 150,
+            'size' => 20,
             'category_id' => 3
         ]);
 
@@ -278,7 +278,7 @@ class CategoryTableSeeder extends Seeder
             'title' => 'Actualizada SI - NO',
             'name' => 'actualizada',
             'order' => 2,
-            'size' => 150,
+            'size' => 10,
             'category_id' => 3
         ]);
 
@@ -286,7 +286,7 @@ class CategoryTableSeeder extends Seeder
             'title' => 'Direcciones redes sociales - enviar mas información SI - NO',
             'name' => 'enviar_informacion_redes_sociales',
             'order' => 3,
-            'size' => 150,
+            'size' => 100,
             'category_id' => 3
         ]);
 
@@ -302,7 +302,7 @@ class CategoryTableSeeder extends Seeder
             'title' => 'Celular 1',
             'name' => 'celular1',
             'order' => 5,
-            'size' => 150,
+            'size' => 20,
             'category_id' => 3
         ]);
 
@@ -310,7 +310,7 @@ class CategoryTableSeeder extends Seeder
             'title' => 'Celular 2',
             'name' => 'celular2',
             'order' => 6,
-            'size' => 150,
+            'size' => 20,
             'category_id' => 3
         ]);
 
@@ -318,7 +318,7 @@ class CategoryTableSeeder extends Seeder
             'title' => 'Celular 3',
             'name' => 'celular3',
             'order' => 7,
-            'size' => 150,
+            'size' => 20,
             'category_id' => 3
         ]);
 
@@ -326,7 +326,7 @@ class CategoryTableSeeder extends Seeder
             'title' => 'Teléfono fijo 1',
             'name' => 'telefono_fijo1',
             'order' => 8,
-            'size' => 150,
+            'size' => 20,
             'category_id' => 3
         ]);
 
@@ -334,7 +334,7 @@ class CategoryTableSeeder extends Seeder
             'title' => 'Teléfono fijo 2',
             'name' => 'telefono_fijo2',
             'order' => 9,
-            'size' => 150,
+            'size' => 20,
             'category_id' => 3
         ]);
 
@@ -342,7 +342,7 @@ class CategoryTableSeeder extends Seeder
             'title' => 'Correo electrónico 1',
             'name' => 'correo_electronico1',
             'order' => 10,
-            'size' => 150,
+            'size' => 100,
             'category_id' => 3
         ]);
 
@@ -350,7 +350,7 @@ class CategoryTableSeeder extends Seeder
             'title' => 'Correo electrónico 2',
             'name' => 'correo_electronico2',
             'order' => 11,
-            'size' => 150,
+            'size' => 100,
             'category_id' => 3
         ]);
 
@@ -358,7 +358,7 @@ class CategoryTableSeeder extends Seeder
             'title' => 'Correo electrónico 3',
             'name' => 'correo_electronico3',
             'order' => 12,
-            'size' => 150,
+            'size' => 100,
             'category_id' => 3
         ]);
 
@@ -366,7 +366,7 @@ class CategoryTableSeeder extends Seeder
             'title' => 'Dirección vivienda',
             'name' => 'direccion_vivienda',
             'order' => 13,
-            'size' => 150,
+            'size' => 100,
             'category_id' => 3
         ]);
 
@@ -374,7 +374,7 @@ class CategoryTableSeeder extends Seeder
             'title' => 'Ciudad de residencia',
             'name' => 'cidudad_de_residencia',
             'order' => 14,
-            'size' => 150,
+            'size' => 100,
             'category_id' => 3
         ]);
 
@@ -382,7 +382,7 @@ class CategoryTableSeeder extends Seeder
             'title' => 'Departamento de residencia',
             'name' => 'departamento_de_residencia',
             'order' => 15,
-            'size' => 150,
+            'size' => 100,
             'category_id' => 3
         ]);
 
@@ -390,7 +390,7 @@ class CategoryTableSeeder extends Seeder
             'title' => 'País de residencia',
             'name' => 'pais_de_residencia',
             'order' => 16,
-            'size' => 150,
+            'size' => 100,
             'category_id' => 3
         ]);
 
@@ -398,7 +398,7 @@ class CategoryTableSeeder extends Seeder
             'title' => '¿Ha Realizado. Participado o está realizadó proyectos de investigación? (DIFERENTE AL DEL PREGRADO)',
             'name' => 'participacion_proyectos_investigacion',
             'order' => 1,
-            'size' => 150,
+            'size' => 10,
             'category_id' => 4
         ]);
 
@@ -406,7 +406,7 @@ class CategoryTableSeeder extends Seeder
             'title' => 'SI. Indique el nombre del proyecto de investigación',
             'name' => 'nombre_proyecto_investigacion',
             'order' => 2,
-            'size' => 150,
+            'size' => 250,
             'category_id' => 4
         ]);
 
@@ -414,7 +414,7 @@ class CategoryTableSeeder extends Seeder
             'title' => 'Usted pertenece a comunidades académicas, asociaciones científicas, profesionales, tecnologícas y/o redes de investigación',
             'name' => 'pertenece_red_investigacion',
             'order' => 1,
-            'size' => 150,
+            'size' => 10,
             'category_id' => 5
         ]);
 
@@ -422,7 +422,7 @@ class CategoryTableSeeder extends Seeder
             'title' => 'SI. Indique el nombre de la red a la que pertenece',
             'name' => 'nombre_red_investigacion',
             'order' => 2,
-            'size' => 150,
+            'size' => 200,
             'category_id' => 5
         ]);
 
@@ -430,7 +430,7 @@ class CategoryTableSeeder extends Seeder
             'title' => 'El ámbito de esta red es REGIONAL, NACIONAL o INTERNACIONAL',
             'name' => 'ambito_red_investigacion',
             'order' => 3,
-            'size' => 150,
+            'size' => 50,
             'category_id' => 5
         ]);
 
@@ -438,7 +438,7 @@ class CategoryTableSeeder extends Seeder
             'title' => 'Ha recibido algún reconocimiento, distinción por su desempeño laboral, estudiantil, deportivo, cultural u otros',
             'name' => 'reconicimiento_laboral',
             'order' => 1,
-            'size' => 150,
+            'size' => 10,
             'category_id' => 6
         ]);
 
@@ -446,7 +446,7 @@ class CategoryTableSeeder extends Seeder
             'title' => ' Indique el nombre del reconocimeinto o distinción y quien se lo otorgo',
             'name' => 'nombre_econicimiento_laboral',
             'order' => 2,
-            'size' => 150,
+            'size' => 200,
             'category_id' => 6
         ]);
 
@@ -454,7 +454,7 @@ class CategoryTableSeeder extends Seeder
             'title' => 'Usted pertence o ha pertenecido a organizaciones sin ánimo de lucro o realiza o ha realizado voluntariados. SI - NO',
             'name' => 'pertenece_organizacion_sinanimolucro',
             'order' => 3,
-            'size' => 150,
+            'size' => 10,
             'category_id' => 6
         ]);
 
@@ -462,7 +462,7 @@ class CategoryTableSeeder extends Seeder
             'title' => 'Nombre de la organización sin ánimo de lucro, voluntariado o fundación en donde ha prestado sus servicios',
             'name' => 'nombre_organizacion_sinanimolucro',
             'order' => 4,
-            'size' => 150,
+            'size' => 200,
             'category_id' => 6
         ]);
 
@@ -478,7 +478,7 @@ class CategoryTableSeeder extends Seeder
             'title' => 'Si realizo estudios posgraduales indique nombre del estudio posgradual que realizó ¿cual?',
             'name' => 'nombre_estudios_posgraduales',
             'order' => 2,
-            'size' => 150,
+            'size' => 200,
             'category_id' => 7
         ]);
 
@@ -502,7 +502,7 @@ class CategoryTableSeeder extends Seeder
             'title' => '¿En la actualidad ésta interesado en cursar estudios posgraduales?',
             'name' => 'interes_estudios_posgradual',
             'order' => 1,
-            'size' => 150,
+            'size' => 50,
             'category_id' => 8
         ]);
 
@@ -518,7 +518,7 @@ class CategoryTableSeeder extends Seeder
             'title' => '¿Qué nivel de posgrado conidera le permitirá mejorar su desempeño laboral?',
             'name' => 'nivel_posgrado',
             'order' => 3,
-            'size' => 150,
+            'size' => 100,
             'category_id' => 8
         ]);
 
@@ -526,7 +526,7 @@ class CategoryTableSeeder extends Seeder
             'title' => '¿Cuál de las siguientes jornadas se ajustaría más a su disponibilidad de tiempo?',
             'name' => 'jornada_disponibilidad',
             'order' => 4,
-            'size' => 150,
+            'size' => 50,
             'category_id' => 8
         ]);
 
@@ -559,7 +559,7 @@ class CategoryTableSeeder extends Seeder
             'title' => '¿Cuál fue se primer cargo y salario después de graduarse de la universidad?',
             'name' => 'primer_salario_al_graduarse_ucp',
             'order' => 3,
-            'size' => 150,
+            'size' => 100,
             'category_id' => 9
         ]);
 
@@ -568,7 +568,7 @@ class CategoryTableSeeder extends Seeder
                         Si, por estudio – Si, Por trabajo - otro',
             'name' => 'visitas_al_exterior_al_graduarse',
             'order' => 4,
-            'size' => 150,
+            'size' => 100,
             'category_id' => 9
         ]);
 
@@ -576,7 +576,7 @@ class CategoryTableSeeder extends Seeder
             'title' => '¿En qué país estuvo después de su graduación?',
             'name' => 'pais_despues_de_graduarce',
             'order' => 5,
-            'size' => 150,
+            'size' => 100,
             'category_id' => 9
         ]);
 
@@ -584,7 +584,7 @@ class CategoryTableSeeder extends Seeder
             'title' => '¿Cuánto tiempo estuvo fuera del país?',
             'name' => 'tiempo_fuera_del_pais',
             'order' => 6,
-            'size' => 150,
+            'size' => 50,
             'category_id' => 9
         ]);
 
@@ -592,7 +592,7 @@ class CategoryTableSeeder extends Seeder
             'title' => '¿En la actualidad en qué actividad ocupa la mayor parte de su tiempo?',
             'name' => 'ocupacion_mayoria_del_tiempo',
             'order' => 1,
-            'size' => 150,
+            'size' => 100,
             'category_id' => 10
         ]);
 
@@ -616,7 +616,7 @@ class CategoryTableSeeder extends Seeder
             'title' => 'Nivel del cargo ocupacional',
             'name' => 'nivel_cargo_ocupacional',
             'order' => 1,
-            'size' => 150,
+            'size' => 100,
             'category_id' => 11
         ]);
 
@@ -624,7 +624,7 @@ class CategoryTableSeeder extends Seeder
             'title' => '¿Qué cargo ocupacional, ocupa actualmente?',
             'name' => 'cargo_ocupacional_actualmente',
             'order' => 2,
-            'size' => 150,
+            'size' => 100,
             'category_id' => 11
         ]);
 
@@ -632,7 +632,7 @@ class CategoryTableSeeder extends Seeder
             'title' => '¿En qué área del ejercicio profesional se desempeña actualmente?',
             'name' => 'area_desempeno_profesional_actual',
             'order' => 3,
-            'size' => 150,
+            'size' => 100,
             'category_id' => 11
         ]);
 
@@ -640,7 +640,7 @@ class CategoryTableSeeder extends Seeder
             'title' => '¿El ámbito de la empresa es local, regional, nacional o internacional?',
             'name' => 'ambito_de_la_empresa',
             'order' => 1,
-            'size' => 150,
+            'size' => 50,
             'category_id' => 12
         ]);
 
@@ -648,7 +648,7 @@ class CategoryTableSeeder extends Seeder
             'title' => 'Teléfono laboral',
             'name' => 'telefono_laboral',
             'order' => 2,
-            'size' => 150,
+            'size' => 20,
             'category_id' => 12
         ]);
 
@@ -656,7 +656,7 @@ class CategoryTableSeeder extends Seeder
             'title' => 'Correo electrónico laboral',
             'name' => 'correo_labora',
             'order' => 3,
-            'size' => 150,
+            'size' => 100,
             'category_id' => 12
         ]);
 
@@ -681,7 +681,7 @@ class CategoryTableSeeder extends Seeder
                         ¿Cuál fue su ingreso laboral el mes pasado?',
             'name' => 'ingreso_laboral_mes_pasado',
             'order' => 6,
-            'size' => 150,
+            'size' => 100,
             'category_id' => 12
         ]);
 
@@ -689,7 +689,7 @@ class CategoryTableSeeder extends Seeder
             'title' => '¿Cuánto tiempo lleva en esta actividad o trabajo?',
             'name' => 'cuanto_tiempo_lleva_en_el_trabajo',
             'order' => 7,
-            'size' => 150,
+            'size' => 50,
             'category_id' => 12
         ]);
 
@@ -698,7 +698,7 @@ class CategoryTableSeeder extends Seeder
                         actividad o trabajo que usted desempeña?',
             'name' => 'nivel_formacion_mas_apropiado',
             'order' => 1,
-            'size' => 150,
+            'size' => 50,
             'category_id' => 13
         ]);
 
@@ -707,7 +707,7 @@ class CategoryTableSeeder extends Seeder
                         obtuvo del programa del cuál es graduado?',
             'name' => 'utiliza_los_conocimientos',
             'order' => 2,
-            'size' => 150,
+            'size' => 50,
             'category_id' => 13
         ]);
 
@@ -715,7 +715,7 @@ class CategoryTableSeeder extends Seeder
             'title' => '¿Cuál de los siguientes aspectos le genera a usted mayor satisfacción en su trabajo actual?',
             'name' => 'mayor_satisfaccion_laboral',
             'order' => 3,
-            'size' => 150,
+            'size' => 200,
             'category_id' => 13
         ]);
 
@@ -723,7 +723,7 @@ class CategoryTableSeeder extends Seeder
             'title' => '¿Cuál de los siguientes aspectos le genera a usted mayor insatisfacción en su trabajo actual?',
             'name' => 'mayor_insatisfaccion_laboral',
             'order' => 4,
-            'size' => 150,
+            'size' => 200,
             'category_id' => 13
         ]);
 
@@ -731,7 +731,7 @@ class CategoryTableSeeder extends Seeder
             'title' => '¿Qué tan relacionado está su perfil laboral con respecto al perfil profesional?',
             'name' => 'relacion_perfil_laboral_profesional',
             'order' => 5,
-            'size' => 150,
+            'size' => 100,
             'category_id' => 13
         ]);
 
@@ -739,7 +739,7 @@ class CategoryTableSeeder extends Seeder
             'title' => 'Si está buscando trabajo u otro trabajo / ¿cuántos meses ha estado buscando trabajo?',
             'name' => 'meses_buscando_trabajo',
             'order' => 1,
-            'size' => 150,
+            'size' => 50,
             'category_id' => 14
         ]);
 
@@ -747,7 +747,7 @@ class CategoryTableSeeder extends Seeder
             'title' => '¿Cuál considera la principal dificultad a la hora de conseguir el empleo que busca?',
             'name' => 'dificultad_conseguir_empleo',
             'order' => 2,
-            'size' => 150,
+            'size' => 100,
             'category_id' => 14
         ]);
 
@@ -755,7 +755,7 @@ class CategoryTableSeeder extends Seeder
             'title' => '¿Cuál es el perfil ocupacional que busca para emplearse?',
             'name' => 'perfil_que_busca_al_emplearse',
             'order' => 3,
-            'size' => 150,
+            'size' => 100,
             'category_id' => 14
         ]);
 
@@ -763,7 +763,7 @@ class CategoryTableSeeder extends Seeder
             'title' => '¿Cuál es su aspiración salarial?',
             'name' => 'aspiracion_salarial',
             'order' => 4,
-            'size' => 150,
+            'size' => 50,
             'category_id' => 14
         ]);
 
@@ -771,7 +771,7 @@ class CategoryTableSeeder extends Seeder
             'title' => 'Indíquenos por favor el nombre un contacto personal, laboral o familiar',
             'name' => 'nombre_contacto_personal',
             'order' => 1,
-            'size' => 150,
+            'size' => 100,
             'category_id' => 15
         ]);
 
@@ -779,7 +779,7 @@ class CategoryTableSeeder extends Seeder
             'title' => 'Parentesco del contacto',
             'name' => 'parentesco_contacto',
             'order' => 2,
-            'size' => 150,
+            'size' => 50,
             'category_id' => 15
         ]);
 
@@ -787,7 +787,7 @@ class CategoryTableSeeder extends Seeder
             'title' => 'Teléfono fijo del contacto',
             'name' => 'telefono_fijo_contacto',
             'order' => 3,
-            'size' => 150,
+            'size' => 20,
             'category_id' => 15
         ]);
 
@@ -795,7 +795,7 @@ class CategoryTableSeeder extends Seeder
             'title' => 'Celular 1 del contacto',
             'name' => 'celular_contacto1',
             'order' => 4,
-            'size' => 150,
+            'size' => 20,
             'category_id' => 15
         ]);
 
@@ -803,7 +803,7 @@ class CategoryTableSeeder extends Seeder
             'title' => 'Celular 2 del contacto',
             'name' => 'celular_contacto2',
             'order' => 5,
-            'size' => 150,
+            'size' => 20,
             'category_id' => 15
         ]);
 
@@ -811,7 +811,7 @@ class CategoryTableSeeder extends Seeder
             'title' => 'Indíquenos por favor el nombre un segundo contacto personal, laboral o familiar',
             'name' => 'nombre_segundo_contacto',
             'order' => 6,
-            'size' => 150,
+            'size' => 100,
             'category_id' => 15
         ]);
 
@@ -819,7 +819,7 @@ class CategoryTableSeeder extends Seeder
             'title' => 'Parentesco del segundo contacto',
             'name' => 'parentesco_segundo_contacto',
             'order' => 7,
-            'size' => 150,
+            'size' => 50,
             'category_id' => 15
         ]);
 
@@ -827,7 +827,7 @@ class CategoryTableSeeder extends Seeder
             'title' => 'Teléfono fijo segundo contacto',
             'name' => 'telefono_segundo_contacto',
             'order' => 8,
-            'size' => 150,
+            'size' => 20,
             'category_id' => 15
         ]);
 
@@ -835,7 +835,7 @@ class CategoryTableSeeder extends Seeder
             'title' => 'Celular 1 del segundo contacto',
             'name' => 'celular1_segundo_contacto',
             'order' => 9,
-            'size' => 150,
+            'size' => 20,
             'category_id' => 15
         ]);
 
@@ -843,7 +843,7 @@ class CategoryTableSeeder extends Seeder
             'title' => 'Celular 2 del segundo contacto',
             'name' => 'celular2_segundo_contacto',
             'order' => 10,
-            'size' => 150,
+            'size' => 20,
             'category_id' => 15
         ]);
 
@@ -851,7 +851,7 @@ class CategoryTableSeeder extends Seeder
             'title' => 'Tiene información de algún graduado ucp',
             'name' => 'informacion_graduado_ucp',
             'order' => 1,
-            'size' => 150,
+            'size' => 10,
             'category_id' => 16
         ]);
 
@@ -859,7 +859,7 @@ class CategoryTableSeeder extends Seeder
             'title' => 'Nombre graduado referido',
             'name' => 'nombre_graduado_referido',
             'order' => 2,
-            'size' => 150,
+            'size' => 100,
             'category_id' => 16
         ]);
 
@@ -867,7 +867,7 @@ class CategoryTableSeeder extends Seeder
             'title' => 'Programa del que se graduo',
             'name' => 'programa_del_que_se_graduo',
             'order' => 3,
-            'size' => 150,
+            'size' => 100,
             'category_id' => 16
         ]);
 
@@ -875,7 +875,7 @@ class CategoryTableSeeder extends Seeder
             'title' => 'Sabe dónde trabaja el graduado',
             'name' => 'donde_trabaja_el_graduado',
             'order' => 4,
-            'size' => 150,
+            'size' => 100,
             'category_id' => 16
         ]);
 
@@ -883,7 +883,7 @@ class CategoryTableSeeder extends Seeder
             'title' => 'Tiene algún No. telefónico de graduado referido',
             'name' => 'telefono_graduado_referido',
             'order' => 5,
-            'size' => 150,
+            'size' => 20,
             'category_id' => 16
         ]);
 
@@ -891,7 +891,7 @@ class CategoryTableSeeder extends Seeder
             'title' => 'Tiene la dirección de email de graduado referido',
             'name' => 'email_graduado_referido',
             'order' => 6,
-            'size' => 150,
+            'size' => 100,
             'category_id' => 16
         ]);
 
@@ -899,7 +899,7 @@ class CategoryTableSeeder extends Seeder
             'title' => 'Programa ¿me gradúo y ahora qué? fecha de asistencia',
             'name' => 'asistencia_graduo_y_ahora_que',
             'order' => 1,
-            'size' => 150,
+            'size' => 100,
             'category_id' => 17
         ]);
 
@@ -907,7 +907,7 @@ class CategoryTableSeeder extends Seeder
             'title' => 'Autoevaluación',
             'name' => 'autoevaluacion',
             'order' => 2,
-            'size' => 150,
+            'size' => 100,
             'category_id' => 17
         ]);
 
@@ -915,7 +915,7 @@ class CategoryTableSeeder extends Seeder
             'title' => 'Carta en custodia oficina 1AG - fecha de realización carta',
             'name' => 'realizacion_carta_en_custodia',
             'order' => 3,
-            'size' => 150,
+            'size' => 100,
             'category_id' => 17
         ]);
 
@@ -923,7 +923,7 @@ class CategoryTableSeeder extends Seeder
             'title' => 'Programa 1AG fecha de envió correspondencia',
             'name' => 'programa_1ag_envio_correspondencia',
             'order' => 4,
-            'size' => 150,
+            'size' => 100,
             'category_id' => 17
         ]);
 
@@ -931,7 +931,7 @@ class CategoryTableSeeder extends Seeder
             'title' => 'Seguimiento M1',
             'name' => 'seguimiento_m1',
             'order' => 1,
-            'size' => 150,
+            'size' => 100,
             'category_id' => 18
         ]);
 
@@ -939,7 +939,7 @@ class CategoryTableSeeder extends Seeder
             'title' => 'Seguimiento M5',
             'name' => 'seguimiento_m5',
             'order' => 2,
-            'size' => 150,
+            'size' => 100,
             'category_id' => 18
         ]);
 
@@ -947,7 +947,7 @@ class CategoryTableSeeder extends Seeder
             'title' => 'Sancocho universitario',
             'name' => 'sancocho_universitario',
             'order' => 1,
-            'size' => 150,
+            'size' => 100,
             'category_id' => 19
         ]);
 
@@ -955,7 +955,7 @@ class CategoryTableSeeder extends Seeder
             'title' => 'Fiesta de los niños',
             'name' => 'fiesta_de_los_ninos',
             'order' => 2,
-            'size' => 150,
+            'size' => 100,
             'category_id' => 19
         ]);
 
@@ -963,7 +963,7 @@ class CategoryTableSeeder extends Seeder
             'title' => 'Jornadas de actualización académicas. Si. Fecha - nombre de la jornada',
             'name' => 'jornadas_actualizacion_academicas',
             'order' => 1,
-            'size' => 150,
+            'size' => 100,
             'category_id' => 20
         ]);
 
@@ -971,7 +971,7 @@ class CategoryTableSeeder extends Seeder
             'title' => 'Asistencia a fiesta de graduados. Si - fecha',
             'name' => 'asistencia_fiesta_graduados',
             'order' => 1,
-            'size' => 150,
+            'size' => 100,
             'category_id' => 21
         ]);
 
@@ -979,7 +979,7 @@ class CategoryTableSeeder extends Seeder
             'title' => 'Fecha de registro al taller acompañamiento a la empleabilidad / emprendimiento',
             'name' => 'registro_taller_empleabilidad',
             'order' => 1,
-            'size' => 150,
+            'size' => 100,
             'category_id' => 22
         ]);
 
@@ -987,7 +987,7 @@ class CategoryTableSeeder extends Seeder
             'title' => 'Fecha de invitación al taller de acompañamiento a la empleabilidad',
             'name' => 'invitacion_taller_empleabilidad',
             'order' => 2,
-            'size' => 150,
+            'size' => 100,
             'category_id' => 22
         ]);
 
@@ -995,7 +995,7 @@ class CategoryTableSeeder extends Seeder
             'title' => 'Asistió al taller de acompañamiento a la empleabilidad. SI - NO',
             'name' => 'asistencia_taller_empleabilidad',
             'order' => 3,
-            'size' => 150,
+            'size' => 100,
             'category_id' => 22
         ]);
 
@@ -1003,7 +1003,7 @@ class CategoryTableSeeder extends Seeder
             'title' => 'Consentimiento informado firmado y en físico oficina. SI - NO',
             'name' => 'consentimiento_informado_firmado',
             'order' => 4,
-            'size' => 150,
+            'size' => 100,
             'category_id' => 22
         ]);
 
@@ -1011,7 +1011,7 @@ class CategoryTableSeeder extends Seeder
             'title' => 'Registro en bolsa de empleo. Si - Fecha de registro',
             'name' => 'registro_bolsa_empleo',
             'order' => 1,
-            'size' => 150,
+            'size' => 30,
             'category_id' => 23
         ]);
 
@@ -1059,7 +1059,7 @@ class CategoryTableSeeder extends Seeder
             'title' => 'Seguimiento. Dejar observación',
             'name' => 'seguimiento_observacion',
             'order' => 7,
-            'size' => 150,
+            'size' => 200,
             'category_id' => 23
         ]);
 
@@ -1067,7 +1067,7 @@ class CategoryTableSeeder extends Seeder
             'title' => 'Ubicación de empleo. SI - NO',
             'name' => 'ubicacion_empleo_si_no',
             'order' => 8,
-            'size' => 150,
+            'size' => 10,
             'category_id' => 23
         ]);
 
@@ -1075,7 +1075,7 @@ class CategoryTableSeeder extends Seeder
             'title' => '¿Tiene hijos?',
             'name' => 'tiene_hijos',
             'order' => 1,
-            'size' => 150,
+            'size' => 10,
             'category_id' => 24
         ]);
 
@@ -1083,7 +1083,7 @@ class CategoryTableSeeder extends Seeder
             'title' => '¿Cuántos hijos tiene?',
             'name' => 'cuantos_hijos_tiene',
             'order' => 2,
-            'size' => 150,
+            'size' => 10,
             'category_id' => 24
         ]);
 
@@ -1091,7 +1091,7 @@ class CategoryTableSeeder extends Seeder
             'title' => 'Qué edades tienen sus hijos',
             'name' => 'edades_de_los_hijos',
             'order' => 3,
-            'size' => 150,
+            'size' => 100,
             'category_id' => 24
         ]);
 

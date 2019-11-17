@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CreateCategoryRequest extends FormRequest
+class UpdateCategoryRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,7 +24,7 @@ class CreateCategoryRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|min:2|max:50|unique:categories,name',
+            'name' => 'required|min:2|max:50',
             'color' => 'required',
             'color_text' => 'required',
             'order' => 'required|integer',
@@ -36,7 +36,6 @@ class CreateCategoryRequest extends FormRequest
     {
         return [
             'name.required' => 'El campo nombre es requerido',
-            'name.unique' => 'Ya existe una categoría con ese nombre',
             'name.min' => 'El nombre debe tener más de 2 caracteres',
             'name.mix' => 'El nombre debe tener menos de 50 caracteres',
             'color.required' => 'El campo color de fondo es requerido',

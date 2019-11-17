@@ -163,13 +163,8 @@ class DataController extends Controller
 
         $arr_file = [];
         $cols = Column::all();
-        $arr = [];
         $i = 0;
         $dtsOK = false;
-
-        foreach ($cols as $col){
-            $arr[] = $col->name;
-        }
 
         if($request->hasFile('file')){
 
@@ -183,9 +178,18 @@ class DataController extends Controller
                 foreach ($data as $key => $value) {
 
                     foreach ($cols as $col){
+
                         $name = $col->name;
                         if($value->$name){
-                            $arr_file[$i][$name] = $value->$name;
+
+                            //VALIDAR QUE EL TEXTO DE LA CELDA NO SOBREPASE EL TAMAÑO DE LA COLUMNA
+                            if(strlen($value->$name) > $col->size){
+                                $row = $i + 2;
+                                session()->flash('mjs_error', 'El tamaño del campo de la columna '.$name.' en la fila '.$row.' es mayor de '.$col->size.' caracteres!');
+                                return back();
+                            } else {
+                                $arr_file[$i][$name] = $value->$name;
+                            }
                         } else {
                             $arr_file[$i][$name] = '';
                         }
