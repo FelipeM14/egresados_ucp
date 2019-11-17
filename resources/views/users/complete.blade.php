@@ -11,7 +11,7 @@
     <div class="row justify-content-center">
         <div class="col-md-4">
             <div class="card mt-5">
-                <div class="card-header text-center bg-green text-white">
+                <div class="card-header text-center bg-success text-white">
                     <h4 class="mt-3">Completar registro</h4>
 
                 </div>
