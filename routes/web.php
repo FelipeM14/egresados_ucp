@@ -127,6 +127,8 @@ Route::get('/', function () {
     Route::post('actualizacion/searchgraduate', 'ActualizacionController@searchgraduate')->name('actualizacion.searchgraduate');
 
 
+
+
     //Rutas Usuarios
     Route::get('users_index', 'UsersController@index')->name('users.index')
         ->middleware('permission:Administrar usuarios');

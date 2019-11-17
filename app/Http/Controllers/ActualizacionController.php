@@ -113,6 +113,14 @@ class ActualizacionController extends Controller
         return redirect('http://127.0.0.1:8000');
 
     }
+    public function upgrade(Request $request, $id)
+    {
+        $datosactualizacion = request()->except('_token','_method');
+        Graduates::where('codigo','=', $id)->update($datosactualizacion);
+        return redirect('http://127.0.0.1:8000');
+
+    }
+
 
     /**
      * Remove the specified resource from storage.
