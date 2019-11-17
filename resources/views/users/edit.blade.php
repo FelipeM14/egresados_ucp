@@ -92,8 +92,10 @@
                             <button type="submit" class="btn btn-success mr-1">Guardar cambios</button>
                             <a href="{{ route('users.index') }}" class="btn btn-secondary">Cancelar</a>
                         </div>
+                        </div>
                     </form>
                 </div>
             </div>
         </div>
+
 @endsection
