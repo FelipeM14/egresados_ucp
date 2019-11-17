@@ -19,7 +19,7 @@
                     Configurar permisos
                 </div>
 
-                <div class="card-body">
+                <div class="card-body pb-0">
 
                     <div class="form-row">
                         <div class="form-group col-md-12">

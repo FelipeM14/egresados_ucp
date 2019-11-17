@@ -104,6 +104,7 @@ class PermissionsTableSeeder extends Seeder
 
         $guest->givePermissionTo([
             'Consultar datos graduados',
+            'Ver datos',
         ]);
 
         //User Administrador
