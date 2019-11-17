@@ -5,6 +5,7 @@
             <form action="{{route('actualizacion.searchgraduate')}}" method="post">
                 @csrf
                 <div class="header-area">
+
                     <h2>Ingresa Tu Cedula</h2>
                     <br><br>
 

@@ -168,7 +168,7 @@
                         </div>
                         <div class="single-contact d-flex mb-30">
                             <i class="icon-placeholder"></i>
-                            <p>Carrera 21 No 49-95 Ave.de las Americas, Pereira, Risaralda, Colombia. </p>
+                            <p class="text-white">Carrera 21 No 49-95 Ave.de las Americas, Pereira, Risaralda, Colombia. </p>
                         </div>
                     </div>
                 </div>

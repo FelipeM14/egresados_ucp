@@ -77,6 +77,8 @@ class ActualizacionController extends Controller
 
 
         $datospersona = Graduates::where('codigo', $request->cedula)->first();
+        $create_fecha = Graduates::where('codigo', $request->create_at)->first();
+
 
         #printf($datospersona);
         #Fecha en la qie se hizo la ultima actualizacion
@@ -92,6 +94,9 @@ class ActualizacionController extends Controller
 
         }else{
             return redirect('actualizacion/'.$datospersona->codigo.'/edit');
+        }
+        if($datospersona->create_at<$create_fecha ){
+
         }
         #return redirect('actualizacion/'.$datospersona->codigo.'/edit');
 
