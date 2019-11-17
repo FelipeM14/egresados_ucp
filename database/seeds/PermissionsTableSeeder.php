@@ -94,7 +94,6 @@ class PermissionsTableSeeder extends Seeder
         Permission::create(['name' => 'Información sobre los hijos ver']);
         Permission::create(['name' => 'Información sobre los hijos editar']);
 
-
         //rol
         $admin = Role::create(['name' => 'Administrador']);
 
