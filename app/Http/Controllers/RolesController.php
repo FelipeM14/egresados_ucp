@@ -109,6 +109,7 @@ class RolesController extends Controller
 
         return Permission::select('permissions.id', 'permissions.name')
             ->whereNotIn('id', $role_arr)
+            ->orderBy('name', 'ASC')
             ->get();
     }
 
@@ -122,7 +123,7 @@ class RolesController extends Controller
 
     public function getRolePermissions(Role $role){
 
-        return $role->permissions()->get();
+        return $role->permissions()->orderBy('name', 'ASC')->get();
     }
 
     public function deleteRolePermissions(Role $role, Permission $permission){

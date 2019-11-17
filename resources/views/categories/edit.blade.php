@@ -26,9 +26,9 @@
                                 <div class="col-sm-12">
                                     <div class="form-group">
                                         <label for="name">
-                                            Nombre categoria
+                                            Nombre categoría
                                         </label>
-                                        <input class="form-control" type="text" name="name" id="name" value="{{ old('name', $category->name) }}" placeholder="Título columna...">
+                                        <input class="form-control" type="text" name="name" id="name" value="{{ old('name', $category->name) }}" placeholder="Nombre categoría...">
                                     </div>
                                 </div>
                             </div>

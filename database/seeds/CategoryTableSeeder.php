@@ -286,7 +286,7 @@ class CategoryTableSeeder extends Seeder
             'title' => 'Direcciones redes sociales - enviar mas información SI - NO',
             'name' => 'enviar_informacion_redes_sociales',
             'order' => 3,
-            'size' => 10,
+            'size' => 100,
             'category_id' => 3
         ]);
 
