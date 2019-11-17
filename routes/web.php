@@ -108,7 +108,6 @@ Route::get('/', function () {
 
     Route::post('update_graduate/{graduate_id}', 'GraduateController@update')->name('graduate.update');
 
-
     //ACTUALIZACION DE DATOS
     Route::post('actualizacion/store', 'ActualizacionController@store')->name('actualizacion.store');
 
