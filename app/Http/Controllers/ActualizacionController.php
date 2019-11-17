@@ -16,7 +16,8 @@ class ActualizacionController extends Controller
      */
     public function index()
     {
-        $datos['columns'] = Columns::paginate();#Problema consulta, solo tra 15 campos
+        $datos['columns'] = Columns::where('category_id', 2)->paginate();
+
         return view('columns.creategraduate', $datos);
     }
 
@@ -37,7 +38,9 @@ class ActualizacionController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
+
     {
+        $datos['columns'] = Columns::where('category_id', 2)->paginate();
         $datosactualizacion = request()->except('_token');
         Graduates::insert($datosactualizacion);
         return redirect('actualizacion');
@@ -69,22 +72,28 @@ class ActualizacionController extends Controller
         return view('columns.editdatosgraduados',$datos);
 
     }
-    public function searchgraduate()
+    public function searchgraduate(Request $request)
     {
-        $datosactualizacion = request()->except('_token');
-        $datospersona = Graduates::where('codigo', $datosactualizacion['cedula'])->firstOrFail();
-        printf($datospersona);
+
+
+        $datospersona = Graduates::where('codigo', $request->cedula)->first();
+
+        #printf($datospersona);
         #Fecha en la qie se hizo la ultima actualizacion
-        $fechaactualizacion = $datospersona->updated_at;
-        echo "<br>".$fechaactualizacion;
+        #$fechaactualizacion = $datospersona->updated_at;
+        #echo "<br>".$fechaactualizacion;
         #$fechaactual = date( );
         #echo  "<br>".$fechaactual;
 
-        if ($datospersona->codigo == null){
-            return redirect('actualizacion');
+
+        if (!$datospersona){
+
+            return redirect(config('app.url'));
+
         }else{
             return redirect('actualizacion/'.$datospersona->codigo.'/edit');
         }
+        #return redirect('actualizacion/'.$datospersona->codigo.'/edit');
 
         #return view('columns.editdatosgraduados',$datospersona);
 
@@ -101,7 +110,7 @@ class ActualizacionController extends Controller
     {
         $datosactualizacion = request()->except('_token','_method');
         Graduates::where('codigo','=', $id)->update($datosactualizacion);
-        return redirect('actualizacion');
+        return redirect('http://127.0.0.1:8000');
 
     }
 

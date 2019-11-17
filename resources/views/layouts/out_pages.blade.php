@@ -326,35 +326,29 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title">Ingresa Tu Cedula</h4>
+<div class="modal-body">
 
-                <form action="{{url('/actualizacion/searchgraduate')}}" method="post">
-                    @csrf
-                    <input type="text" name="cedula" id="cedula" >
-                    <br>
-                    <input type="submit" class="btn btn-success" value="agregar">
+    <form action="{{route('actualizacion.searchgraduate')}}" method="post">
+        @csrf
+        <input type="text" name="cedula" id="cedula" >
+        <br>
+        <input type="submit" class="btn btn-success" value="agregar">
 
-               </form>
+    </form>
+</div>
+
 
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <img src="img/bg-img/aleteiaucpp.jpg" class="img-fluid" alt="Responsive image">
-                <form
-
-
-
-
-
-                ></form>
-
 
 
             </div>
             <div class="modal-footer">
 
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Cerra</button>
             </div>
         </div>
     </div>

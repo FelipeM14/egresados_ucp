@@ -9,7 +9,7 @@
         @include('columns.form')
 
 
-        <input type="submit" class="btn btn-success" value="agregar">
+        <input type="submit" class="btn btn-success" value="Actualizar">
 
     </form>
     </div>
