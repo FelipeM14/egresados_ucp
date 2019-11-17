@@ -18,6 +18,7 @@ class PermissionsTableSeeder extends Seeder
         //Crea los permisos en la BD
         Permission::create(['name' => 'Administrar usuarios']);
         Permission::create(['name' => 'Realizar ajustes']);
+        Permission::create(['name' => 'Ver datos']);
         Permission::create(['name' => 'Administrar datos graduados']);
         Permission::create(['name' => 'Consultar datos graduados']);
 
@@ -103,7 +104,7 @@ class PermissionsTableSeeder extends Seeder
         $guest = Role::create(['name' => 'Consultor']);
 
         $guest->givePermissionTo([
-            'Ver datos',
+            'Consultar datos graduados',
         ]);
 
         //User Administrador
