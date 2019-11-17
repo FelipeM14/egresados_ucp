@@ -16,10 +16,10 @@ class PermissionsTableSeeder extends Seeder
     {
 
         //Crea los permisos en la BD
-        Permission::create(['name' => 'Ver datos']);
-        Permission::create(['name' => 'Editar datos']);
-        Permission::create(['name' => 'Ingresar datos']);
-        Permission::create(['name' => 'Eliminar datos']);
+        Permission::create(['name' => 'Administrar usuarios']);
+        Permission::create(['name' => 'Realizar ajustes']);
+        Permission::create(['name' => 'Administrar datos graduados']);
+        Permission::create(['name' => 'Consultar datos graduados']);
 
         Permission::create(['name' => 'Datos básicos ver']);
         Permission::create(['name' => 'Datos básicos editar']);

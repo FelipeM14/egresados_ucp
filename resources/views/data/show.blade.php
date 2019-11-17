@@ -20,7 +20,7 @@
                     <form id="frm_category" action="{{ route('graduate.show', ['graduate_id' => $graduate->id]) }}" method="get">
                         <div class="input-group mb-3">
                             <select class="custom-select" id="category_id" name="category_id">
-                                <option>Seleccionar una categoría</option>
+                                <option value="">Seleccionar una categoría</option>
                                 @foreach($categories as $category)
                                     @can($category->name.' ver')
                                         <option @if($category_id == $category->id) selected @endif value="{{ $category->id }}">{{ $category->name }}</option>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Http\Requests\UpdateGraduateRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -30,7 +31,7 @@ class GraduateController extends Controller
         return view('data.show', ['graduate' => $graduate, 'categories' => $categories, 'cols' => $cols, 'category_id' => $category_id]);
     }
 
-    public function update($graduate_id, Request $request){
+    public function update($graduate_id, UpdateGraduateRequest $request){
 
         $category = Category::find($request->category);
         $this->middleware('permission:'.$category->name. ' editar22323');
