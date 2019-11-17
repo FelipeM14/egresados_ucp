@@ -110,27 +110,28 @@ Route::middleware(['auth', 'checkActive'])->group(function () {
 
 
     //ACTUALIZACION DE DATOS
-    Route::post('data/store', 'DataController@store')->name('upgrade.store')
-        ->middleware('permission:Ingresar datos');
 
-    Route::get('upgrade', 'DataController@index')->name('upgrade.index')
-        ->middleware('permission:Ver datos');
+    Route::post('actualizacion/store', 'ActualizacionController@store')->name('actualizacion.store');
 
 
-    Route::get('upgrade/create', 'DataController@create')->name('upgrade.create')
-        ->middleware('permission:Ingresar datos');
+    Route::get('actualizacion', 'ActualizacionController@index')->name('actualizacion.index');
 
-    Route::put('upgrade/{role}', 'DataController@update')->name('upgrade.update')
-        ->middleware('permission:Editar datos');
 
-    Route::get('upgrade/{role}', 'DataController@show')->name('upgrade.show')
-        ->middleware('permission:Ver datos');
 
-    Route::delete('upgrade/{role}', 'DataController@destroy')->name('upgrade.destroy')
-        ->middleware('permission:Eliminar datos');
+    Route::get('actualizacion/create', 'ActualizacionController@create')->name('actualizacion.create');
 
-    Route::get('upgrade/{role}/edit', 'DataController@edit')->name('upgrade.edit')
-        ->middleware('permission:Editar datos');
+
+    Route::match(['put','patch'],'actualizacion/{role}', 'ActualizacionController@update')->name('actualizacion.update');
+
+
+    Route::get('actualizacion/{role}', 'ActualizacionController@show')->name('actualizacion.show');
+
+
+    Route::delete('actualizacion/{role}', 'ActualizacionController@destroy')->name('actualizacion.destroy');
+
+    Route::get('actualizacion/{role}/edit', 'ActualizacionController@edit')->name('actualizacion.edit');
+
+    Route::post('actualizacion/searchgraduate', 'ActualizacionController@searchgraduate')->name('actualizacion.searchgraduate');
 
 
 

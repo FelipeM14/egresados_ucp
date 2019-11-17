@@ -327,6 +327,14 @@
             <div class="modal-header">
                 <h4 class="modal-title">Ingresa Tu Cedula</h4>
 
+                <form action="{{url('/actualizacion/searchgraduate')}}" method="post">
+                    @csrf
+                    <input type="text" name="cedula" id="cedula" >
+                    <br>
+                    <input type="submit" class="btn btn-success" value="agregar">
+
+               </form>
+
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>

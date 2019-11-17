@@ -15,6 +15,13 @@ class CreateColumnsTable extends Migration
     {
         Schema::create('columns', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('title');
+            $table->string('name');
+            $table->integer('order');
+            $table->bigInteger('category_id')->unsigned();
+            $table->foreign('category_id')->references('id')->on('categories');
+            $table->integer('status')->default(1);
+            $table->integer('size')->default(150);
             $table->timestamps();
         });
     }
