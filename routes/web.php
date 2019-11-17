@@ -58,7 +58,6 @@ Route::middleware(['auth', 'checkActive'])->group(function () {
     Route::put('columns_update/{column}', 'ColumnController@update')->name('columns.update')
         ->middleware('permission:Editar datos');
 
-
     //DATA
     Route::post('data/store', 'DataController@store')->name('data.store')
         ->middleware('permission:Ingresar datos');
@@ -106,6 +105,33 @@ Route::middleware(['auth', 'checkActive'])->group(function () {
     //Graduates
     Route::get('show_graduate/{graduate_id}', 'GraduateController@show')->name('graduate.show');
     Route::post('update_graduate/{graduate_id}', 'GraduateController@update')->name('graduate.update');
+
+
+
+
+    //ACTUALIZACION DE DATOS
+
+    Route::post('actualizacion/store', 'ActualizacionController@store')->name('actualizacion.store');
+
+
+    Route::get('actualizacion', 'ActualizacionController@index')->name('actualizacion.index');
+
+
+
+    Route::get('actualizacion/create', 'ActualizacionController@create')->name('actualizacion.create');
+
+
+    Route::match(['put','patch'],'actualizacion/{role}', 'ActualizacionController@update')->name('actualizacion.update');
+
+
+    Route::get('actualizacion/{role}', 'ActualizacionController@show')->name('actualizacion.show');
+
+
+    Route::delete('actualizacion/{role}', 'ActualizacionController@destroy')->name('actualizacion.destroy');
+
+    Route::get('actualizacion/{role}/edit', 'ActualizacionController@edit')->name('actualizacion.edit');
+
+    Route::post('actualizacion/searchgraduate', 'ActualizacionController@searchgraduate')->name('actualizacion.searchgraduate');
 
 
 

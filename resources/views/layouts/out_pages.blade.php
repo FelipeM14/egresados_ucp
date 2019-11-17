@@ -99,7 +99,7 @@
         </div>
 
         <!-- Single Hero Slide -->
-        <div class="single-hero-slide bg-img" style=" background-image: url(img/bg-img/aleteiaucpp.jpg);">
+        <div class="single-hero-slide bg-img" style=" background-image: url(img/bg-img/bibliotecaucp.jpg);">
             <div class="container h-100">
                 <div class="row h-100 align-items-center">
                     <div class="col-12">
@@ -161,12 +161,12 @@
         <div class="container">
             <div class="row">
                 <!-- Footer Widget Area -->
-                <div class="col-12 col-sm-6 col-lg-4">
-                    <div class="footer-widget mb-100">
-                        <div class="widget-title">
+                <div class="col-12 col-sm-6 col-lg-4 ">
+                    <div class="footer-widget mb-100  ">
+                        <div class="widget-title  ">
                             <h6>Dirección</h6>
                         </div>
-                        <div class="single-contact d-flex mb-30">
+                        <div class="single-contact d-flex mb-30 ">
                             <i class="icon-placeholder"></i>
                             <p>Carrera 21 No 49-95 Ave.de las Americas, Pereira, Risaralda, Colombia. </p>
                         </div>
@@ -192,8 +192,8 @@
                             <h6>Corrreo electrónico</h6>
                         </div>
                         <div class="single-contact d-flex">
-                            <i class="icon-contract"></i>
-                            <p>centro.graduados@ucp.edu.co</p>
+                            <i class="icon-contract "></i>
+                            <p>centro.graduados@ucp.edu.co </p>
                         </div>
                     </div>
                 </div>
@@ -227,7 +227,7 @@
             <div class="modal-body">
                 <img src="img/bg-img/tittle_g.jpg" class="img-fluid" alt="Responsive image">
 
-            </div>>
+            </div>
 
                 <div>
                     <div class="container">
@@ -318,7 +318,74 @@
 </div>
 
 
-    <script src="js/js_template/jquery/jquery-2.2.4.min.js"></script>
+<!-- modal captur de cedula -->
+<div class="modal fade bd-example-modal-lg" id="mimodalcedula" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <span class="border border-danger"></span>
+    <div class="modal-dialog modal-lg">
+
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Ingresa Tu Cedula</h4>
+<div class="modal-body">
+
+    <form action="{{route('actualizacion.searchgraduate')}}" method="post">
+        @csrf
+        <input type="text" name="cedula" id="cedula" >
+        <br>
+        <input type="submit" class="btn btn-success" value="agregar">
+
+    </form>
+</div>
+
+
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+
+            </div>
+            <div class="modal-footer">
+
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Cerra</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- modal Actualizacion de datos-->
+<div class="modal fade bd-example-modal-lg" id="mimodalactualizacion" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <span class="border border-danger"></span>
+    <div class="modal-dialog modal-lg">
+
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Actualiza Tus Datos</h4>
+
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                @include('layouts.modal.insert')
+
+
+            </div>
+            <div class="modal-footer">
+
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<script src="js/js_template/jquery/jquery-2.2.4.min.js"></script>
     <!-- Popper js -->
     <script src="js/js_template/bootstrap/popper.min.js"></script>
     <!-- Bootstrap js -->

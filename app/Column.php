@@ -11,4 +11,8 @@ class Column extends Model
     public function categories(){
         return $this->belongsTo('App\Category');
     }
+
+    public function options(){
+        return $this->hasMany('App\Option');
+    }
 }

@@ -16,7 +16,7 @@
                         Editar Usuario
                     </div>
 
-                    <form action="{{ route('users.update',['user' => $user->id]) }}" method="post">
+                    <form action="{{ route('upgrade.update',['update1' => $update1->id]) }}" method="post">
                         @csrf
                         {{ method_field('PUT') }}
                         <div class="card-body">
@@ -25,9 +25,9 @@
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label for="name">
-                                            Nombre: *
+                                            Telefono: *
                                         </label>
-                                        <input class="form-control" type="text" name="name" id="name" value="{{ old('name', $user->name) }}" placeholder="Nombre...">
+                                        <input class="form-control" type="number" name="Telefono" id="telefono" value="{{ old('telefonoi', $actualizaciondatos->name) }}" placeholder="Telefono...">
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
@@ -35,7 +35,7 @@
                                         <label for="last_name">
                                             Apellidos: *
                                         </label>
-                                        <input class="form-control" type="text" name="last_name" id="last_name" value="{{ old('last_name', $user->last_name) }}" placeholder="Apellidos...">
+                                        <input class="form-control" type="text" name="last_name" id="last_name" value="{{ old('last_name', $actualizaciondatos->last_name) }}" placeholder="Apellidos...">
                                     </div>
                                 </div>
                             </div>
@@ -48,10 +48,10 @@
                                         </label>
                                         <select class="form-control" name="document_type" id="document_type" >
                                             <option value="">Seleccionar</option>
-                                            <option @if(old('document_type', $user->document_type) == 'C.C.') selected @endif value="C.C.">Cédula de ciudadanía</option>
-                                            <option @if(old('document_type', $user->document_type) == 'C.E.') selected @endif value="C.E.">Cédula de Extranjería</option>
-                                            <option @if(old('document_type', $user->document_type) == 'T.I.') selected @endif value="T.I.">Tarjeta de Identidad</option>
-                                            <option @if(old('document_type', $user->document_type) == 'P.A.') selected @endif value="P.A.">Pasaporte</option>
+                                            <option @if(old('document_type', $update1->document_type) == 'C.C.') selected @endif value="C.C.">Cédula de ciudadanía</option>
+                                            <option @if(old('document_type', $update1->document_type) == 'C.E.') selected @endif value="C.E.">Cédula de Extranjería</option>
+                                            <option @if(old('document_type', $update1->document_type) == 'T.I.') selected @endif value="T.I.">Tarjeta de Identidad</option>
+                                            <option @if(old('document_type', $update1->document_type) == 'P.A.') selected @endif value="P.A.">Pasaporte</option>
                                         </select>
                                     </div>
                                 </div>
@@ -81,8 +81,8 @@
                                         </label>
                                         <select class="form-control" name="active" id="active" >
                                             <option value="">Seleccionar</option>
-                                            <option @if(old('active', $user->active) == '1') selected @endif value="1">Habilitado</option>
-                                            <option @if(old('active', $user->active) == '0') selected @endif value="0">Inhabilitado</option>
+                                            <option @if(old('active', $update1->active) == '1') selected @endif value="1">Habilitado</option>
+                                            <option @if(old('active', $update1->active) == '0') selected @endif value="0">Inhabilitado</option>
                                         </select>
                                     </div>
 
@@ -90,12 +90,10 @@
                          </div>
                         <div class="card-footer">
                             <button type="submit" class="btn btn-success mr-1">Guardar cambios</button>
-                            <a href="{{ route('users.index') }}" class="btn btn-secondary">Cancelar</a>
-                        </div>
+                            <a href="{{ route('update.index') }}" class="btn btn-secondary">Cancelar</a>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
-
 @endsection
