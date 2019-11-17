@@ -184,7 +184,8 @@ class DataController extends Controller
 
                             //VALIDAR QUE EL TEXTO DE LA CELDA NO SOBREPASE EL TAMAÑO DE LA COLUMNA
                             if(strlen($value->$name) > $col->size){
-                                session()->flash('mjs_error', 'El tamaño del campo de la columna '.$name.' es mayor de '.$col->size.' caracteres!');
+                                $row = $i + 2;
+                                session()->flash('mjs_error', 'El tamaño del campo de la columna '.$name.' en la fila '.$row.' es mayor de '.$col->size.' caracteres!');
                                 return back();
                             } else {
                                 $arr_file[$i][$name] = $value->$name;
