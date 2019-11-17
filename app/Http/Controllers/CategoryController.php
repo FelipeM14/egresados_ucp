@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use App\Http\Requests\CreateCategoryRequest;
+use App\Http\Requests\UpdateCategoryRequest;
 use Illuminate\Http\Request;
+use Spatie\Permission\Models\Permission;
 
 class CategoryController extends Controller
 {
@@ -40,6 +42,7 @@ class CategoryController extends Controller
         ]);
 
         if($category){
+            Permission::create(['name' => $request->name]);
             session()->flash('message', 'La categoría '.strtolower($category->name).' fue creada correctamente!');
         }
 
@@ -51,7 +54,7 @@ class CategoryController extends Controller
         return view('categories.edit',['category' => $category]);
     }
 
-    public function update(CreateCategoryRequest $request, Category $category){
+    public function update(UpdateCategoryRequest $request, Category $category){
 
         $u = $category->update([
             'name' => $request->name,
