@@ -6,6 +6,7 @@ use App\Category;
 use App\Http\Requests\UpdateGraduateRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Gate;
 
 class GraduateController extends Controller
 {
@@ -34,13 +35,24 @@ class GraduateController extends Controller
     public function update($graduate_id, UpdateGraduateRequest $request){
 
         $category = Category::find($request->category);
-        $this->middleware('permission:'.$category->name. ' editar22323');
+
+        if(!Gate::allows($category->name.' editar')){
+            session()->flash('mjs_error', 'Usted no tiene permiso para modificar este dato!');
+            return back();
+        }
+
         $updates = 0;
 
         $cols = $category->columns()->get();
 
         foreach ($cols as $col){
             $name_col = $col->name;
+
+            //VALIDAR QUE EL TEXTO DE LA CELDA NO SOBREPASE EL TAMAÑO DE LA COLUMNA
+            if(strlen($request->$name_col) > $col->size){
+                session()->flash('mjs_error', 'El tamaño del campo de la columna '.$col->title.' es mayor de '.$col->size.' caracteres!');
+                return back();
+            }
             $updates += DB::table('graduates')->where('id', $graduate_id)->update([$name_col => $request->$name_col]);
         }
 
