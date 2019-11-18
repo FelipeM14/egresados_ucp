@@ -78,6 +78,8 @@ class ActualizacionController extends Controller
 
         $datospersona = Graduates::where('codigo', $request->cedula)->first();
         $create_fecha = Graduates::where('codigo', $request->create_at)->first();
+        $modelo = Cliente::find(1);
+        $fechaAlta = $modelo->created_at;
 
 
         #printf($datospersona);
