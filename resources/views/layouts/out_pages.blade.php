@@ -318,40 +318,6 @@
 </div>
 
 
-<!-- modal captur de cedula -->
-<div class="modal fade bd-example-modal-lg" id="mimodalcedula" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-    <span class="border border-danger"></span>
-    <div class="modal-dialog modal-lg">
-
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title">Ingresa Tu Cedula</h4>
-
-
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="modal-body">
-
-                    <form action="{{route('actualizacion.searchgraduate')}}" method="post">
-                        @csrf
-                        <input type="text" name="cedula" id="cedula" >
-                        <br><br>
-                        <input type="submit" class="btn btn-success" value="agregar">
-                    </form>
-                </div>
-
-            </div>
-            <div class="modal-footer">
-
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Cerra</button>
-            </div>
-        </div>
-    </div>
-</div>
-
 <!-- modal Actualizacion de datos-->
 <div class="modal fade bd-example-modal-lg" id="mimodalactualizacion" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
     <span class="border border-danger"></span>
