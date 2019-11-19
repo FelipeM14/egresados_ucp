@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Actualizacion;
+use App\Category;
 use App\Columns;
+use App\Graduate;
 use App\Graduates;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ActualizacionController extends Controller
 {
@@ -14,129 +17,53 @@ class ActualizacionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        $datos['columns'] = Columns::where('category_id', 2)->paginate();
 
-        return view('columns.creategraduate', $datos);
+    public function index() {
+        return view('data.upgrade');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
+    public function searchGraduate(Request $request){
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+        $graduate = Graduates::where('codigo', $request->cedula)->first();
 
-    {
-        $datos['columns'] = Columns::where('category_id', 2)->paginate();
-        $datosactualizacion = request()->except('_token');
-        Graduates::insert($datosactualizacion);
-        return redirect('actualizacion');
+        if (!$graduate){
+            return redirect()->route('welcome');
+        } else {
 
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Actualizacion  $actualizacion
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Actualizacion $actualizacion)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Actualizacion  $actualizacion
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($codigo)
-    {
-        $datos['columns'] = Columns::where('category_id', 2)->paginate();
-        #$datos['graduadodate'] = Graduates::findOrFail($codigo);
-        $datos['graduadodate'] = Graduates::where('codigo', $codigo)->firstOrFail();
-        return view('columns.editdatosgraduados',$datos);
-
-    }
-    public function searchgraduate(Request $request)
-    {
-
-
-        $datospersona = Graduates::where('codigo', $request->cedula)->first();
-        $create_fecha = Graduates::where('codigo', $request->create_at)->first();
-        $modelo = Cliente::find(1);
-        $fechaAlta = $modelo->created_at;
-
-
-        #printf($datospersona);
-        #Fecha en la qie se hizo la ultima actualizacion
-        #$fechaactualizacion = $datospersona->updated_at;
-        #echo "<br>".$fechaactualizacion;
-        #$fechaactual = date( );
-        #echo  "<br>".$fechaactual;
-
-
-        if (!$datospersona){
-
-            return redirect(config('app.url'));
-
-        }else{
-            return redirect('actualizacion/'.$datospersona->codigo.'/edit');
+            $category = Category::find(2);
+            $cols = $category->columns()->get();
+            return view('data.poll', ['cols' => $cols, 'graduate' => $graduate]);
         }
-        if($datospersona->create_at<$create_fecha ){
 
+    }
+
+    public function update(Request $request, $graduate_id){
+
+        $updates = 0;
+        $category = Category::find(2);
+        $cols = $category->columns()->get();
+
+        foreach ($cols as $col){
+            $name_col = $col->name;
+
+            //VALIDAR QUE EL TEXTO DE LA CELDA NO SOBREPASE EL TAMAÑO DE LA COLUMNA
+            if(strlen($request->$name_col) > $col->size){
+                session()->flash('mjs_error', 'El tamaño del campo de la columna '.$col->title.' es mayor de '.$col->size.' caracteres!');
+                return back();
+            }
+            $updates += DB::table('graduates')->where('id', $graduate_id)->update([$name_col => $request->$name_col]);
         }
-        #return redirect('actualizacion/'.$datospersona->codigo.'/edit');
 
-        #return view('columns.editdatosgraduados',$datospersona);
+        if($updates)
+            session()->flash('message', 'Los datos de han actualizado correctamente!');
+        else {
+            session()->flash('mjs_error', 'No se han realizado cambios!');
+        }
 
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Actualizacion  $actualizacion
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        $datosactualizacion = request()->except('_token','_method');
-        Graduates::where('codigo','=', $id)->update($datosactualizacion);
-        return redirect('http://127.0.0.1:8000');
-
-    }
-    public function upgrade(Request $request, $id)
-    {
-        $datosactualizacion = request()->except('_token','_method');
-        Graduates::where('codigo','=', $id)->update($datosactualizacion);
-        return redirect('http://127.0.0.1:8000');
+        return redirect()->route('welcome');
 
     }
 
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Actualizacion  $actualizacion
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Actualizacion $actualizacion)
-    {
-        //
-    }
+
 }
