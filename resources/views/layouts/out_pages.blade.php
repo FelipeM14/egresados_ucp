@@ -126,22 +126,22 @@
                         <!-- Single Top Features -->
                         <div class="col-12 col-md-4">
                             <div class="single-top-features d-flex align-items-center justify-content-center">
-                                <i class="icon-agenda-1"></i>
-                                <h5>Ayuda para Ti</h5>
+                                <i ></i>
+                                <h5></h5>
                             </div>
                         </div>
                         <!--- Single Top Features -->
                         <div class="col-12 col-md-4">
                             <div class="single-top-features d-flex align-items-center justify-content-center">
-                                <i class="icon-assistance"></i>
-                                <h5>Informate</h5>
+                                <i ></i>
+                                <h5></h5>
                             </div>
                         </div>
                         <!-- Single Top Features -->
                         <div class="col-12 col-md-4">
                             <div class="single-top-features d-flex align-items-center justify-content-center">
-                                <i class="icon-telephone-3"></i>
-                                <h5>Comunicate Con Nosotros</h5>
+                                <i ></i>
+                                <h5></h5>
                             </div>
                         </div>
                     </div>
@@ -326,16 +326,6 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title">Ingresa Tu Cedula</h4>
-<div class="modal-body">
-
-    <form action="{{route('actualizacion.searchgraduate')}}" method="post">
-        @csrf
-        <input type="text" name="cedula" id="cedula" >
-        <br>
-        <input type="submit" class="btn btn-success" value="agregar">
-
-    </form>
-</div>
 
 
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -343,7 +333,15 @@
                 </button>
             </div>
             <div class="modal-body">
+                <div class="modal-body">
 
+                    <form action="{{route('actualizacion.searchgraduate')}}" method="post">
+                        @csrf
+                        <input type="text" name="cedula" id="cedula" >
+                        <br><br>
+                        <input type="submit" class="btn btn-success" value="agregar">
+                    </form>
+                </div>
 
             </div>
             <div class="modal-footer">
@@ -363,11 +361,13 @@
             <div class="modal-header">
                 <h4 class="modal-title">Actualiza Tus Datos</h4>
 
+
+            </div>
+            <div class="modal-body">
+
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
-            </div>
-            <div class="modal-body">
                 @include('layouts.modal.insert')
 
 

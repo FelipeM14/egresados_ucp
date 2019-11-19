@@ -41,7 +41,7 @@
                                 @foreach($cols as $col)
                                     @php($name = $col->name)
                                     <div class="form-group">
-                                        <label for="">{{ $col->name }}</label>
+                                        <label for="">{{ $col->title }}</label>
                                         <input class="form-control" name="{{ $col->name }}" id="{{ $col->name }}" value="{{ $graduate->$name }}">
                                     </div>
                                 @endforeach

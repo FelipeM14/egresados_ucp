@@ -21,6 +21,15 @@ class UsersTableSeeder extends Seeder
             'password'     => bcrypt('123456')
         ]);
 
-        factory(User::class, 7)->create();
+        User::create([
+            'name'      => 'Motita',
+            'last_name'      => 'González',
+            'document_type'      => 'C.C',
+            'document_number'      => '23948348',
+            'email'     => 'morita.gonzalez@ucp.edu.co',
+            'password'     => bcrypt('123456')
+        ]);
+
+        //factory(User::class, 7)->create();
     }
 }

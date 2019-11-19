@@ -77,6 +77,10 @@ class ActualizacionController extends Controller
 
 
         $datospersona = Graduates::where('codigo', $request->cedula)->first();
+        $create_fecha = Graduates::where('codigo', $request->create_at)->first();
+        $modelo = Cliente::find(1);
+        $fechaAlta = $modelo->created_at;
+
 
         #printf($datospersona);
         #Fecha en la qie se hizo la ultima actualizacion
@@ -92,6 +96,9 @@ class ActualizacionController extends Controller
 
         }else{
             return redirect('actualizacion/'.$datospersona->codigo.'/edit');
+        }
+        if($datospersona->create_at<$create_fecha ){
+
         }
         #return redirect('actualizacion/'.$datospersona->codigo.'/edit');
 
@@ -113,6 +120,14 @@ class ActualizacionController extends Controller
         return redirect('http://127.0.0.1:8000');
 
     }
+    public function upgrade(Request $request, $id)
+    {
+        $datosactualizacion = request()->except('_token','_method');
+        Graduates::where('codigo','=', $id)->update($datosactualizacion);
+        return redirect('http://127.0.0.1:8000');
+
+    }
+
 
     /**
      * Remove the specified resource from storage.
