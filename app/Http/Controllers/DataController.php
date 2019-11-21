@@ -209,10 +209,8 @@ class DataController extends Controller
         }
 
         if($dtsOK){
-            $categories = $this->getCategories();
-            $cols = $this->getColumns();
             session()->flash('message', 'Los datos de han importado correctamente!');
-            return view('data.index', ['columns' => $cols, 'categories' => $categories]);
+            return redirect()->route('data.index');
         } else
             return back();
     }

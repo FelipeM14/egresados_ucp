@@ -14,7 +14,6 @@ class PermissionsTableSeeder extends Seeder
      */
     public function run()
     {
-
         //Crea los permisos en la BD
         Permission::create(['name' => 'Administrar usuarios']);
         Permission::create(['name' => 'Realizar ajustes']);
@@ -96,13 +95,32 @@ class PermissionsTableSeeder extends Seeder
 
         //rol
         $admin = Role::create(['name' => 'Administrador']);
-
         $admin->givePermissionTo(Permission::all());
 
         //Guest
-        $guest = Role::create(['name' => 'Consultor']);
-
+        $guest = Role::create(['name' => 'Mercadeo']);
         $guest->givePermissionTo([
+            'Consultar datos graduados',
+            'Ver datos',
+        ]);
+
+        //rol monitor
+        $monitor = Role::create(['name' => 'Monitor']);
+        $monitor->givePermissionTo([
+            'Consultar datos graduados',
+            'Ver datos',
+        ]);
+
+        //rol para bilbioteca
+        $bi = Role::create(['name' => 'Biblioteca']);
+        $bi->givePermissionTo([
+            'Consultar datos graduados',
+            'Ver datos',
+        ]);
+
+        //rol para recepcion
+        $re = Role::create(['name' => 'Recepción']);
+        $re->givePermissionTo([
             'Consultar datos graduados',
             'Ver datos',
         ]);
@@ -112,7 +130,9 @@ class PermissionsTableSeeder extends Seeder
         $user->assignRole('Administrador');
 
         //User consutor
-        $u = User::find(2);
-        $u->assignRole('Consultor');
+        $m = User::find(2);
+        $m->assignRole('Mercadeo');
+
+
     }
 }

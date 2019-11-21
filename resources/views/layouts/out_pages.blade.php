@@ -167,8 +167,8 @@
                             <h6>Dirección</h6>
                         </div>
                         <div class="single-contact d-flex mb-30 ">
-                            <i class="icon-placeholder"></i>
-                            <p>Carrera 21 No 49-95 Ave.de las Americas, Pereira, Risaralda, Colombia. </p>
+                            <i class="icon-placeholder text-white"></i>
+                            <p class="text-white">Carrera 21 No 49-95 Ave.de las Americas, Pereira, Risaralda, Colombia. </p>
                         </div>
                     </div>
                 </div>
@@ -179,8 +179,8 @@
                             <h6>PBX</h6>
                         </div>
                         <div class="single-contact d-flex mb-30">
-                            <i class="icon-telephone-1"></i>
-                            <p>PBX (+57) (6) 312 4000
+                            <i class="icon-telephone-1 text-white"></i>
+                            <p class="text-white">PBX (+57) (6) 312 4000
                             </p>
                         </div>
                     </div>
@@ -192,8 +192,8 @@
                             <h6>Corrreo electrónico</h6>
                         </div>
                         <div class="single-contact d-flex">
-                            <i class="icon-contract "></i>
-                            <p>centro.graduados@ucp.edu.co </p>
+                            <i class="icon-contract text-white"></i>
+                            <p class="text-white">centro.graduados@ucp.edu.co </p>
                         </div>
                     </div>
                 </div>

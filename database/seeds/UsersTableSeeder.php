@@ -22,7 +22,7 @@ class UsersTableSeeder extends Seeder
         ]);
 
         User::create([
-            'name'      => 'Motita',
+            'name'      => 'Morita',
             'last_name'      => 'González',
             'document_type'      => 'C.C',
             'document_number'      => '23948348',
@@ -30,6 +30,5 @@ class UsersTableSeeder extends Seeder
             'password'     => bcrypt('123456')
         ]);
 
-        //factory(User::class, 7)->create();
     }
 }
