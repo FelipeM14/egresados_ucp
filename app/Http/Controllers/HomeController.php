@@ -7,6 +7,8 @@ use App\Graduate;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
+
+//contralador de inicio al dashboard
 {
     /**
      * Create a new controller instance.

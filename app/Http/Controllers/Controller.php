@@ -11,6 +11,8 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
+    //CLASE PADRE DE LOS CONTROLADORES
+
     public function deleteAccents($chain){
 
         //Ahora reemplazamos las letras

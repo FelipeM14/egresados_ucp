@@ -10,6 +10,7 @@ use Spatie\Permission\Models\Permission;
 
 class CategoryController extends Controller
 {
+// CONTROLADOR MANEJA LAS VISTAS RELACIONADAS CON LAS CATEGORIAS DE LAS COLUMNAS
 
     public function index(){
 
@@ -17,7 +18,9 @@ class CategoryController extends Controller
         return view('categories.index', ['categories' => $categories]);
     }
 
-    public function generateRandomString($length = 6) {
+    //RETORNA  COLOR AL AZAR PARA LA CATEGORIA
+
+    private function generateRandomString($length = 6) {
         $characters = '0123456789ABCDEF';
         $charactersLength = strlen($characters);
         $randomString = '';
@@ -53,6 +56,8 @@ class CategoryController extends Controller
 
         return view('categories.edit',['category' => $category]);
     }
+
+    //GUARDA LOS CAMBIOS QUE SE HICIERON EN FORMULARIO EN BD
 
     public function update(UpdateCategoryRequest $request, Category $category){
 
