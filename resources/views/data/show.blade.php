@@ -52,6 +52,7 @@
                             <div class="col">
                                 <a href="{{ route('data.update') }}" class="btn btn-outline-secondary">Regresar</a>
                                 <input type="hidden" name="category" value="{{ $category_id }}">
+                                @can()
                                 <button type="submit" class="btn btn-outline-success">Guardar cambios</button>
                             </div>
                         </div>

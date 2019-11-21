@@ -15,7 +15,7 @@
         return view('welcome');
     })->name('welcome');
 
-    Route::get('/', 'ActualizacionController@index')->name('search');
+    Route::get('/', 'ActualizationController@index')->name('search');
 
     Auth::routes(["register" => false]);
 
@@ -27,15 +27,16 @@
 
 
     //ACTUALIZACION DE DATOS
-    Route::get('actualization', 'ActualizacionController@index')->name('actualization.index');
+    Route::get('actualization', 'ActualizationController@index')->name('actualization.index');
 
-    Route::post('actualization_search', 'ActualizacionController@searchGraduate')->name('actualization.search.graduate');
+    Route::post('actualization_search', 'ActualizationController@searchGraduate')->name('actualization.search.graduate');
 
-    Route::get('actualization/{graduate}/edit', 'ActualizacionController@edit')->name('actualization.edit');
+    Route::get('actualization/{graduate}/edit', 'ActualizationController@edit')->name('actualization.edit');
 
-    Route::put('actualization_update/{graduate}', 'ActualizacionController@update')->name('actualization.update');
+    Route::put('actualization_update/{graduate}', 'ActualizationController@update')->name('actualization.update');
 
-//Rutas para el proyecto
+
+//Rutas para el proyecto con autenticacion
 Route::middleware(['auth', 'checkActive'])->group(function () {
 
     //CATEGORIES
@@ -77,7 +78,7 @@ Route::middleware(['auth', 'checkActive'])->group(function () {
         ->middleware('permission:Administrar datos graduados');
 
     Route::get('data', 'DataController@index')->name('data.index')
-        ->middleware('permission:Consultar datos graduados');
+        ->middleware('permission:Administrar datos graduados');
 
     Route::get('get_columns', 'DataController@getCols')->name('data.cols')
         ->middleware('permission:Consultar datos graduados');
