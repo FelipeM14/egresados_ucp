@@ -17,7 +17,7 @@ class UsersController extends Controller
 {
     public function index(){
 
-        $users = User::orderBy('id', 'DESC')->paginate(5);
+        $users = User::orderBy('id', 'DESC')->paginate(10);
 
         return view('users.index',['users' => $users]);
 
@@ -48,19 +48,19 @@ class UsersController extends Controller
             $role = Role::find($request->role);
             $user->assignRole($role);
 
+            //envia correo electronico para que ingrese la contraseña y se complete el registro
+
             Mail::to($request->email)
                 ->send(new Complete($request->name, $request->last_name, $code));
         }
-
 
         if($user){
             session()->flash('message', 'El usuario '.$request->name.' fue creado correctamente!');
         }
 
         return redirect()->route('users.index');
-
     }
-
+    //retorna la vita para que le usurio complete el registro
     public function complete($code){
 
         $user = User::where('remember_token', $code)
@@ -68,7 +68,7 @@ class UsersController extends Controller
 
         return view('users.complete', ['user' => $user]);
     }
-
+    //actualiza la contaseña que envio el usuario
     public function updatePass(User $user, Request $request){
 
         $update = $user->update(['password' => Hash::make($request->password)]);
@@ -79,7 +79,7 @@ class UsersController extends Controller
 
         return redirect()->route('login');
     }
-
+    //retorna vista de edicion de usurio
     public function edit(User $user){
 
         return view('users.edit', ['user' => $user]);

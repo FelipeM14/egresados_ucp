@@ -18,6 +18,8 @@ class ActualizationController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+//ESTE CONTRALODAR LA ACTUALIZACION DE LOS DATOS DE LA ENCUESTA POR PARTE DEL EGRESADO
+
 
     public function index() {
         return view('data.upgrade');

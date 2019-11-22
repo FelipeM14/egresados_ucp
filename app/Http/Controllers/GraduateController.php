@@ -11,6 +11,8 @@ use Illuminate\Support\Facades\Gate;
 class GraduateController extends Controller
 {
 
+    //controlador que maneja los datos de los graduados de la vista diferente a la del administrador
+
     private function getCategories(){
         return Category::all();
     }

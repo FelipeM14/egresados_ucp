@@ -29,7 +29,7 @@ class CreateGraduatesTable extends Migration
             $table->string('cargo3',100)->nullable();
             $table->string('titulos_obtenidos_ucp',20)->nullable();
             $table->string('actualizada',10)->nullable();
-            $table->string('enviar_informacion_redes_sociales',10)->nullable();
+            $table->string('enviar_informacion_redes_sociales',100)->nullable();
             $table->string('gestion_matriculados',150)->nullable();
             $table->string('celular1',20)->nullable();
             $table->string('celular2',20)->nullable();
