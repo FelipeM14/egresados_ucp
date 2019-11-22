@@ -36,8 +36,8 @@
     Route::put('actualization_update/{graduate}', 'ActualizationController@update')->name('actualization.update');
 
 
-//Rutas para el proyecto con autenticacion
-Route::middleware(['auth', 'checkActive'])->group(function () {
+    //Rutas para el proyecto con autenticacion
+    Route::middleware(['auth', 'checkActive'])->group(function () {
 
     //CATEGORIES
     Route::get('categories_create', 'CategoryController@create')->name('categories.create')

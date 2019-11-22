@@ -27,7 +27,7 @@ class ActualizationController extends Controller
 
     public function searchGraduate(Request $request){
 
-        $graduate = Graduates::where('codigo', $request->cedula)->first();
+        $graduate = Graduate::where('codigo', $request->cedula)->first();
         $diff = 0;
 
         $now = Carbon::now();
