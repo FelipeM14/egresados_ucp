@@ -20,6 +20,12 @@
             <span>Inicio</span></a>
     </li>
 
+    <li class="nav-item">
+        <a target="_blank" class="nav-link" href="{{ asset('pdf/formulario_inscripcion.pdf') }}">
+            <i class="fas fa-fw fa-file-pdf"></i>
+            <span>Manual de usuario </span></a>
+    </li>
+
     <!-- Divider -->
     <hr class="sidebar-divider my-0">
 
